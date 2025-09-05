@@ -1,0 +1,16 @@
+.datos-tecnicos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 990px) {
+  .datos-tecnicos {
+    width: 50%;
+  }
+}
+
+
+.strong {
+  font-weight: 600;
+}

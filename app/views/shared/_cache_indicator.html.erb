@@ -1,0 +1,13 @@
+<% if @cached_at %>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <small style="color: #6c757d; font-size: 12px; background-color: #f8f9fa; padding: 4px 8px; border-radius: 4px; border: 1px solid #dee2e6;">
+      📊 Datos actualizados el <%= @cached_at.strftime("%d/%m/%Y a las %H:%M") %>
+    </small>
+  </div>
+<% elsif @cache_missing %>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <small style="color: #856404; font-size: 12px; background-color: #fff3cd; padding: 4px 8px; border-radius: 4px; border: 1px solid #ffeaa7;">
+      ⚠️ Actualizando datos... Mostrando vista sin resultados
+    </small>
+  </div>
+<% end %>

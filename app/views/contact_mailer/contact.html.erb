@@ -1,0 +1,73 @@
+<table>
+  <tr>
+    <td> <strong>NOMBRE</strong> </td>
+  </tr>
+  <tr>
+    <td> <%= @contact.name %></td>
+  </tr>
+  <tr>
+    <td> <strong>NÚMERO DE TELÉFONO</strong> </td>
+  </tr>
+  <tr>
+    <td> <%= @contact.phone %> </td>
+  </tr>
+  <tr>
+    <td> <strong>EMAIL</strong> </td>
+  </tr>
+  <tr>
+    <td> <%= @contact.email %></td>
+  </tr>
+  <% if @contact.mobile_link.present? && @contact.price.present? %>
+  <tr>
+    <td>
+      <strong>ANUNCIO</strong>
+    </td>
+  </tr>
+  <tr>
+    <td> <a href="<%= @contact.mobile_link %>" target="_blank" > Ver anuncio en mobile.de </a></td>
+  </tr>
+  <tr>
+    <td> <strong>PRECIO</strong> </td>
+  </tr>
+  <tr>
+    <td> <%= @contact.price %> EUR</td>
+  </tr>
+  <% end %>
+  <tr>
+    <td> <strong>ORIGEN DEL CONTACTO</strong> </td>
+  </tr>
+  <tr>
+    <td> <%= @contact.source&.humanize || "No especificado" %></td>
+  </tr>
+  <% if @contact.user.present? %>
+  <tr>
+    <td> <strong>USUARIO REGISTRADO</strong> </td>
+  </tr>
+  <tr>
+    <td style="background-color: #e8f5e9; padding: 10px; border: 1px solid #4caf50; border-radius: 4px;">
+      <a href="<%= Rails.application.routes.url_helpers.admin_user_url(@contact.user, host: 'importocotxe.ad') %>" 
+         style="color: #2e7d32; text-decoration: none; font-weight: bold;">
+        👤 <%= @contact.user.email %> (ID: <%= @contact.user.id %>) - Ver actividad completa →
+      </a>
+    </td>
+  </tr>
+  <% end %>
+  <tr>
+    <td> <strong>INFORMACIÓN DE CAMPAÑA (UTM)</strong> </td>
+  </tr>
+  <tr>
+    <td style="background-color: #f8f9fa; padding: 10px; border: 1px solid #dee2e6; border-radius: 4px;">
+      <% if @contact.utm_params.present? %>
+        <%= @contact.utm_params %>
+      <% else %>
+        Tráfico directo - Sin parámetros UTM
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td> <strong>COMENTARIOS</strong> </td>
+  </tr>
+  <tr>
+    <td> <%= @contact.comment %></td>
+  </tr>
+</table>

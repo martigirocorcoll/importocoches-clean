@@ -1,0 +1,120 @@
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-car-side"></i> <%= t('cars.show.estado')%>
+  </div>
+  <div class="strong">
+    <%= car.condition %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-calendar-days"></i> <%= t('cars.show.registro')%>
+  </div>
+  <div class="strong">
+    <%= "#{DateTime.parse("#{@car.first_registration_date}-01").strftime("%m-%Y")}" %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-gauge"></i> <%= t('pages.home.kilome')%>
+  </div>
+  <div class="strong">
+    <%="#{number_with_precision(@car.mileage, :precision => 0, :delimiter => '.')} km"%>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-bolt-lightning"></i> <%= t('pages.home.pot')%>
+  </div>
+  <div class="strong">
+    <%= "#{@car.power} kW - #{(@car.power.to_i * 1.3595).round} cv" %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-gears"></i> <%= t('pages.home.cambio')%>
+  </div>
+  <div class="strong">
+    <%= car.gearbox %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-gas-pump"></i> <%= t('pages.home.fuel')%>:
+  </div>
+  <div class="strong">
+    <%= car.fuel %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <% unless car.num_seats.nil? %>
+    <div>
+      <i class="fa-solid fa-couch"></i> <%= t('cars.show.asientos')%>
+    </div>
+    <div class="strong">
+      <%= car.num_seats %>
+    </div>
+  <% end %>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-door-closed"></i>  <%= t('cars.show.doors')%>
+  </div>
+  <div class="strong">
+    <%= car.door_count %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-user"></i>  <%= t('cars.show.propietarios')%>
+  </div>
+  <div class="strong">
+    <%= car.number_of_previous_owners %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <% unless car.exterior_color.nil? %>
+    <div>
+      <i class="fa-solid fa-eye-dropper"></i> <%= t('cars.show.color')%>
+    </div>
+    <div class="strong">
+      <%= car.exterior_color %>
+    </div>
+  <% end %>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-truck-pickup"></i> <%= t('cars.show.categoria')%>
+  </div>
+  <div class="strong">
+    <%= car.category %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <% unless car.combined.nil? %>
+  <div>
+    <i class="fa-solid fa-gauge-simple-high"></i> <%= t('cars.show.consumofuel')%>
+  </div>
+  <div class="strong">
+    <%="#{number_with_precision(car.combined, :precision => 2, :delimiter => '.')} l/100"%>
+  </div>
+  <% end %>
+</div>
+<div class="datos-tecnicos">
+  <div>
+   <i class="fa-solid fa-smog"></i> <%= t('cars.show.consumoco2')%>
+  </div>
+  <div class="strong">
+    <%= "#{number_with_precision(car.emission_fuel_consumption, :precision => 0, :delimiter => '.')} g/km" %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <% unless car.interior_type.nil? || car.interior_color.nil? %>
+    <div>
+      <i class="fa-solid fa-rug"></i> <%= t('cars.show.interior')%>
+    </div>
+    <div class="strong">
+      <%= car.interior_type + ", " + car.interior_color%>
+    </div>
+  <% end %>
+</div>

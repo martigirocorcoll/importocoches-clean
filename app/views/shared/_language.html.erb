@@ -1,0 +1,28 @@
+<div class="dropdown" style="text-align: end;">
+  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-language"></i></i> <%= t('idioma') %>
+  </button>
+  <%# <ul class="dropdown-menu dropdown-menu-end"> %>
+    <%# <li><%=link_to 'CAT', root_path( :locale => 'cat' ), class: "dropdown-item"%>
+    <%# <li><%=link_to 'FR', root_path( :locale => 'fr'), class: "dropdown-item"%>
+    <%# <li><%=link_to "ES".html_safe, root_path( :locale => 'es'), class: "dropdown-item"%>
+    <%# <li><%=link_to 'EN', root_path( :locale => 'en' ), class: "dropdown-item"%>
+    <%# <li><%=link_to 'DE', root_path( :locale => 'de'), class: "dropdown-item"%>
+    <%# <li><%=link_to 'NL', root_path( :locale => 'nl'), class: "dropdown-item"%>
+    <%# <li><%=link_to 'RU', root_path( :locale => 'ru'), class: "dropdown-item"%>
+  <%# </ul> %>
+
+
+  <ul class="dropdown-menu dropdown-menu-end">
+    <% Rails.configuration.x.hreflang_map.keys.each do |locale| %>
+      <% next if locale == I18n.locale.to_s %>
+      <li>
+        <%= link_to locale.upcase,
+            url_for(request.params.merge(locale: locale, only_path: false)),
+            class: "dropdown-item" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+</div>

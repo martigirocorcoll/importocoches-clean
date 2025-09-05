@@ -1,0 +1,208 @@
+<% @ads.each_with_index do |ad, index| %>
+    <% @car = Car.new(ad) %>
+    <% next if @car.photo.nil? %>
+    <% price = PriceCalculation.new(first_registration: @car.first_registration, price_bruto: @car.price_bruto, vat: @car.vat)%>
+    <% unless session[:api_counter].nil? %>
+      <% if session[:api_counter]<5 || user_signed_in? %>
+        <% if user_signed_in? && current_user.email == "professional@importocotxe.ad" %>
+          <%= link_to car_path(id: ad.first.last, final_price: price.finalpricereduced), class:"open-show", style:"text-decoration:none; color:black;flex-grow:4", target: :_blank do %>
+            <div class="card-product">
+              <img src=<%=@car.photo.attr('url')%> alt="ad photo">
+              <div class="card-product-infos">
+                <div class = "listing-card-title">
+                  <%= @car.make %> <%= CGI.unescapeHTML(@car.description).html_safe %>
+                </div>
+                <div class="font-card-listing">
+                  <div class = "d-flex justify-content-around">
+                    <div>
+                      <div>
+                        <i class="fa-regular fa-calendar-days mb-2"></i> <%= "#{DateTime.parse("#{@car.first_registration}-01").strftime("%m-%Y")}" %>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-gauge mb-2"></i> <%="#{number_with_precision(@car.mileage, :precision => 0, :delimiter => '.')} km"%>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-bolt-lightning mb-2"></i> <%= "#{@car.power} kW - #{(@car.power.to_i * 1.3595).round} cv" %>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <i class="fa-solid fa-gears mb-2"></i> <%= @car.gearbox %>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-gas-pump mb-2"></i> <%= @car.fuel %>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-eye-dropper mb-2"></i> <%= @car.color %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="listing-card-price">
+                    <s><%= number_to_currency(price.finalprice.round, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %> €</s>
+                    <strong> <%= number_to_currency(price.finalpricereduced.round, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %> € </strong>                    <div class = "text-mini-listing"><%= t('todoincluido_html') %><i class="fa-solid fa-check tick"></i><%= t('vehiculo') %> <i class="fa-solid fa-check tick"></i><%= t('transport') %> <i class="fa-solid fa-check tick"></i><%= t('importacion') %> <i class="fa-solid fa-check tick"></i><%= t('matriculacion') %></i></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to car_path(id: ad.first.last, final_price: price.finalprice), class:"open-show", style:"text-decoration:none; color:black;flex-grow:4", target: :_blank do %>
+            <div class="card-product">
+              <img src=<%=@car.photo.attr('url')%> alt="ad photo">
+              <div class="card-product-infos">
+                <div class = "listing-card-title">
+                  <%= @car.make %> <%= CGI.unescapeHTML(@car.description).html_safe %>
+                </div>
+                <div class="font-card-listing">
+                  <div class = "d-flex justify-content-around">
+                    <div>
+                      <div>
+                        <i class="fa-regular fa-calendar-days mb-2"></i> <%= "#{DateTime.parse("#{@car.first_registration}-01").strftime("%m-%Y")}" %>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-gauge mb-2"></i> <%="#{number_with_precision(@car.mileage, :precision => 0, :delimiter => '.')} km"%>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-bolt-lightning mb-2"></i> <%= "#{@car.power} kW - #{(@car.power.to_i * 1.3595).round} cv" %>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <i class="fa-solid fa-gears mb-2"></i> <%= @car.gearbox %>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-gas-pump mb-2"></i> <%= @car.fuel %>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-eye-dropper mb-2"></i> <%= @car.color %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="listing-card-price">
+                    <strong> <%= number_to_currency(price.finalprice.round, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %> € </strong>                    <div class = "text-mini-listing"><%= t('todoincluido_html') %><i class="fa-solid fa-check tick"></i><%= t('vehiculo') %> <i class="fa-solid fa-check tick"></i><%= t('transport') %> <i class="fa-solid fa-check tick"></i><%= t('importacion') %> <i class="fa-solid fa-check tick"></i><%= t('matriculacion') %> <i class="fa-solid fa-check tick"></i><%= t('garantia') %></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_registration_path, style:"text-decoration:none; color:black;flex-grow:4", target: :_blank do %>
+          <div class="card-product">
+            <img src=<%=@car.photo.attr('url')%> alt="ad photo">
+            <div class="card-product-infos">
+              <div class = "listing-card-title">
+                <%= @car.make %> <%= CGI.unescapeHTML(@car.description).html_safe %>
+              </div>
+              <div class="font-card-listing">
+                <div class = "d-flex justify-content-around">
+                  <div>
+                    <div>
+                      <i class="fa-regular fa-calendar-days mb-2"></i> <%= "#{DateTime.parse("#{@car.first_registration}-01").strftime("%m-%Y")}" %>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-gauge mb-2"></i> <%="#{number_with_precision(@car.mileage, :precision => 0, :delimiter => '.')} km"%>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-bolt-lightning mb-2"></i> <%= "#{@car.power} kW - #{(@car.power.to_i * 1.3595).round} cv" %>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <i class="fa-solid fa-gears mb-2"></i> <%= @car.gearbox %>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-gas-pump mb-2"></i> <%= @car.fuel %>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-eye-dropper mb-2"></i> <%= @car.color %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="listing-card-price">
+                  <strong> <%= number_to_currency(price.finalprice.round, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %> € </strong>                  <div class = "text-mini-listing"><%= t('todoincluido_html') %><i class="fa-solid fa-check tick"></i><%= t('vehiculo') %> <i class="fa-solid fa-check tick"></i><%= t('transport') %> <i class="fa-solid fa-check tick"></i><%= t('importacion') %> <i class="fa-solid fa-check tick"></i><%= t('matriculacion') %> <i class="fa-solid fa-check tick"></i><%= t('garantia') %></div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+        <%= link_to car_path(id: ad.first.last, final_price: price.finalprice), style:"text-decoration:none; color:black;flex-grow:4", target: :_blank do %>
+          <div class="card-product">
+            <img src=<%=@car.photo.attr('url')%> alt="ad photo">
+            <div class="card-product-infos">
+              <div class = "listing-card-title">
+                <%= @car.make %> <%= CGI.unescapeHTML(@car.description).html_safe %>
+              </div>
+              <div class="font-card-listing">
+                <div class = "d-flex justify-content-around">
+                  <div>
+                    <div>
+                      <i class="fa-regular fa-calendar-days mb-2"></i> <%= "#{DateTime.parse("#{@car.first_registration}-01").strftime("%m-%Y")}" %>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-gauge mb-2"></i> <%="#{number_with_precision(@car.mileage, :precision => 0, :delimiter => '.')} km"%>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-bolt-lightning mb-2"></i> <%= "#{@car.power} kW - #{(@car.power.to_i * 1.3595).round} cv" %>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <i class="fa-solid fa-gears mb-2"></i> <%= @car.gearbox %>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-gas-pump mb-2"></i> <%= @car.fuel %>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-eye-dropper mb-2"></i> <%= @car.color %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="listing-card-price">
+                  <strong> <%= number_to_currency(price.finalprice.round, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %> € </strong>                  <div class = "text-mini-listing"><%= t('todoincluido_html') %><i class="fa-solid fa-check tick"></i><%= t('vehiculo') %> <i class="fa-solid fa-check tick"></i><%= t('transport') %> <i class="fa-solid fa-check tick"></i><%= t('importacion') %> <i class="fa-solid fa-check tick"></i><%= t('matriculacion') %> <i class="fa-solid fa-check tick"></i><%= t('garantia') %></div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+    
+    <!-- WhatsApp Contact Button every 3 ads -->
+    <% if (index + 1) % 3 == 0 %>
+      <div class="whatsapp-contact-card">
+        <div class="whatsapp-contact-content">
+          <div class="whatsapp-contact-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="whatsapp-contact-text">
+            <h4><%= t('noencuentras') %></h4>
+            <p><%= t('indicanos') %></p>
+          </div>
+          <%= link_to whatsapp_redirect_path(source: 'car_search', page_url: request.original_url), 
+                      target: "_blank", 
+                      class: "whatsapp-contact-btn" do %>
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Contactar por WhatsApp</span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<div class="card-product" style="background-color: #A2262B !important">
+  <div class="card-product-infos">
+    <div class = "listing-card-title" style="color: white !important;">
+    <strong><%= t('noencuentras') %></strong>
+    <p><%= t('indicanos') %></p>
+    </div>
+    <div class="font-card-listing" style= "text-align:center;">
+      <%= render 'shared/unified_contact_form', 
+                 source: 'cars',
+                 form_type: 'search_inquiry',
+                 placeholder: 'Cuéntanos más detalles sobre el coche que buscas...',
+                 submit_text: 'Contactar' %>
+    </div>
+  </div>
+</div>

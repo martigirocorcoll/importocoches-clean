@@ -1,0 +1,510 @@
+//comú
+
+.nav-link {
+  color: gray;
+  /* Cambia el color del texto de la pestaña inactiva */
+}
+
+.nav-link.active {
+  color: #A2262B !important;
+  /* Cambia el color del texto de la pestaña activa */
+}
+
+@media (min-width: 200px) {
+  .vertical-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 990px) {
+  .vertical-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+//// copyhome
+
+@media (max-width: 740px) {
+  .img-no-mini {
+    display: none;
+  }
+}
+
+//youtube videos embed
+
+
+.container-video {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  height: 0;
+  padding-bottom: 45%;
+  margin-bottom: 25px;
+  border-radius: 25px;
+}
+
+.container-video .youtube-thumbnail,
+.container-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+}
+
+.container-video .youtube-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: url('https://img.icons8.com/ios-filled/50/ffffff/play-button-circled.png') no-repeat center;
+  background-size: 50px;
+  border: none;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.youtube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  box-shadow: 0px 5px 8px 2px rgba(168, 168, 168, 0.036)
+}
+
+//Reviews
+
+.reviews{
+  background-color: black;
+  padding-top: 4em;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 4em;
+}
+
+.review-slider {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  margin-bottom: 30px;
+}
+
+.valoracion {
+  color: white !important;
+  width: 400px;
+  background-color: #373737;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  margin: 25px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+.valoracion-nombre {
+  color: white !important;
+  width: 300px;
+  background-color: #4b4b4b;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+
+// Home: sit partial
+
+.sit-home{
+  background-color: #A2262B;
+}
+
+#home-card-sit {
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0px 5px 8px 3px rgba(25, 20, 20, 0.1);
+  border-radius: 20px;
+  width: 100%;
+}
+
+@media (min-width: 200px) {
+  #home-card-sit {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 990px) {
+  #home-card-sit {
+    padding: 50px;
+    margin-top: 6rem;
+    margin: auto;
+  }
+}
+
+.sit-block{
+  margin-bottom: 5em;
+}
+
+.sit-card{
+  background-color: white;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+  width: 300px;
+  img+p{
+    margin-top:10px;
+  }
+}
+
+.sit-card-2 {
+  background-color: rgb(255, 255, 255);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+  width: 350px;
+
+  img+p {
+    margin-top: 10px;
+  }
+}
+
+.sit-card-3 {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  border-radius: 25px;
+  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+
+  img+p {
+    margin-top: 10px;
+  }
+}
+
+.sit-card-vid {
+  background-color: white;
+  margin: 15px;
+  padding: 0;
+  border-radius: 25px;
+  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+  width: 300px;
+
+  /* Responsive vertical 9:16 */
+  position: relative;
+  overflow: hidden;
+}
+
+.sit-card-vid .youtube-thumbnail,
+.sit-card-vid iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+}
+
+.sit-card-vid .youtube-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: url('https://img.icons8.com/ios-filled/50/ffffff/play-button-circled.png') no-repeat center;
+  background-size: 50px;
+  border: none;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.sit-card-vid-2 {
+  border-radius: 25px;
+  width: 150px;
+}
+
+.sit-card-img{
+  height: 250px;
+  max-width: 270px;
+  padding-bottom: 20px;
+}
+
+
+.sit-cards-2 {
+  display: flex;
+  direction: row;
+  overflow: scroll;
+}
+
+.sit-cards{
+  display: flex;
+  direction: row;
+  overflow: scroll;
+}
+
+@media (min-width: 1150px) {
+  .sit-cards {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1150px) {
+.sit-cards-column {
+  display: none;
+}
+}
+
+@media (min-width: 1150px) {
+  .sit-cards-row {
+    display: none;
+  }
+}
+
+// Blog
+.blog-container {
+  max-width: 1300px;
+  width: 90%;
+  margin: auto;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.blog-container h1{
+  color: black;
+  font-size: 40px;
+}
+
+.blog-container h2 {
+  color: rgb(95, 95, 95) !important;
+  font-size: 35px !important;
+}
+
+.blog-container h3 {
+  color: rgb(137, 137, 137) !important;
+  font-size: 30px !important;
+}
+
+.blog-container h4 {
+  color: rgb(137, 137, 137) !important;
+  font-size: 27px !important;
+}
+
+.blog-container h5 {
+  color: rgb(95, 95, 95) !important;
+  font-size: 25px !important;
+}
+
+.blog-container h6 {
+  color: rgb(95, 95, 95) !important;
+  font-size: 22px !important;
+}
+
+.blog-container p,li,ul,ol{
+  color: black;
+  font-size: 22px !important;
+}
+
+
+// Home: problem partial
+.problem{
+  background-color: #A2262B;
+  padding-top: 4em;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 4em;
+
+.container{
+    max-width: 1300px;
+    width: 90%;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    line-height: 38px !important;
+    color: white;
+  }
+}
+
+.problem-img {
+  width: 100%;
+  padding: 1em;
+  border-radius: 35px;
+
+}
+
+
+
+@media (min-width: 990px) {
+  .problem-text {
+      color: white !important;
+      padding-right: 2em;
+    }
+}
+
+@media (min-width: 200px) {
+  .problem-text {
+    color: white !important;
+  }
+}
+
+
+
+// Specific CSS for your home-page
+#btn-footer-home {
+  height: 80px;
+  width: 75%;
+  margin: auto auto;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  background-color: #A2262B;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+}
+
+@media (min-width: 200px) {
+  #btn-footer-home {
+    margin-bottom: 55px;
+  }
+}
+
+@media (min-width: 990px) {
+  #btn-footer-home {
+    margin-bottom: 0px;
+  }
+}
+
+#footer-home {
+  background: rgba(162, 38, 43, 1);
+  min-height: 320px;
+  color: white;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 8px 3px rgba(25, 20, 20, 0.1);
+}
+
+#footer-home-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  max-width: 740px;
+}
+
+.text h5 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 200px) {
+  #que-hacemos {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 990px) {
+  #que-hacemos {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 990px) {
+  #about {
+    margin: 0px;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 990px) {
+  #about {
+    margin: 50px 50px;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+}
+
+
+  .img-home {
+    width: 90%;
+    max-height: 150px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
+
+.cards-container {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 150px;
+}
+
+@media (min-width: 1100px) {
+  .cards-only-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 200px) {
+  .cards-only-container {
+    width: 100%;
+
+  }
+}
+.home-card {
+  max-width: 450px;
+  margin: 20px;
+  padding: 30px;
+  white-space: normal;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 8px 3px rgba(25, 20, 20, 0.1);
+  border: white 1px solid;
+
+  h5 {
+    color: #A2262B;
+    margin-bottom: 2em;
+  }
+}
+
+.home-about{
+  text-align: left;
+
+}
+
+.titulo-about{
+  font-size: 26px;
+  margin-bottom: 10px;
+  color:#A2262B;
+}

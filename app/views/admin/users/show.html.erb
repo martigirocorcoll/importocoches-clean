@@ -1,0 +1,189 @@
+<div class="container-fluid">
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2>👤 Detalle de Usuario</h2>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <%= link_to "👥 Usuarios", admin_users_path %>
+          </li>
+          <li class="breadcrumb-item active"><%= @user.email %></li>
+        </ol>
+      </nav>
+    </div>
+    <div>
+      <% if @api_stats[:is_active] %>
+        <span class="badge badge-success badge-lg">✅ Usuario Activo</span>
+      <% else %>
+        <span class="badge badge-secondary badge-lg">😴 Usuario Inactivo</span>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- User Information Row -->
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">
+          <h6>📋 Información Personal</h6>
+        </div>
+        <div class="card-body">
+          <p><strong>ID:</strong> <code>#<%= @user.id %></code></p>
+          <p><strong>Email:</strong> <%= @user.email %></p>
+          <p><strong>Registro:</strong> <%= @user.created_at.strftime('%d/%m/%Y %H:%M') %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <!-- Stats Cards -->
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card bg-primary text-white text-center">
+            <div class="card-body py-2">
+              <h5><%= number_with_delimiter(@api_stats[:total_calls]) %></h5>
+              <small>📞 Total</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-info text-white text-center">
+            <div class="card-body py-2">
+              <h5><%= number_with_delimiter(@api_stats[:calls_this_month]) %></h5>
+              <small>📅 Este Mes</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-success text-white text-center">
+            <div class="card-body py-2">
+              <h5><%= number_with_delimiter(@api_stats[:calls_today]) %></h5>
+              <small>📈 Hoy</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-warning text-white text-center">
+            <div class="card-body py-2">
+              <h6>
+                <% if @api_stats[:last_call] %>
+                  <%= @api_stats[:last_call].strftime('%d/%m %H:%M') %>
+                <% else %>
+                  Nunca
+                <% end %>
+              </h6>
+              <small>⏰ Última</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent API Calls -->
+  <div class="card">
+    <div class="card-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">🔍 Llamadas API Recientes - Endpoints Completos</h5>
+      </div>
+    </div>
+    <div class="card-body">
+      <% if @recent_calls.any? %>
+        <div class="table-responsive">
+          <table class="table table-sm table-hover">
+            <thead>
+              <tr>
+                <th style="width: 120px;">Fecha</th>
+                <th style="width: 100px;">IP</th>
+                <th style="width: 80px;">Método</th>
+                <th>Endpoint Completo</th>
+                <th style="width: 200px;">User Agent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @recent_calls.each do |call| %>
+                <tr>
+                  <td>
+                    <small>
+                      <%= call.created_at&.strftime('%d/%m %H:%M') || 'N/A' %>
+                    </small>
+                  </td>
+                  <td>
+                    <code style="font-size: 11px;"><%= call.ip_address || 'N/A' %></code>
+                  </td>
+                  <td>
+                    <span class="badge badge-<%= call.request_method == 'POST' ? 'primary' : 'secondary' %> badge-sm">
+                      <%= call.request_method || 'N/A' %>
+                    </span>
+                  </td>
+                  <td>
+                    <code style="font-size: 11px; word-break: break-all; white-space: pre-wrap;"><%= call.endpoint || 'N/A' %></code>
+                  </td>
+                  <td>
+                    <span style="font-size: 10px; word-break: break-all;"><%= call.user_agent&.truncate(50) || 'N/A' %></span>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% else %>
+        <div class="text-center py-4">
+          <div class="text-muted">
+            <i class="fas fa-info-circle fa-2x mb-2"></i>
+            <p>Este usuario no ha realizado ninguna llamada a la API aún.</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Contact Information -->
+  <div class="card mt-4">
+    <div class="card-header">
+      <h5>💬 Información de Contacto</h5>
+    </div>
+    <div class="card-body">
+      <% user_contacts = Contact.where(email: @user.email) %>
+      <% if user_contacts.any? %>
+        <div class="table-responsive">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Comentario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% user_contacts.order(created_at: :desc).limit(5).each do |contact| %>
+                <tr>
+                  <td>
+                    <small><%= contact.created_at.strftime('%d/%m/%Y') %></small>
+                  </td>
+                  <td><%= contact.name %></td>
+                  <td><%= contact.phone %></td>
+                  <td>
+                    <%= contact.comment || '-' %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <% if user_contacts.count > 5 %>
+          <small class="text-muted">
+            Mostrando las 5 consultas más recientes de <%= user_contacts.count %> total.
+          </small>
+        <% end %>
+      <% else %>
+        <div class="text-center py-3">
+          <span class="text-muted">
+            No hay información de contacto para este usuario.
+          </span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

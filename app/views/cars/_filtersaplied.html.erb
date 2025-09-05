@@ -1,0 +1,68 @@
+<div class= "d flex flex-row mt-2 justify-content-start filtersaplied" style="overflow:scroll">
+
+<% unless params["filters"]["make"] == "" %>
+  <div class = "targeta_filtro">
+    <%= params["filters"]["make"] %>
+  </div>
+<% end %>
+
+<% unless params["filters"]["model"] == "" %>
+  <div class = "targeta_filtro">
+  <%= params["filters"]["model"] %>
+  </div>
+<% end %>
+
+<% unless params["filters"]["model_description"] == "" %>
+  <div class = "targeta_filtro">
+  <%= params["filters"]["model_description"] %>
+  </div>
+<% end %>
+
+<% unless params["filters"]["first_registration_date"] == "" %>
+  <div class = "targeta_filtro">
+  <%= params["filters"]["first_registration_date"] %>
+  </div>
+<% end %>
+
+<% unless params["filters"]["mileage_max"] == "" %>
+  <div class = "targeta_filtro">
+    <%= params["filters"]["mileage_max"]%> km
+  </div>
+<% end %>
+
+<% unless params["filters"]["potencia"] == "" %>
+  <div class = "targeta_filtro">
+    <%= (params["filters"]["potencia"].to_i * 1.3598).round %> cv
+  </div>
+<% end %>
+
+<% unless params["filters"]["price_max"] == "" %>
+  <div class = "targeta_filtro">
+    <%= params["filters"]["price_max"] %>
+  </div>
+<% end %>
+
+<% unless params["filters"]["fuel"] == "" %>
+  <div class = "targeta_filtro">
+    <%= params["filters"]["fuel"] %>
+  </div>
+<% end %>
+
+<% unless params["filters"]["transmision"] == "" %>
+  <% if params["filters"]["transmision"] == "MANUAL_GEAR" %>
+    <%transmision_coche = "Cambio manual" %>
+  <% else %>
+    <% transmision_coche = "Cambio automático" %>
+  <% end %>
+  <div class = "targeta_filtro">
+  <%= transmision_coche %>
+  </div>
+<% end %>
+
+<% if params["filters"]["fourwheeldrive"] == "1" %>
+  <div class = "targeta_filtro">
+    4x4
+  </div>
+<% end %>
+
+</div>

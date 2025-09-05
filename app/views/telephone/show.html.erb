@@ -1,0 +1,221 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <div class="auth-icon">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <h2 class="auth-title mt-2"><%= t('pages.complete_telephone.title') %></h2>
+      <p class="auth-subtitle"><%= t('pages.complete_telephone.subtitle') %></p>
+    </div>
+
+    <%= simple_form_for(current_user, url: telephone_path, method: :patch) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="auth-form">
+        <%= f.input :telephone,
+                    required: true,
+                    autofocus: true,
+                    label: t('pages.complete_telephone.label'),
+                    input_html: { 
+                      autocomplete: "tel", 
+                      class: "auth-input", 
+                      placeholder: t('pages.complete_telephone.placeholder')
+                    },
+                    wrapper_html: { class: "auth-input-wrapper" } %>
+        
+        <div class="telephone-help">
+          <small class="text-muted">
+            <i class="fa-solid fa-info-circle"></i>
+            <%= t('pages.complete_telephone.help') %>
+          </small>
+        </div>
+      </div>
+
+      <div class="auth-actions">
+        <%= f.button :submit, t('pages.complete_telephone.submit'), class: "auth-btn auth-btn-primary" %>
+      </div>
+    <% end %>
+
+    <div class="auth-footer">
+      <p class="auth-alt-text"><%= t('pages.complete_telephone.later') %></p>
+      <%= link_to t('pages.complete_telephone.logout'), destroy_user_session_path, 
+                  method: :delete, 
+                  class: "auth-btn auth-btn-secondary" %>
+    </div>
+  </div>
+</div>
+
+<style>
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #A2262B, #D32F2F);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-icon {
+  margin-bottom: 16px;
+}
+
+.auth-icon i {
+  font-size: 48px;
+  color: #A2262B;
+}
+
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.auth-form {
+  margin-bottom: 24px;
+}
+
+.auth-input-wrapper {
+  margin-bottom: 20px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #A2262B;
+  box-shadow: 0 0 0 3px rgba(162, 38, 43, 0.1);
+}
+
+.telephone-help {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.telephone-help small {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.telephone-help i {
+  margin-right: 4px;
+  color: #A2262B;
+}
+
+.auth-actions {
+  margin-bottom: 24px;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.auth-btn-primary {
+  background: #A2262B;
+  color: white;
+}
+
+.auth-btn-primary:hover {
+  background: #8B1F24;
+  transform: translateY(-1px);
+}
+
+.auth-btn-secondary {
+  background: transparent;
+  color: #A2262B;
+  border: 2px solid #A2262B;
+  margin-top: 12px;
+}
+
+.auth-btn-secondary:hover {
+  background: #A2262B;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.auth-footer {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.auth-alt-text {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.error_notification {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.field_with_errors input {
+  border-color: #dc2626 !important;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 16px;
+  }
+
+  .auth-card {
+    padding: 32px 24px;
+  }
+}
+</style>

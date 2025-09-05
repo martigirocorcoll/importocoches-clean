@@ -1,0 +1,439 @@
+<div class="api-limit-container">
+  <div class="api-limit-card">
+    <!-- Header Section with Empathy -->
+    <div class="api-limit-header">
+      <div class="api-limit-icon">
+        <i class="fa-solid fa-search-plus"></i>
+      </div>
+      <h1 class="api-limit-title"><%= t('pages.api_limit.title') %></h1>
+      <p class="api-limit-subtitle"><%= t('pages.api_limit.subtitle') %></p>
+    </div>
+
+    <!-- Problem Recognition Section -->
+    <div class="api-limit-recognition">
+      <div class="stats-display">
+        <div class="stat-item">
+          <span class="stat-number"><%= current_user.total_api_calls %></span>
+          <span class="stat-label"><%= t('pages.api_limit.searches_completed') %></span>
+        </div>
+        <div class="stat-divider">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="stat-item highlight">
+          <span class="stat-number">0</span>
+          <span class="stat-label"><%= t('pages.api_limit.cars_imported') %></span>
+        </div>
+      </div>
+      
+      <p class="empathy-text">
+        <%= t('pages.api_limit.recognition_text') %>
+      </p>
+    </div>
+
+    <!-- Solution Section -->
+    <div class="api-limit-solution">
+      <h2 class="solution-title">
+        <i class="fa-solid fa-lightbulb"></i>
+        <%= t('pages.api_limit.solution_title') %>
+      </h2>
+      
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <h3><%= t('pages.api_limit.benefit_expert_title') %></h3>
+          <p><%= t('pages.api_limit.benefit_expert_desc') %></p>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3><%= t('pages.api_limit.benefit_time_title') %></h3>
+          <p><%= t('pages.api_limit.benefit_time_desc') %></p>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-euro-sign"></i>
+          </div>
+          <h3><%= t('pages.api_limit.benefit_price_title') %></h3>
+          <p><%= t('pages.api_limit.benefit_price_desc') %></p>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3><%= t('pages.api_limit.benefit_guarantee_title') %></h3>
+          <p><%= t('pages.api_limit.benefit_guarantee_desc') %></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="api-limit-cta">
+      <h2 class="cta-title"><%= t('pages.api_limit.cta_title') %></h2>
+      <p class="cta-subtitle"><%= t('pages.api_limit.cta_subtitle') %></p>
+      
+      <div class="cta-buttons">
+        <!-- WhatsApp CTA (Primary) -->
+        <%= link_to whatsapp_redirect_path(source: 'api_limit', page_url: request.original_url), 
+                    class: "cta-btn cta-btn-whatsapp", 
+                    target: "_blank",
+                    onclick: "gtag('event', 'api_limit_whatsapp_click');" do %>
+          <i class="fa-brands fa-whatsapp"></i>
+          <%= t('pages.api_limit.whatsapp_cta') %>
+          <span class="cta-badge"><%= t('pages.api_limit.instant_response') %></span>
+        <% end %>
+        
+        <!-- Contact Form CTA (Secondary) -->
+        <%= link_to new_contact_path, class: "cta-btn cta-btn-contact", onclick: "gtag('event', 'api_limit_contact_click');" do %>
+          <i class="fa-solid fa-envelope"></i>
+          <%= t('pages.api_limit.contact_cta') %>
+        <% end %>
+      </div>
+      
+      <!-- Social Proof -->
+      <div class="social-proof">
+        <div class="testimonial">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text"><%= t('pages.api_limit.testimonial_text') %></p>
+          <span class="testimonial-author"><%= t('pages.api_limit.testimonial_author') %></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.api-limit-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.api-limit-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.api-limit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #A2262B, #D32F2F, #FF6B35);
+}
+
+.api-limit-header {
+  text-align: center;
+  padding: 50px 40px 30px;
+  background: linear-gradient(135deg, #A2262B 0%, #D32F2F 100%);
+  color: white;
+}
+
+.api-limit-icon {
+  margin-bottom: 20px;
+}
+
+.api-limit-icon i {
+  font-size: 64px;
+  opacity: 0.9;
+}
+
+.api-limit-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.api-limit-subtitle {
+  font-size: 18px;
+  opacity: 0.95;
+  margin: 0;
+  font-weight: 300;
+}
+
+.api-limit-recognition {
+  padding: 40px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.stats-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 900;
+  color: #A2262B;
+  line-height: 1;
+}
+
+.stat-item.highlight .stat-number {
+  color: #dc3545;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-divider {
+  color: #dee2e6;
+  font-size: 24px;
+}
+
+.empathy-text {
+  font-size: 18px;
+  color: #495057;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.api-limit-solution {
+  padding: 40px;
+}
+
+.solution-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #212529;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.solution-title i {
+  color: #FFC107;
+  margin-right: 10px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background: #fff;
+  border: 2px solid #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  border-color: #A2262B;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(162, 38, 43, 0.1);
+}
+
+.benefit-icon {
+  margin-bottom: 20px;
+}
+
+.benefit-icon i {
+  font-size: 40px;
+  color: #A2262B;
+}
+
+.benefit-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 15px;
+}
+
+.benefit-item p {
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.api-limit-cta {
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #212529;
+  margin-bottom: 15px;
+}
+
+.cta-subtitle {
+  font-size: 18px;
+  color: #6c757d;
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto 40px;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 30px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn-whatsapp {
+  background: #25D366;
+  color: white;
+  border: none;
+}
+
+.cta-btn-whatsapp:hover {
+  background: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+.cta-btn-contact {
+  background: #A2262B;
+  color: white;
+  border: none;
+}
+
+.cta-btn-contact:hover {
+  background: #8B1F24;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(162, 38, 43, 0.3);
+}
+
+.cta-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.social-proof {
+  margin-top: 40px;
+}
+
+.testimonial {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-stars {
+  color: #FFC107;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #495057;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: #A2262B;
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+  .api-limit-container {
+    padding: 10px;
+  }
+  
+  .api-limit-card {
+    margin: 10px 0;
+  }
+  
+  .api-limit-header {
+    padding: 40px 20px 30px;
+  }
+  
+  .api-limit-title {
+    font-size: 28px;
+  }
+  
+  .stats-display {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stat-divider {
+    transform: rotate(90deg);
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .api-limit-cta {
+    padding: 40px 20px;
+  }
+  
+  .cta-title {
+    font-size: 24px;
+  }
+  
+}
+</style>

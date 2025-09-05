@@ -1,0 +1,14 @@
+<div>
+    <% if user_signed_in? %>
+      <div class="dropdown" style="text-align: end;">
+        <button class="btn btn-secondary nav-button-inverse" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-regular fa-user"></i> <%= current_user.id? ? current_user.fname : 'User' %>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li class="nav-item active"><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </div>
+    <% else %>
+      <%= link_to "<button class='nav-button'><i class='fa-regular fa-user'></i></button>".html_safe, new_user_session_path %>
+    <% end %>
+</div>

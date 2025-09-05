@@ -1,0 +1,54 @@
+<div class= "continer">
+    <%= render 'shared/contact' %>
+    <%= render 'shared/language' %>
+</div>
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon pr-2 pl-2">
+  <div class="container-fluid">
+  <%= link_to root_path, class: "brand-icon" do %>
+    <%= image_tag "https://res.cloudinary.com/dd7x7bqya/image/upload/v1668073646/Captura_de_pantalla_2022-11-10_a_las_10.46.10-removebg-preview_ry5s3a.png"%>
+  <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <%# <li class="nav-item active">
+            <%= link_to t('pages.us'), us_path, class: "nav-link" %>
+          <%# </li>  %>
+          <li class="nav-item">
+            <%= link_to t('bread.importados'), imported_cars_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('bread.marca'), marca_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+          <%= link_to t('faqs.faqs'), faqs_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('pages.funcionament'), articles_path, class: "nav-link" %>
+          </li>
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://res.cloudinary.com/dd7x7bqya/image/upload/v1683187661/585e4bf3cb11b227491c339a_ifzi4a.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <% unless current_user.email == nil %>
+              <p style="color: gray !important; font-size: 8px;"><%= current_user.email%></p>
+            <% end %>
+              <% if current_user.email == "marti@gmail.com" %>
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item"%>
+              <% end %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "<button class='nav-button'><i class='fa-regular fa-user'></i></button>".html_safe, new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

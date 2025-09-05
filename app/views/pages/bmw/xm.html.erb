@@ -1,0 +1,42 @@
+<% content_for :for_head do %>
+  <title> <%= t('head.importacio') %> BMW XM <%= t('head.importocotxe') %></title>
+  <meta name='description' content="Encuentra los mejores precios en la importación de coches BMW xm a Andorra con Importocotxe. ¡Contáctanos hoy mismo!)">
+<% end %>
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+  <%= link_to t('bread.mmarca'), marca_path, style:"text-decoration: none;" %>
+  <%= link_to "> BMW", marca_bmw_andorra_path, style:"text-decoration: none;" %>
+  > XM
+</div>
+
+<div class="container">
+      <h1 style = "text-align:center; color:black;"> <%= t('model.concreto', marca: @marca, model: @model) %><h1>
+      <h5 style = "text-align:center; color:gray; margin-bottom: 30px;"><%= t('h5totinclos') %> </h5>
+  <div class="flex">
+    <%= render "pages/bmw/contactmodal" %>
+    <%= render "shared/filters_sidebar" %>
+    <div class="ads">
+      <hr>
+      <div class="listing-top">
+      </div>
+      <%= render 'pages/bmw/listingmodel' %>
+    </div>
+  </div>
+  <div>
+    <h2><%= t('bmw_xm.title') %></h2>
+    <p><%= t('bmw_xm.description') %></p>
+
+    <% t('bmw_xm.sections').each do |section| %>
+      <h3><%= section[:heading] %></h3>
+      <p><%= section[:content] %></p>
+    <% end %>
+    <br>
+    <p><%= t('bmw_xm.conclusion') %></p>
+
+    <ul>
+      <% t('bmw_xm.faqs').each do |faq| %>
+        <li><%= faq[:question] %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,232 @@
+.home-button {
+  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  height: 50px;
+  border: none;
+  margin-top: 22px;
+  font-family: 'Work Sans';
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(161, 38, 41, 0.2);
+}
+
+.home-button:hover {
+  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(161, 38, 41, 0.3);
+}
+
+.whatsapp-button {
+  background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  height: 60px;
+  border: none;
+  margin-top: 22px;
+  font-family: 'Work Sans';
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-button:hover {
+  background: linear-gradient(135deg, #1DA851 0%, #25D366 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+
+
+.home-button:disabled {
+  background-color: #a1262883;
+}
+
+
+.nav-button {
+  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  color: white;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  border: none;
+  font-family: 'Work Sans';
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(161, 38, 41, 0.2);
+}
+
+.nav-button:hover {
+  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(161, 38, 41, 0.3);
+}
+
+.nav-button-inverse {
+  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  color: white;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  border: none;
+  font-family: 'Work Sans';
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(161, 38, 41, 0.2);
+}
+
+.nav-button-inverse:hover {
+  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(161, 38, 41, 0.3);
+}
+
+.show-button-inverse {
+  background-color: white;
+  color: #929292 !important;
+  border-color: #929292 !important;
+  width: 100%;
+  border-radius: 10px;
+  height: 50px;
+  border: solid;
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  font-family: 'Work Sans';
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.home-button-inverse {
+  background-color: white;
+  color: #A12629 !important;
+  border-color: #A12629 !important;
+  width: 100%;
+  border-radius: 10px;
+  height: 50px;
+  border: solid;
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  font-family: 'Work Sans';
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.btn-pagination {
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  color: black;
+}
+
+.btn-pagination-next {
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  color: white;
+  border-radius: 5px;
+  padding-right: 7px;
+  padding-left: 7px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(161, 38, 41, 0.2);
+}
+
+.btn-pagination-next:hover {
+  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(161, 38, 41, 0.3);
+  color: white;
+}
+
+.btn-pagination:hover{
+  font-weight: bold;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.401);
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+}
+
+.pagination-wrapper{
+  margin: 15px;
+  text-align: center;
+  font-size: 24px;
+}
+
+// Enhanced pagination styles for Kaminari default pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  
+  a, span {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: white;
+    color: #374151;
+    transition: all 0.15s ease;
+    min-width: 32px;
+    text-align: center;
+    
+    &:hover {
+      background-color: #f8f9fa;
+      color: #A12629;
+      text-decoration: none;
+    }
+  }
+  
+  .current {
+    background-color: #A12629 !important;
+    color: white !important;
+    font-weight: 500;
+    
+    &:hover {
+      background-color: #A12629 !important;
+      color: white !important;
+    }
+  }
+  
+  .gap {
+    background: none;
+    color: #6c757d;
+    
+    &:hover {
+      background: none;
+      color: #6c757d;
+    }
+  }
+}
+
+.btn-read {
+  height: 50px;
+  width: 189px;
+  left: 166px;
+  top: 1070px;
+  border-radius: 10px;
+  border: 2px solid rgba(51, 51, 51, 1);
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

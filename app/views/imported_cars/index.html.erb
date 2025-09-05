@@ -1,0 +1,68 @@
+<% content_for :for_head do %>
+  <title> <%= t('bread.importados') %></title>
+<% end %>
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style: "text-decoration: none;" %> &gt;
+  <%= t('bread.importados') %>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<div class="blog-container">
+  <h1 class="text-center"><%= t('bread.importados') %></h1>
+
+  <% @imported_cars.each do |car| %>
+    <div class="container-car mt-5">
+      <div class="row">
+        <div class="col-12">
+          <article class="blog-card">
+            <div class="blog-card__background">
+              <div class="card__background--wrapper">
+                  <% thumb = car.ad_image_urls.to_s.lines.first.to_s.strip %>
+                <div class="card__background--main"
+                     style="background-image: url('<%= thumb %>');">
+                  <div class="card__background--layer"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Date box -->
+            <div class="blog-card__head">
+              <span class="date__box">
+                <% if car.imported_date.present? %>
+                  <span class="date__day">
+                    <%= car.imported_date.strftime("%d") %>
+                  </span>
+                  <span class="date__month">
+                    <%= car.imported_date.strftime("%^b") %>
+                  </span>
+                <% else %>
+                  <!-- Fallback si no hay fecha: puedes dejar vacío, mostrar “–” o no renderizar nada -->
+                  <span class="date__day"><%= car.created_at.strftime("%d") %></span>
+                  <span class="date__month"><%= car.created_at.strftime("%^b") %></span>
+                <% end %>
+              </span>
+            </div>
+
+            <!-- Info -->
+            <div class="blog-card__info">
+              <h2><%= "#{car.brand} #{car.model}" %></h2>
+              <% desc = car.public_send("long_description_#{I18n.locale}") %>
+              <% plain = desc&.body&.to_plain_text.to_s %>
+              <p><%= truncate(plain, length: 90) %></p>
+              <%= link_to t('Show'),
+                          imported_car_path(car),
+                          class: "btn-blog" %>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-center mt-5 mb-4">
+    <%= paginate @imported_cars %>
+  </div>
+
+
+</div>

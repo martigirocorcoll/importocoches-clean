@@ -1,0 +1,18 @@
+<% content_for :for_head do %>
+  <meta name='robots' content='noindex'>
+<% end %>
+<div class="container">
+  <div class="flex">
+    <%= render "index_modal" %>
+    <%= render "shared/filters_sidebar" %>
+    <div class="ads">
+      <div class="listing-top">
+        <h2 style= "color: #A2262B;"><%= @number_results %> <%= t('resultados') %></h2>
+      </div>
+        <%= render 'filtersaplied'%>
+      <hr>
+      <%= render 'listing' %>
+      <%= render 'pagination_pages' %>
+    </div>
+  </div>
+</div>

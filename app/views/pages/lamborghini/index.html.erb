@@ -1,0 +1,122 @@
+ <% content_for :for_head do %>
+  <title> <%= t('head.importacio') %> Lamborghini <%= t('head.importocotxe') %></title>
+  <meta name='description' content="Importa tu coche Lamborghini a Andorra de manera fácil, rápida y segura con Importocotxe.">  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Modelos de Lamborghini",
+    "description": "Descubre todos los modelos de coches Lamborghini que importamos desde Alemania a Andorra.",
+    "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra",
+    "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1668073646/Captura_de_pantalla_2022-11-10_a_las_10.46.10-removebg-preview_ry5s3a.png",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Marcas",
+          "item": "https://www.importocotxe.ad/marca"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lamborghini",
+          "item": "https://www.importocotxe.ad/es/marca/lamborghini-andorra"
+        }
+      ]
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Lamborghini Countach",
+            "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/countach",
+            "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812668/countach_hp_1_fbn2fb.jpg",
+            "description": "Lamborghini Countach, un coche deportivo clásico con diseño icónico y rendimiento espectacular.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": 300000,
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/countach"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Lamborghini Urus",
+            "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/urus",
+            "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812668/foto-lamborghini-urus-es-lujo-alto-rendimiento-generado-ia_911060-13581.jpg_plrtmu.avif",
+            "description": "Lamborghini Urus, un SUV de lujo con gran potencia y estilo distintivo.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": 200000,
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/urus"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Lamborghini Huracán",
+            "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/huracan",
+            "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812669/lam-01-rk0955-01p_z1hwes.jpg",
+            "description": "Lamborghini Huracán, un coche deportivo con gran rendimiento y diseño aerodinámico.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": 250000,
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/huracan"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "name": "Lamborghini Aventador",
+            "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/aventador",
+            "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812669/kuala-lumpurmalaysia-may-31-2022-600nw-2162381665.jpg_qbbpta.webp",
+            "description": "Lamborghini Aventador, un superdeportivo con gran potencia y tecnología avanzada.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": 350000,
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra/aventador"
+            }
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+
+
+<% end %>
+  <%@marca = "Lamborghini" %>
+  <div style="background-color: white; margin-left:15px;">
+    <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+    <%= link_to t('bread.mmarca'), marca_path, style:"text-decoration: none;" %>
+    > Lamborghini
+  </div>
+
+    <%= render 'pages/lamborghini/titol' %>
+    <%= render 'pages/lamborghini/modelos' %>
+    <%= render 'pages/lamborghini/form' %>
+    <%# <%= render 'pages/lamborghini/listing' %>
+    <%= render 'pages/lamborghini/explicacion' %>

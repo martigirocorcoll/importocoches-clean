@@ -1,0 +1,248 @@
+<div class="auth-container">
+  <div class="auth-card auth-card-large">
+    <div class="auth-header">
+      <div class="auth-icon">
+        <i class="fa-solid fa-user-plus"></i>
+      </div>
+      <h2 class="auth-title mt-2"><%=t('pages.exp')%></h2>
+    </div>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="auth-form">
+        <div class="auth-name-row">
+          <%= f.input :fname,
+                required: true,
+                autofocus: true,
+                label: "Nombre",
+                input_html: { autocomplete: "given-name", class: "auth-input" },
+                wrapper_html: { class: "auth-input-wrapper auth-input-half" } %>
+          <%= f.input :lname,
+                required: true,
+                label: "Apellidos",
+                input_html: { autocomplete: "family-name", class: "auth-input" },
+                wrapper_html: { class: "auth-input-wrapper auth-input-half" } %>
+        </div>
+
+        <%= f.input :email,
+                    required: true,
+                    input_html: { autocomplete: "email", class: "auth-input" },
+                    wrapper_html: { class: "auth-input-wrapper" } %>
+        <%= f.input :telephone,
+                    required: true,
+                    label: "Teléfono",
+                    input_html: { autocomplete: "tel", class: "auth-input", placeholder: "+376 XXX XXX" },
+                    wrapper_html: { class: "auth-input-wrapper" } %>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} caracteres mínimo" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password", class: "auth-input" },
+                    wrapper_html: { class: "auth-input-wrapper" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: "Confirmar contraseña",
+                    input_html: { autocomplete: "new-password", class: "auth-input" },
+                    wrapper_html: { class: "auth-input-wrapper" } %>
+      </div>
+
+      <div class="auth-actions">
+        <%= f.button :submit, t('pages.signup'), class: "auth-btn auth-btn-primary" %>
+      </div>
+    <% end %>
+
+    <div class="auth-footer">
+      <p class="auth-alt-text"><%=t('pages.alt')%></p>
+      <%= link_to t('pages.login'), new_session_path(resource_name), class: "auth-btn auth-btn-secondary" %>
+    </div>
+  </div>
+</div>
+
+<style>
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card-large {
+  max-width: 520px;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #A2262B, #D32F2F);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-icon {
+  margin-bottom: 16px;
+}
+
+.auth-icon i {
+  font-size: 48px;
+  color: #A2262B;
+}
+
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+.auth-form {
+  margin-bottom: 24px;
+}
+
+.auth-name-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.auth-input-wrapper {
+  margin-bottom: 20px;
+}
+
+.auth-input-half {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #A2262B;
+  box-shadow: 0 0 0 3px rgba(162, 38, 43, 0.1);
+}
+
+.auth-actions {
+  margin-bottom: 24px;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.auth-btn-primary {
+  background: #A2262B;
+  color: white;
+}
+
+.auth-btn-primary:hover {
+  background: #8B1F24;
+  transform: translateY(-1px);
+}
+
+.auth-btn-secondary {
+  background: transparent;
+  color: #A2262B;
+  border: 2px solid #A2262B;
+  margin-top: 12px;
+}
+
+.auth-btn-secondary:hover {
+  background: #A2262B;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.auth-footer {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.auth-alt-text {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.error_notification {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.field_with_errors input {
+  border-color: #dc2626 !important;
+}
+
+.help-block {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 16px;
+  }
+
+  .auth-card {
+    padding: 32px 24px;
+  }
+
+  .auth-name-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .auth-input-half {
+    margin-bottom: 20px;
+  }
+}
+</style>

@@ -1,0 +1,59 @@
+<% @endpoint = "https://services.mobile.de/search-api/search?vatable=1&&classification=refdata/classes/Car/makes/CUPRA&damageUnrepaired=0&firstRegistrationDate.min=2019-01"%>
+<% doc = ApiCaller.new(@endpoint).call %>
+<% @ads = doc.xpath('//ad:ad') %>
+
+
+<div class= "seogenerallisting">
+  <div class="seocontainer">
+    <br>
+    <h2><%= t('model.ejemplos', marca: @marca) %></h2>
+
+    <div class="seolistings">
+      <% @ads[...8].each do |ad| %>
+          <% @car = Car.new(ad) %>
+          <% next if @car.photo.nil? %>
+          <% price = PriceCalculation.new(first_registration: @car.first_registration, price_bruto: @car.price_bruto, vat: @car.vat)%>
+              <%= link_to car_path(id: ad.first.last, final_price: price.finalprice), style:"text-decoration:none; color:black;flex-grow:4", target: :_blank do %>
+                <div class="seocard-product">
+                  <img src=<%=@car.photo.attr('url')%> alt="ad photo">
+                  <div class="seocard-product-infos">
+                    <div class = "listing-card-title">
+                    <p><%= @car.make %> <%= @car.description %></p>
+                    </div>
+                    <div class="font-card-listing">
+                      <div class = "d-flex justify-content-around">
+                        <div>
+                          <div>
+                            <i class="fa-regular fa-calendar-days mb-2"></i> <%= "#{DateTime.parse("#{@car.first_registration}-01").strftime("%m-%Y")}" %>
+                          </div>
+                          <div>
+                            <i class="fa-solid fa-gauge mb-2"></i> <%="#{number_with_precision(@car.mileage, :precision => 0, :delimiter => '.')} km"%>
+                          </div>
+                          <div>
+                            <i class="fa-solid fa-bolt-lightning mb-2"></i> <%= "#{@car.power} kW - #{(@car.power.to_i * 1.3595).round} cv" %>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <i class="fa-solid fa-gears mb-2"></i> <%= @car.gearbox %>
+                          </div>
+                          <div>
+                            <i class="fa-solid fa-gas-pump mb-2"></i> <%= @car.fuel %>
+                          </div>
+                          <div>
+                            <i class="fa-solid fa-eye-dropper mb-2"></i> <%= @car.color %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="listing-card-price">
+                        <strong> <%= number_to_currency(price.finalprice.round, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %> € </strong> - <%= t('nextoprice') %>
+                        <div class = "text-mini-listing"><%= t('todoincluido_html') %><i class="fa-solid fa-check tick"></i><%= t('vehiculo') %> <i class="fa-solid fa-check tick"></i><%= t('transport') %> <i class="fa-solid fa-check tick"></i><%= t('importacion') %> <i class="fa-solid fa-check tick"></i><%= t('matriculacion') %> <i class="fa-solid fa-check tick"></i><%= t('garantia') %></div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

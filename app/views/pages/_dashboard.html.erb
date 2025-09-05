@@ -1,0 +1,46 @@
+<div data-controller="form">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active"
+              id="home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#home"
+              type="button"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true">
+        <h3><%= t('pages.home.buscador') %></h3>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link"
+              id="profile-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#profile"
+              type="button"
+              role="tab"
+              aria-controls="profile"
+              aria-selected="false"
+              data-action="shown.bs.tab->form#load">
+        <h3><%= t('pages.home.formulari') %></h3>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <br>
+    <div class="tab-pane fade show active"
+         id="home"
+         role="tabpanel"
+         aria-labelledby="home-tab">
+      <%= render 'pages/buscaform' %>
+    </div>
+    <div class="tab-pane fade"
+         id="profile"
+         role="tabpanel"
+         aria-labelledby="profile-tab">
+      <%= render 'pages/directform' %>
+    </div>
+
+  </div>
+</div>

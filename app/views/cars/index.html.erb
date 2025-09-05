@@ -1,0 +1,20 @@
+<% content_for :for_head do %>
+  <meta name='robots' content='noindex'>
+<% end %>
+<div class="container">
+      <h4 style = "text-align:center; margin-top: 40px; margin-bottom: 15px;"> <%=t('h2totinclos')%> <h4>
+      <h5 style = "text-align:center; color:gray; margin-bottom: 40px;"><%= t('h5totinclos') %> </h5>
+  <div class="flex">
+    <%= render "index_modal" %>
+    <%= render "shared/filters_sidebar" %>
+    <div class="ads">
+      <hr>
+      <div class="listing-top">
+        <h2 style= "color: #A2262B;"><%= @number_results %> <%= t('resultados') %></h2>
+        <%= render 'filtersaplied' %>
+      </div>
+      <%= render 'listing' %>
+      <%= render 'pagination_index' %>
+    </div>
+  </div>
+</div>

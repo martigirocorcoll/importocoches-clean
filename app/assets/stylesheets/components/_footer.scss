@@ -1,0 +1,42 @@
+.footer {
+  background: #4c4c4c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  color: rgba(0,0,0,0.3);
+  padding: 50px 100px;
+}
+
+.flex-vertical {
+  display: block;
+}
+
+#footer-logo {
+  text-align: center;
+  border-bottom: 1px solid white;
+  width: auto;
+  padding-bottom: 20px;
+}
+
+.footer-links {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-links:hover{
+    text-decoration: underline;
+    color:white;
+  }
+
+#footer-links-position {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+@media (min-width: 200px) {
+  #footer-home-text {
+    padding: 20px;
+  }
+}

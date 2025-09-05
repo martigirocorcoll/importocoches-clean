@@ -1,0 +1,413 @@
+<% require 'base64' %>
+<% require 'open-uri' %>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      margin-bottom: 5px;
+    }
+    .company-info {
+      text-align: right;
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .section {
+      margin: 10px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000;
+    }
+    .data-row {
+      margin: 6px 0;
+    }
+    .data-row strong {
+      display: inline-block;
+      width: 200px;
+    }
+    .precio-row {
+      margin: 8px 0;
+      padding-left: 30px;
+    }
+    .clausulas {
+      margin-top: 15px;
+      text-align: justify;
+    }
+    .clausulas p {
+      margin: 6px 0;
+    }
+    .signature-section {
+      margin-top: 40px;
+      display: table;
+      width: 100%;
+    }
+    .signature-box {
+      display: table-cell;
+      width: 45%;
+      text-align: center;
+      vertical-align: bottom;
+    }
+    .signature-line {
+      border-bottom: 1px solid #000;
+      margin: 0 20px 5px 20px;
+      height: 70px;
+    }
+    .page-break {
+      page-break-after: always;
+    }
+
+    /* Styles for annex */
+    .car-specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: auto;
+    }
+    .car-specs-table td {
+      border: 1px solid #BFBFBF;
+      padding: 15px 10px;
+      text-align: center;
+    }
+    .car-specs-table .header-cell {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+    .car-specs-table .data-cell {
+      background-color: #FAECF0;
+    }
+    .car-image {
+      max-width: 100%;
+      height: auto;
+    }
+    .image-gallery table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .image-gallery td {
+      width: 50%;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- PAGE 1: CONTRACT -->
+  <!-- Header -->
+  <div class="header">
+    <table style="width:100%; cellpadding: 0; cellspacing: 0;">
+      <tr>
+        <td style="padding: 0;">
+          <%= wicked_pdf_image_tag "logo.png", alt: "Importo Cotxe logo", style: "height: 120px;" %>
+        </td>
+        <td style="padding: 0;">
+          <p style="text-align:right; font-family: Arial, Helvetica, sans-serif; font-size: 10px; margin: 0; padding: 0;"><strong>Importocotxe</strong></p>
+          <p style="text-align:right; font-family: Arial, Helvetica, sans-serif; font-size: 10px; margin: 0; padding: 0;"><strong>Brava A&M Solutions SL L-717603-E</strong></p>
+          <p style="text-align:right; font-family: Arial, Helvetica, sans-serif; font-size: 10px; margin: 0; padding: 0;">C/ del Clos 01, Block A, house 2A</p>
+          <p style="text-align:right; font-family: Arial, Helvetica, sans-serif; font-size: 10px; margin: 0; padding: 0;">AD300 Ordino</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Document title -->
+  <h1 style="text-align: center; font-size: 20px; margin: 15px 0 10px 0; font-weight: bold;">VEHICLE RESERVATION CONTRACT</h1>
+
+  <!-- Date -->
+  <div style="text-align: center; margin-bottom: 15px;">
+    <strong>Date: <%= @contract_data[:fecha] %></strong>
+  </div>
+
+  <!-- CUSTOMER IDENTIFICATION -->
+  <div class="section">
+    <h1>CUSTOMER IDENTIFICATION</h1>
+
+    <% if @contract_data[:empresa].present? %>
+      <strong><p>Company: </strong> <%= @contract_data[:empresa] %></p>
+      <strong><p>NRT: </strong> <%= @contract_data[:nrt] %></p>
+      <strong><p>Represented by: </strong> <%= @contract_data[:nombre] %></p>
+      <strong><p>NIA: </strong> <%= @contract_data[:nia] %></p>
+    <% else %>
+      <strong><p>Name: </strong><%= @contract_data[:nombre] %></p>
+      <strong><p>NIA: </strong><%= @contract_data[:nia] %></p>
+    <% end %>
+    <strong><p>Address:</strong> <%= @contract_data[:domicilio] %></p>
+  </div>
+
+  <!-- VEHICLE DATA -->
+  <div class="section">
+    <h1>VEHICLE DATA</h1>
+
+    <table style="width: 100%; border-collapse: collapse; background-color: white;">
+      <tr>
+        <td style="width: 25%; text-align: center; padding: 10px; border: none; border-bottom: 1px solid #000;">
+          <strong>Model</strong>
+        </td>
+        <td style="width: 25%; text-align: center; padding: 10px; border: none; border-bottom: 1px solid #000;">
+          <strong>Mileage</strong>
+        </td>
+        <td style="width: 25%; text-align: center; padding: 10px; border: none; border-bottom: 1px solid #000;">
+          <strong>First registration</strong>
+        </td>
+        <td style="width: 25%; text-align: center; padding: 10px; border: none; border-bottom: 1px solid #000;">
+          <strong>Chassis number</strong>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; padding: 10px; border: none;">
+          <%= @contract_data[:marca_model] %>
+        </td>
+        <td style="text-align: center; padding: 10px; border: none;">
+          <%= @contract_data[:km] %> km *
+        </td>
+        <td style="text-align: center; padding: 10px; border: none;">
+          <%= @contract_data[:primera_matriculacion] %>
+        </td>
+        <td style="text-align: center; padding: 10px; border: none;">
+          <%= @contract_data[:chassis] %>
+        </td>
+      </tr>
+    </table>
+
+    <p style="font-size: 10px; margin-top: 15px;"><strong>*</strong> The indicated mileage corresponds to that recorded at the time of acquisition and may increase slightly due to transport, import and registration procedures. This increase will be minimal and will not give rise to claims, cancellations or price adjustments.</p>
+  </div>
+
+  <!-- PRICE AND PAYMENT METHOD -->
+  <div class="section">
+    <h1>PRICE AND PAYMENT METHOD</h1>
+    <p><strong>Total price:</strong> <%= number_with_precision(@contract_data[:venta_total].to_f, precision: 0, delimiter: ".") %> €</p>
+    <p style="margin-left: 15px; font-size: 12px; font-style: italic;">(Includes registration in Andorra, IGI 4.5% and one year warranty)</p>
+
+    <p><strong>Payment method:</strong></p>
+    <p style="margin-left: 15px;"><strong>First payment (reservation):</strong> <%= number_with_precision(@contract_data[:deposito].to_f, precision: 0, delimiter: ".") %> € to make the reservation at origin.</p>
+    <p style="margin-left: 15px;"><strong>Second payment:</strong> <%= number_with_precision(@contract_data[:pago_restante].to_f, precision: 0, delimiter: ".") %> €, to be made within a maximum of 5 calendar days from when Importocotxe confirms to the Customer that the vehicle is ready for purchase at origin.</p>
+
+    <p style="margin-top: 20px;"><strong>Bank details for transfer:</strong></p>
+    <p style="margin-left: 15px;"><strong>IBAN:</strong> AD06 0001 0000 4170 7580 0100</p>
+    <p style="margin-left: 15px;"><strong>BIC:</strong> BACA AD AD</p>
+  </div>
+
+  <!-- CLAUSES -->
+  <div class="section">
+    <h1>CLAUSES</h1>
+
+    <p><strong>1. Vehicle unavailability at origin:</strong></p>
+    <p>In the event that, after the reservation at origin, the vehicle becomes unavailable for reasons beyond Importocotxe's control, Importocotxe will:</p>
+    <p style="margin-left: 15px;">a) Offer the Customer a vehicle with similar characteristics and price, or</p>
+    <p style="margin-left: 15px;">b) Fully refund the amount paid as a reservation within a maximum of 1 business day, if the Customer does not accept the alternative.</p>
+
+    <p><strong>2. Cancellations:</strong></p>
+    <p><strong style="margin-left: 15px;">2.1. Cancellation during reservation phase</strong></p>
+    <p style="margin-left: 15px;">Once the reservation is made, Importocotxe blocks the vehicle at origin and advances the amount to the supplier.</p>
+    <p style="margin-left: 15px;">If the Customer decides not to proceed and the payment has already been transferred, that amount cannot be refunded, as it is not recoverable from the supplier.</p>
+
+    <p><strong style="margin-left: 15px;">2.2. Cancellation at delivery</strong></p>
+    <p style="margin-left: 15px;">If at delivery the vehicle presents relevant differences from what was agreed in terms of model, version, essential equipment or general condition, and it is not possible to correct them, the Customer may cancel the purchase and recover what was paid.</p>
+    <p style="margin-left: 15px;">If such differences or defects can be corrected, Importocotxe will manage it immediately and cover all necessary costs to bring the vehicle into compliance with what was agreed, even if such costs cause losses in the vehicle import for Importocotxe.</p>
+
+    <p><strong>3. Delivery period:</strong></p>
+    <p>Importocotxe undertakes to manage and make payment at origin diligently so that the vehicle arrives within the expected timeframe. The estimated delivery time is approximately three weeks from receipt of the second payment.</p>
+    <p>This period is indicative and may vary due to causes beyond Importocotxe's control, such as transport, customs, registration or administrative procedures.</p>
+
+    <p><strong>4. Condition and equipment:</strong></p>
+    <p>The vehicle will be delivered in good working order and condition, in accordance with its age and mileage, with the equipment described in Annex 1.</p>
+    <p>Annex 1 forms an inseparable part of this contract and the Customer declares having received and reviewed it at the time of formalizing the reservation.</p>
+
+    <p><strong>5. Jurisdiction and applicable law:</strong></p>
+    <p>This contract is governed by the laws of the Principality of Andorra. Any dispute will be resolved exclusively by the courts of Andorra.</p>
+
+    <p><strong>6. Acceptance:</strong></p>
+    <p>This contract will be considered fully accepted and binding from the moment the Customer makes the total or partial payment of the reservation, even if they have not physically signed it.</p>
+  </div>
+
+  <!-- ADDITIONAL COMMENTS (only if present) -->
+  <% if @contract_data[:comentarios].present? %>
+  <div class="section">
+    <h1>ADDITIONAL COMMENTS</h1>
+    <p style="text-align: justify; margin: 10px 0;">
+      <%= simple_format(@contract_data[:comentarios]) %>
+    </p>
+  </div>
+  <% end %>
+
+  <!-- Signatures -->
+  <div class="signature-section">
+    <div class="signature-box">
+      <div class="signature-line"></div>
+      <strong>Importocotxe Signature</strong>
+    </div>
+    <div style="display: table-cell; width: 10%;"></div>
+    <div class="signature-box">
+      <div class="signature-line"></div>
+      <strong>Customer Signature</strong>
+    </div>
+  </div>
+
+
+  <!-- Page break for Annex -->
+  <div class="page-break"></div>
+
+  <!-- ANNEX: VEHICLE DETAILS -->
+  <% if @car.present? %>
+    <!-- Annex header -->
+    <div style="padding-bottom: 30px; margin-bottom: 30px;">
+      <table style="width:100%">
+        <tr>
+          <td>
+            <%= wicked_pdf_image_tag "logo.png", alt: "Importo Cotxe logo" %>
+          </td>
+          <td>
+            <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">+376 666 488</p>
+            <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">info@importocotxe.ad</p>
+            <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">https://www.importocotxe.ad</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Annex title -->
+    <div>
+      <h1 style="text-align:center; font-family: Arial, Helvetica, sans-serif;">
+        Annex 1: <%= @contract_data[:marca_model] %>
+      </h1>
+    </div>
+    <br><br>
+
+    <!-- Main car image (Base64 Embedded) -->
+    <div style="text-align:center;">
+      <% if @car.images.first.present? %>
+        <% begin %>
+          <% blob = @car.images.first.is_a?(String) ? URI.open(@car.images.first).read : @car.images.first.blob.download %>
+          <% data = Base64.strict_encode64(blob) %>
+          <% mime = @car.images.first.is_a?(String) ? MIME::Types.type_for(@car.images.first).first.content_type : @car.images.first.blob.content_type %>
+          <%= image_tag "data:#{mime};base64,#{data}", class: "car-image", alt: "#{@car.make} #{@car.model_description}" %>
+        <% rescue => e %>
+          <p>Image not available</p>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Technical specifications -->
+    <div style="font-size:12px;">
+      <div style="padding-bottom: 15px; margin-bottom: 20px;">
+        <table style="width:100%">
+          <tr>
+            <td>
+              <%= wicked_pdf_image_tag "logo.png", alt: "Importo Cotxe logo" %>
+            </td>
+            <td>
+              <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">+376 666 488</p>
+              <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">info@importocotxe.ad</p>
+              <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">https://www.importocotxe.ad</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Specifications table -->
+      <div>
+        <table class="car-specs-table">
+          <tr>
+            <td class="header-cell" style="width: 230px;"><h4>Mileage</h4></td>
+            <td class="header-cell" style="width: 230px;"><h4>1st Registration</h4></td>
+            <td class="header-cell" style="width: 230px;"><h4>Power</h4></td>
+            <td class="header-cell" style="width: 230px;"><h4>Fuel</h4></td>
+          </tr>
+          <tr>
+            <td class="data-cell"><h5><%= "#{number_with_precision(@car.mileage, precision: 0, delimiter: '.')} km" %></h5></td>
+            <td class="data-cell"><h5><%= DateTime.parse("#{@car.first_registration_date}-01").strftime("%m-%Y") %></h5></td>
+            <td class="data-cell"><h5><%= "#{(@car.power.to_i * 1.3595).round} hp" %></h5></td>
+            <td class="data-cell"><h5><%= @car.fuel %></h5></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Equipment description -->
+      <div>
+        <h2 style="text-align:left; font-family: Arial, Helvetica, sans-serif; padding-top: 35px;">Equipment:</h2>
+        <h3 style="text-align:left; font-family: Arial, Helvetica, sans-serif; padding-top: 15px;">
+          <% if @description.present? %>
+            <%= simple_format(@description) %>
+          <% else %>
+            <%= sanitize(@car.equipment_list.join(', ')) if @car.respond_to?(:equipment_list) %>
+          <% end %>
+        </h3>
+        <h2 style="text-align:left; font-family: Arial, Helvetica, sans-serif; padding-top: 45px;">
+          Final price ................................................................ <%= @final_price %> €
+        </h2>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Image gallery: 2 Columns x 3 Rows per page -->
+    <% if @car.images.size > 1 %>
+      <% @car.images[1..-1].each_slice(6).with_index do |page_images, page_index| %>
+        <div style="page-break-after: <%= 'always' if page_index < (@car.images.size/6.0).ceil - 1 %>; margin-bottom: 20px;">
+          <table style="width:100%; border-collapse: collapse;">
+            <% page_images.each_slice(2) do |row_images| %>
+              <tr>
+                <% row_images.each do |img| %>
+                  <% begin %>
+                    <% raw_data = img.is_a?(String) ? URI.open(img).read : img.blob.download %>
+                    <% encoded  = Base64.strict_encode64(raw_data) %>
+                    <% mime     = img.is_a?(String) ? MIME::Types.type_for(img).first.content_type : img.blob.content_type %>
+                    <td style="width:50%; padding: 5px;">
+                      <%= image_tag "data:#{mime};base64,#{encoded}", style: "width:100%; height:auto;" %>
+                    </td>
+                  <% rescue => e %>
+                    <td style="width:50%; padding: 5px;">
+                      <p>Image not available</p>
+                    </td>
+                  <% end %>
+                <% end %>
+                <% if row_images.size < 2 %>
+                  <td style="width:50%; padding: 5px;"></td>
+                <% end %>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <!-- If no car data from API, show only description -->
+    <div style="padding-bottom: 30px; margin-bottom: 30px;">
+      <table style="width:100%">
+        <tr>
+          <td>
+            <%= wicked_pdf_image_tag "logo.png", alt: "Importo Cotxe logo" %>
+          </td>
+          <td style="text-align: right;">
+            <p>IMPORTOCOTXE.AD</p>
+            <p>+376 666 488</p>
+            <p>info@importocotxe.ad</p>
+            <p>https://www.importocotxe.ad</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <h1 style="text-align: center;">Annex 1: <%= @contract_data[:marca_model] %></h1>
+
+    <% if @contract_data[:descripcion_traducida].present? %>
+      <div style="margin: 30px 0;">
+        <h2>Vehicle description:</h2>
+        <p style="text-align: justify;">
+          <%= simple_format(@contract_data[:descripcion_traducida]) %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</body>
+</html>

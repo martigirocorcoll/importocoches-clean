@@ -1,0 +1,114 @@
+<div class="dashboard-header" style="margin-bottom: 30px;">
+  <h1 style="color: #2c3e50; font-size: 28px; margin-bottom: 10px;">
+    <i class="fa-solid fa-chart-line"></i> Actividad API por Usuario
+  </h1>
+  <p style="color: #7f8c8d;">Usuarios ordenados por número de llamadas API por semana</p>
+</div>
+
+<div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h5 style="color: #2c3e50; margin: 0;">
+        Periodo: <%= @week_start.strftime("%d/%m/%Y") %> - <%= @week_end.strftime("%d/%m/%Y") %>
+      </h5>
+      <small class="text-muted">
+        <% case @week_number.to_i
+           when 0 %>
+          Esta semana
+        <% when 1 %>
+          Semana pasada
+        <% else %>
+          Hace <%= @week_number %> semanas
+        <% end %>
+      </small>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="btn-group" role="group">
+        <%= link_to dashboard_api_activity_path(week: 0), 
+            class: "btn btn-sm #{'btn-primary' if @week_number.to_i == 0} #{'btn-outline-primary' if @week_number.to_i != 0}" do %>
+          Esta semana
+        <% end %>
+        <%= link_to dashboard_api_activity_path(week: 1), 
+            class: "btn btn-sm #{'btn-primary' if @week_number.to_i == 1} #{'btn-outline-primary' if @week_number.to_i != 1}" do %>
+          Semana pasada
+        <% end %>
+        <%= link_to dashboard_api_activity_path(week: 2), 
+            class: "btn btn-sm #{'btn-primary' if @week_number.to_i == 2} #{'btn-outline-primary' if @week_number.to_i != 2}" do %>
+          Hace 2 semanas
+        <% end %>
+        <%= link_to dashboard_api_activity_path(week: 3), 
+            class: "btn btn-sm #{'btn-primary' if @week_number.to_i == 3} #{'btn-outline-primary' if @week_number.to_i != 3}" do %>
+          Hace 3 semanas
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+  <% if @total_count > 0 %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Usuario ID</th>
+            <th>Email</th>
+            <th>Nombre</th>
+            <th>Llamadas API</th>
+            <th>Fecha Registro</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.email %></td>
+              <td><%= "#{user.fname} #{user.lname}".strip %></td>
+              <td>
+                <span class="badge badge-<%= 
+                  calls = @api_counts[user.id] || 0
+                  case calls
+                  when 0..10 then 'success'
+                  when 11..50 then 'warning'
+                  else 'danger'
+                  end
+                %>">
+                  <%= @api_counts[user.id] || 0 %> llamadas
+                </span>
+              </td>
+              <td><%= user.created_at.strftime("%d/%m/%Y") %></td>
+              <td>
+                <%= link_to admin_user_path(user), 
+                    class: "btn btn-sm btn-outline-primary", target: "_blank" do %>
+                  <i class="fa-solid fa-eye"></i> Ver detalles
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="mt-3 d-flex justify-content-between">
+      <small class="text-muted">
+        Mostrando <%= @users.count %> de <%= @total_count %> usuarios con actividad
+      </small>
+      
+      <div class="pagination-info">
+        <small class="text-muted">
+          Página <%= @current_page %> de <%= @total_pages %>
+        </small>
+      </div>
+    </div>
+  <% else %>
+    <div class="text-center py-5">
+      <i class="fa-solid fa-chart-line fa-3x text-muted mb-3"></i>
+      <h5 class="text-muted">Sin actividad API</h5>
+      <p class="text-muted">
+        No hay usuarios con llamadas API en el periodo seleccionado
+      </p>
+    </div>
+  <% end %>
+</div>

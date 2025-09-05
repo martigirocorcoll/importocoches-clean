@@ -1,0 +1,33 @@
+
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-calendar-days"></i> <%= t('cars.show.registro')%>
+  </div>
+  <div class="strong">
+    <%= "#{car.year}" %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-gauge"></i> <%= t('pages.home.kilome')%>
+  </div>
+  <div class="strong">
+    <%="#{number_with_precision(car.mileage, :precision => 0, :delimiter => '.')} km"%>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-bolt-lightning"></i> <%= t('pages.home.pot')%>
+  </div>
+  <div class="strong">
+    <%= "#{car.horsepower} kW - #{(car.horsepower.to_i * 1.3595).round} cv" %>
+  </div>
+</div>
+<div class="datos-tecnicos">
+  <div>
+    <i class="fa-solid fa-gas-pump"></i> <%= t('pages.home.fuel')%>:
+  </div>
+  <div class="strong">
+    <%= car.fuel_type %>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+
+// Define fonts for body and headers
+$body-font: "Work Sans", "Helvetica", "sans-serif";
+$headers-font:"Work Sans", "sans-serif";
+
+// To use a font file (.woff) uncomment following lines
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
+
+p {
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 23px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+h1 {
+  font-size: 52px !important;
+  font-weight: 700 !important;
+  line-height: 55px !important;
+  color: white;
+}
+
+h2 {
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  line-height: 38px !important;
+  color: black;
+}
+
+h2 {
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  line-height: 38px !important;
+  color: black;
+}
+
+h3 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+}
+
+h4 {
+  font-size: 40px !important;
+  font-weight: 800 !important;
+  line-height: 47px !important;
+  letter-spacing: 0.01em !important;
+}
+
+.white-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.form-label {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 21px !important;
+}
+
+.card-date {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.5px;
+  color: rgba(140, 146, 153, 1);
+}
+
+.font-card-listing {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.5px;
+  color: rgba(0, 0, 0, 1);
+}

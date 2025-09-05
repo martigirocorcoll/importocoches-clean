@@ -1,0 +1,47 @@
+<!-- Landing Page: Importar Coche España -->
+<!-- DEBUG: Using importar_espana.html.erb template with importar_espana layout -->
+
+<% content_for :for_head do %>
+  <title>Importar Coche desde Alemania a España - Importocotxe</title>
+  <meta name="description" content="Accede a todo el mercado europeo de coches premium. BMW, Mercedes, Audi, Porsche. Mejor precio, más opciones, gestión completa. 7 años de experiencia.">
+<% end %>
+
+<%= render 'pages/importar_espana/styles' %>
+
+<div class="landing-espana">
+  <!-- Hero Section -->
+  <%= render 'pages/importar_espana/hero' %>
+
+  <!-- Problem/Solution Section -->
+  <%= render 'pages/importar_espana/problem_solution' %>
+
+  <!-- Value Propositions -->
+  <%= render 'pages/importar_espana/value_props' %>
+
+  <!-- Objections Section -->
+  <%= render 'pages/importar_espana/objections' %>
+
+  <!-- Process Section -->
+  <%= render 'pages/importar_espana/process' %>
+
+  <!-- Credibility Section -->
+  <%= render 'pages/importar_espana/credibility' %>
+
+  <%# <!-- Transparency Section -->
+  <%= render 'pages/importar_espana/transparency' %>
+
+  <%# <!-- FAQ Section -->
+  <%= render 'pages/importar_espana/faq' %>
+
+  <!-- Final CTA -->
+  <%= render 'pages/importar_espana/final_cta' %>
+</div>
+
+<!-- Spanish Footer -->
+<%= render 'pages/importar_espana/footer_espana' %>
+
+<!-- WhatsApp Sticky Button -->
+<%= render 'pages/importar_espana/whatsapp_sticky' %>
+
+<!-- JavaScript -->
+<%= render 'pages/importar_espana/scripts' %>

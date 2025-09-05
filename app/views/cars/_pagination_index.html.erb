@@ -1,0 +1,38 @@
+  <%# PAGINATION %>
+  <div class="pagination-wrapper">
+    <% unless session[:api_counter].nil? %>
+      <% if session[:api_counter]<5 || user_signed_in? %>
+        <% if @num_pages > 1%>
+          <b><%= link_to 1, car_page_path(page: 1, endpoint: @endpoint, number_results:@number_results, filters: { make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}), class:"btn-pagination" %></b>
+          <% @num_range.each do |num| %>
+            <%= link_to num, car_page_path(number_results:@number_results, page: num, endpoint: @endpoint, filters: {make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}),class:"btn-pagination"  %>
+          <% end %>
+          <%= "..." %>
+          <%= link_to @num_pages, car_page_path(number_results:@number_results, page: @num_pages, endpoint: @endpoint, filters: {make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}), class:"btn-pagination"  %>
+          <% if @num_pages > 1 %>
+          <%= link_to "#{t('pagination.siguiente')}", car_page_path(number_results:@number_results, page: 2, endpoint: @endpoint, filters: {make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}),class:"btn-pagination-next"  %>
+          <% end %>
+        <% else %>
+        <b>1</b>
+        <% end %>
+
+      <% else %>
+        <%= link_to "<button class='home-button'>#{t('pages.home.login')}</button>".html_safe, new_user_registration_path %>
+      <% end %>
+
+    <% else %>
+      <% if @num_pages > 1%>
+        <b><%= link_to 1, car_page_path(page: 1, endpoint: @endpoint, number_results:@number_results, filters: { make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}), class:"btn-pagination" %></b>
+        <% @num_range.each do |num| %>
+          <%= link_to num, car_page_path(number_results:@number_results, page: num, endpoint: @endpoint, filters: {make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}),class:"btn-pagination"  %>
+        <% end %>
+        <%= "..." %>
+        <%= link_to @num_pages, car_page_path(number_results:@number_results, page: @num_pages, endpoint: @endpoint, filters: {make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}), class:"btn-pagination"  %>
+        <% if @num_pages > 1 %>
+        <%= link_to "#{t('pagination.siguiente')}", car_page_path(number_results:@number_results, page: 2, endpoint: @endpoint, filters: {make: params["filters"]["make"], model: params["filters"]["model"], mileage_max: params["filters"]["mileage_max"], first_registration_date: params["filters"]["first_registration_date"], potencia: params["filters"]["potencia"], fuel: params["filters"]["fuel"], price_max: params["filters"]["price_max"], transmision: params["filters"]["transmision"], model_description: params["filters"]["model_description"], fourwheeldrive: params["filters"]["fourwheeldrive"]}),class:"btn-pagination-next"  %>
+        <% end %>
+      <% else %>
+          <b>1</b>
+      <% end %>
+    <% end %>
+  </div>

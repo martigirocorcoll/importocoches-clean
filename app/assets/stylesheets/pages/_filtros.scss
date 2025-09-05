@@ -1,0 +1,21 @@
+.targeta_filtro {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgb(220, 220, 220);
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  margin-right: 10px;
+  color: rgb(100, 100, 100);
+}
+
+
+@media (min-width: 200px) {
+.filtersaplied {
+  visibility: visible;
+}
+}
+
+
+.tick{
+color: green;
+}

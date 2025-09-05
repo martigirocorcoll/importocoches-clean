@@ -1,0 +1,52 @@
+<% content_for :for_head do %>
+  <title> <%= t('head.importacio') %> Audi A3 <%= t('head.importocotxe') %></title>
+  <meta name='description' content="Encuentra los mejores precios en la importación de coches Audi a3 a Andorra con Importocotxe. ¡Contáctanos hoy mismo!)">
+<% end %>
+
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+  <%= link_to t('bread.mmarca'), marca_path, style:"text-decoration: none;" %>
+  <%= link_to "> Audi", marca_audi_andorra_path, style:"text-decoration: none;" %>
+  > A3
+</div>
+
+<div class="container">
+      <h1 style = "text-align:center; color:black;"> <%= t('model.concreto', marca: @marca, model: @model) %><h1>
+      <h5 style = "text-align:center; color:gray; margin-bottom: 30px;"><%= t('h5totinclos') %> </h5>
+  <div class="flex">
+    <%= render "pages/bmw/contactmodal" %>
+    <%= render "shared/filters_sidebar" %>
+    <div class="ads">
+      <hr>
+      <div class="listing-top">
+      </div>
+      <%= render 'pages/bmw/listingmodel' %>
+    </div>
+  </div>
+  <div>
+    <h2><%= t('audi_a3.title') %></h2>
+    <p><%= t('audi_a3.description') %></p>
+
+    <h3><%= t('audi_a3.fiscal_benefits.title') %></h3>
+    <p><%= t('audi_a3.fiscal_benefits.content') %></p>
+
+    <h3><%= t('audi_a3.driving_efficiency.title') %></h3>
+    <p><%= t('audi_a3.driving_efficiency.content') %></p>
+
+    <h3><%= t('audi_a3.technology_comfort.title') %></h3>
+    <p><%= t('audi_a3.technology_comfort.content') %></p>
+
+    <h3><%= t('audi_a3.environment_adaptability.title') %></h3>
+    <p><%= t('audi_a3.environment_adaptability.content') %></p>
+
+    <h3><%= t('audi_a3.conclusion.title') %></h3>
+    <p><%= t('audi_a3.conclusion.content') %></p>
+
+    <h3><%= t('audi_a3.faq.title') %></h3>
+    <ul>
+      <% t('audi_a3.faq.questions').each do |question| %>
+        <li><%= question %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "name": "importy-garage-app",
+  "private": true,
+  "dependencies": {
+    "@popperjs/core": "^2.11.2",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/actiontext": "^6.1.5",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.3",
+    "bootstrap": "^5.1.3",
+    "cookies-eu-banner": "^2.0.1",
+    "stimulus": "^3.0.1",
+    "stimulus-carousel": "^4.0.0",
+    "swiper": "6.8.4",
+    "trix": "^1.2.0",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-class-properties": "^7.27.1",
+    "@babel/plugin-transform-object-rest-spread": "^7.28.0",
+    "@babel/plugin-transform-private-methods": "^7.27.1",
+    "@babel/plugin-transform-private-property-in-object": "^7.27.1",
+    "webpack-dev-server": "^3"
+  }
+}

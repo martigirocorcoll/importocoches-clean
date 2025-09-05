@@ -1,0 +1,33 @@
+ <h2>IVA's pendientes:</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha entrada Andorra</th>
+      <th>Contacto</th>
+      <th>Cantidad iva</th>
+      <th>Comentario</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @encargos.each do |encargo| %>
+      <% if encargo.cantidad_iva.present? && encargo.fentrada_and.present? && encargo.fcobro_iva.blank? %>
+        <tr>
+          <td><%= encargo.nombre %></td>
+          <td><%= encargo.fentrada_and %></td>
+          <td><%= encargo.contacto %></td>
+          <td><%= encargo.cantidad_iva %></td>
+          <td><%= encargo.comentario %></td>
+          <td><%= link_to 'Edit', edit_encargo_path(encargo) %></td>
+        </tr>
+        <% @total += encargo.cantidad_iva.to_i %>
+      <% end %>
+    <% end %>
+  </tbody>
+
+</table>
+ <h2>Total: <%=@total.to_i%>€</h2>
+<br>

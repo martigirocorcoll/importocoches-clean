@@ -1,0 +1,407 @@
+bmw:
+  name: "BMW"
+  display_name: "BMW"
+  api_name: "BMW"
+  slug: "bmw-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732366/devon-janse-van-rensburg-cQHx11ku1Dk-unsplash_awimek.jpg"
+  models:
+    serie1:
+      display_name: "Serie 1"
+      api_name: "1__BMW_ER_SERIES"
+      type: "modelgroup"
+      slug: "serie-1"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709737601/hrlyd5y9ozfioycejjsq.jpg"
+    serie3:
+      display_name: "Serie 3"
+      api_name: "3__BMW_ER_SERIES"
+      type: "modelgroup"
+      slug: "serie-3"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709738717/P90382613-the-new-bmw-m340d-xdrive-touring-black-sapphire-metallic-02-2020-2250px_lbjugy.jpg"
+    serie4:
+      display_name: "Serie 4"
+      api_name: "4__BMW_ER_SERIES"
+      type: "modelgroup"
+      slug: "serie-4"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709738929/16009306958552_zb0cx6.jpg"
+    serie5:
+      display_name: "Serie 5"
+      api_name: "5__BMW_ER_SERIES"
+      type: "modelgroup"
+      slug: "serie-5"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709742619/bmw-serie-5-6553620815c4c_whkhqa.jpg"
+    x1:
+      display_name: "X1"
+      api_name: "X1"
+      type: "model"
+      slug: "x1"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709742759/bmw-x1-m35i-xdrive_tglqls.webp"
+    x5:
+      display_name: "X5"
+      api_name: "X5"
+      type: "model"
+      slug: "x5"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709742806/bmw-x5-front-view_h8pmdk.jpg"
+    x6:
+      display_name: "X6"
+      api_name: "X6"
+      type: "model"
+      slug: "x6"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709742963/BMW_X6_0-1200x675_xi1ceu.jpg"
+    xm:
+      display_name: "XM"
+      api_name: "XM"
+      type: "model"
+      slug: "xm"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709743046/bmw-x-series-xm-phev-mc-electric-driving-hero-desktop.jpg.asset.1681276548118_byl60o.jpg"
+    i8:
+      display_name: "i8"
+      api_name: "i8"
+      type: "model"
+      slug: "i8"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1709743152/840_560_bvq526.jpg"
+
+mercedes:
+  name: "MERCEDES"
+  display_name: "Mercedes-Benz"
+  api_name: "mercedes-benz"
+  slug: "mercedes-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731177/liam-martens-uUi5RQCyUdM-unsplash_xdjxst.jpg"
+  models:
+    a:
+      display_name: "Clase A"
+      api_name: "A-Klasse"
+      type: "modelgroup"
+      slug: "a"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741512/MERCEDES_CLASE_A_2018-e1621413018502-1_asdi3s.jpg"
+    cla:
+      display_name: "CLA"
+      api_name: "CLA-Klasse"
+      type: "modelgroup"
+      slug: "cla"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741513/mercedes-benz-2019-15g-1-1024x683_e87ylz.jpg"
+    gla:
+      display_name: "GLA"
+      api_name: "GLA-Klasse"
+      type: "modelgroup"
+      slug: "gla"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741516/primera-prueba-mercedes-1_g_xdwolt.jpg"
+    g:
+      display_name: "Clase G"
+      api_name: "G-Klasse"
+      type: "modelgroup"
+      slug: "g"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741718/mercedes-benz-g-class-w463-teaser-exterior-3302x1858-05-2023.jpg_vifxln.webp"
+    glb:
+      display_name: "GLB"
+      api_name: "GLB-Klasse"
+      type: "modelgroup"
+      slug: "glb"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741513/mercedes-benz-5_g-1024x576_mngaml.jpg"
+    glc:
+      display_name: "GLC"
+      api_name: "GLC-Klasse"
+      type: "modelgroup"
+      slug: "glc"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741513/mercedes-benz-2019-1_g_v4nv6d.jpg"
+    amggt:
+      display_name: "AMG GT"
+      api_name: "GT-Klasse"
+      type: "modelgroup"
+      slug: "amg-gt"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741845/mercedes-amg-coupe-2024_default_yyxzap.jpg"
+    s:
+      display_name: "Clase S"
+      api_name: "S-Klasse"
+      type: "modelgroup"
+      slug: "s"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741513/Mercedes-S-580e-2021-15_w44xzq.jpg"
+    v:
+      display_name: "Clase V"
+      api_name: "V-Klasse"
+      type: "modelgroup"
+      slug: "v"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711741514/mercedes-benz-clase-v-2024-frontal-lateral.367557_aep0pz.jpg"
+
+audi:
+  name: "AUDI"
+  display_name: "Audi"
+  api_name: "AUDI"
+  slug: "audi-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812955/302afc26-f0cf-4da0-a023-b060706af3ee_fmclsg.jpg"
+  models:
+    a1:
+      display_name: "A1"
+      api_name: "A1"
+      type: "model"
+      slug: "a1"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798678/audi-a1-sportback-2019-1024-07-9a3c18e14f781c08f0453492348268c5e91a1a02_pyuvxo.jpg"
+    a3:
+      display_name: "A3"
+      api_name: "A3"
+      type: "model"
+      slug: "a3"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798497/remy-lovesy-19M7TbSch2U-unsplash_v7qkfc.jpg"
+    a4:
+      display_name: "A4"
+      api_name: "A4"
+      type: "model"
+      slug: "a4"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798509/remy-lovesy-LO8rqX93FgQ-unsplash_erca3u.jpg"
+    q2:
+      display_name: "Q2"
+      api_name: "Q2"
+      type: "model"
+      slug: "q2"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798694/aui-q2-1-1644519933_rhyk6k.jpg"
+    q3:
+      display_name: "Q3"
+      api_name: "Q3"
+      type: "model"
+      slug: "q3"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798502/remy-lovesy-L69quRDsm8A-unsplash_rb0mfn.jpg"
+    q5:
+      display_name: "Q5"
+      api_name: "Q5"
+      type: "model"
+      slug: "q5"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798485/eduardo-flores-FxjjnBvXq-Y-unsplash_lkbfqe.jpg"
+    q8:
+      display_name: "Q8"
+      api_name: "Q8"
+      type: "model"
+      slug: "q8"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798494/maksym-tymchyk-bb6NaemzpGY-unsplash_og4wlz.jpg"
+    rs6:
+      display_name: "RS6"
+      api_name: "RS6"
+      type: "model"
+      slug: "rs6"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798508/serjan-midili-8iZdhhP5bwg-unsplash_kvyzon.jpg"
+    r8:
+      display_name: "R8"
+      api_name: "R8"
+      type: "model"
+      slug: "r8"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711798510/callum-hill-TNvGsWoFQ0A-unsplash_dzgevi.jpg"
+
+porsche:
+  name: "PORSCHE"
+  display_name: "Porsche"
+  api_name: "PORSCHE"
+  slug: "porsche-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812954/porsche_992_head_on_hpudjw.jpg"
+  models:
+    macan:
+      display_name: "Macan"
+      api_name: "MACAN"
+      type: "model"
+      slug: "macan"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711801748/michail-dementiev-EC7juxmFUa4-unsplash_epyi44.jpg"
+    cayenne:
+      display_name: "Cayenne"
+      api_name: "CAYENNE"
+      type: "model"
+      slug: "cayenne"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711801746/jaime-castrillon-G9C5t5z6h0k-unsplash_cvyl3k.jpg"
+    panamera:
+      display_name: "Panamera"
+      api_name: "PANAMERA"
+      type: "model"
+      slug: "panamera"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711801746/ayman-hallak-kjozrvqXnuY-unsplash_e7vbsl.jpg"
+    cayman:
+      display_name: "Cayman"
+      api_name: "CAYMAN"
+      type: "model"
+      slug: "cayman"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711801745/brecht-denil-VwvtwFPjPnU-unsplash_zbazry.jpg"
+    boxster:
+      display_name: "Boxster"
+      api_name: "BOXSTER"
+      type: "model"
+      slug: "boxster"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711801746/pavel-okrema-KmJH2Ql6G-M-unsplash_dctsav.jpg"
+    carrera:
+      display_name: "911 Carrera"
+      api_name: "992"
+      type: "model"
+      slug: "carrera"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711801749/hamza-samil-yavuz-AcBdayIL8us-unsplash_vfydql.jpg"
+    taycan:
+      display_name: "Taycan"
+      api_name: "TAYCAN"
+      type: "model"
+      slug: "taycan"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711801745/or-hakim-0qcexMtNjR4-unsplash_ni6rb7.jpg"
+
+volkswagen:
+  name: "VW"
+  display_name: "Volkswagen"
+  api_name: "VW"
+  slug: "volkswagen-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731576/chris-osmond-54tC25jNoWA-unsplash_axwylx.jpg"
+  models:
+    polo:
+      display_name: "Polo"
+      api_name: "POLO"
+      type: "model"
+      slug: "polo"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711806582/3dvisu-XnwC7-9SZf4-unsplash_xuu0oy.jpg"
+    golf:
+      display_name: "Golf"
+      api_name: "GOLF"
+      type: "model"
+      slug: "golf"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711806580/martin-katler-SuD4h8Gpgok-unsplash_ggebds.jpg"
+    california:
+      display_name: "California"
+      api_name: "T6 CALIFORNIA"
+      type: "model"
+      slug: "california"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711806580/istockphoto-1177455542-612x612_oei4lo.jpg"
+    tcross:
+      display_name: "T-Cross"
+      api_name: "T-CROSS"
+      type: "model"
+      slug: "t-cross"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711806582/yeni-2022-volkswagen-t-cross-turkiye-fiyati-belli-oldu145239_0_jy3zt7.jpg"
+    troc:
+      display_name: "T-Roc"
+      api_name: "T-ROC"
+      type: "model"
+      slug: "t-roc"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711806583/IMG_3927_bxz9ig.jpg"
+    tiguan:
+      display_name: "Tiguan"
+      api_name: "TIGUAN"
+      type: "model"
+      slug: "tiguan"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711806584/unnamed_tihgpj.jpg"
+    touareg:
+      display_name: "Touareg"
+      api_name: "TOUAREG"
+      type: "model"
+      slug: "touareg"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711806582/captivating-ride-with-a-volkswagen-touareg-8dy2ctaugaekcvhd_rse1ni.jpg"
+
+mini:
+  name: "MINI"
+  display_name: "Mini"
+  api_name: "MINI"
+  slug: "mini-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731719/devon-janse-van-rensburg-q039kSjYlD4-unsplash_f5kzny.jpg"
+  models:
+    cooper:
+      display_name: "Cooper"
+      api_name: "COOPER"
+      type: "model"
+      slug: "cooper"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711807975/devon-janse-van-rensburg-i7ipLokGGGo-unsplash_egkonb.jpg"
+    clubman:
+      display_name: "Clubman"
+      api_name: "COOPER_CLUBMAN"
+      type: "model"
+      slug: "clubman"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711807973/2016-model-mini-clubman-cooper-d-13859930.jpg_hfy16n.webp"
+    countryman:
+      display_name: "Countryman"
+      api_name: "COOPER_COUNTRYMAN"
+      type: "model"
+      slug: "countryman"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711807975/burak-sahin-cyLZiU5r4OQ-unsplash_qhhtpg.jpg"
+
+cupra:
+  name: "CUPRA"
+  display_name: "Cupra"
+  api_name: "CUPRA"
+  slug: "cupra-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732019/pierre-saigot-SqPs9Jg-8xk-unsplash_scflhl.jpg"
+  models:
+    ateca:
+      display_name: "Ateca"
+      api_name: "ATECA"
+      type: "model"
+      slug: "ateca"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809221/45427233771_8487063e12_b_mrol0g.jpg"
+    formentor:
+      display_name: "Formentor"
+      api_name: "FORMENTOR"
+      type: "model"
+      slug: "formentor"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809221/marcel-hoberg-PGmkdB6YWbY-unsplash_a3vvyg.jpg"
+    leon:
+      display_name: "León"
+      api_name: "LEON"
+      type: "model"
+      slug: "leon"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809221/nils-arfert-pZ-iur48Z3Y-unsplash_fnjpli.jpg"
+    born:
+      display_name: "Born"
+      api_name: "BORN"
+      type: "model"
+      slug: "born"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809220/swansway-motor-group-eupfOjJDkqQ-unsplash_nlhw7i.jpg"
+
+tesla:
+  name: "TESLA"
+  display_name: "Tesla"
+  api_name: "TESLA"
+  slug: "tesla-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732123/dmitry-novikov-49gi04Retc4-unsplash_tsjq0k.jpg"
+  models:
+    models:
+      display_name: "Model S"
+      api_name: "Model S"
+      type: "model"
+      slug: "model-s"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809972/caras-creative-studio-Wl3tBOG96Jk-unsplash_pecbmh.jpg"
+    model3:
+      display_name: "Model 3"
+      api_name: "Model 3"
+      type: "model"
+      slug: "model-3"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809973/martin-katler-DiJR_M1Mv_A-unsplash_bmutcm.jpg"
+    modely:
+      display_name: "Model Y"
+      api_name: "Model Y"
+      type: "model"
+      slug: "model-y"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809973/craventure-media-f9cTLsjnEi0-unsplash_os1gyh.jpg"
+    modelx:
+      display_name: "Model X"
+      api_name: "Model X"
+      type: "model"
+      slug: "model-x"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711809972/jorgen-hendriksen-dLn6nUY-5zg-unsplash_avsclq.jpg"
+
+lamborghini:
+  name: "LAMBORGHINI"
+  display_name: "Lamborghini"
+  api_name: "LAMBORGHINI"
+  slug: "lamborghini-andorra"
+  logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732521/kyle-bushnell-gELKXGfiSe0-unsplash_kqcfdp.jpg"
+  models:
+    aventador:
+      display_name: "Aventador"
+      api_name: "Aventador"
+      type: "model"
+      slug: "aventador"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812669/kuala-lumpurmalaysia-may-31-2022-600nw-2162381665.jpg_qbbpta.webp"
+    countach:
+      display_name: "Countach"
+      api_name: "Countach"
+      type: "model"
+      slug: "countach"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812668/countach_hp_1_fbn2fb.jpg"
+    huracan:
+      display_name: "Huracán"
+      api_name: "Huracan"
+      type: "model"
+      slug: "huracan"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812669/lam-01-rk0955-01p_z1hwes.jpg"
+    urus:
+      display_name: "Urus"
+      api_name: "Urus"
+      type: "model"
+      slug: "urus"
+      image: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812668/foto-lamborghini-urus-es-lujo-alto-rendimiento-generado-ia_911060-13581.jpg_plrtmu.avif"

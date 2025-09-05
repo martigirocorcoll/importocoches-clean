@@ -1,0 +1,166 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>👥 Panel de Usuarios</h2>
+    <small class="text-muted">
+      Total de usuarios registrados: <%= number_with_delimiter(@total_users) %>
+    </small>
+  </div>
+
+  <!-- View Selector -->
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="btn-group w-100" role="group">
+        <%= link_to "📋 Por Registro", admin_users_path(view: 'registration'), 
+            class: "btn #{'btn-primary' if @view == 'registration'} #{'btn-outline-primary' unless @view == 'registration'}" %>
+        <%= link_to "📊 Actividad API Semanal", admin_users_path(view: 'api_activity'), 
+            class: "btn #{'btn-info' if @view == 'api_activity'} #{'btn-outline-info' unless @view == 'api_activity'}" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <% if @view == 'registration' %>
+        <%= form_with url: admin_users_path, method: :get, local: true, class: "d-flex" do |f| %>
+          <%= f.hidden_field :view, value: @view %>
+          <%= f.text_field :search, value: @search, placeholder: "Buscar por email o ID...", class: "form-control me-2" %>
+          <%= f.submit "🔍 Buscar", class: "btn btn-outline-primary" %>
+        <% end %>
+      <% elsif @view == 'api_activity' %>
+        <%= form_with url: admin_users_path, method: :get, local: true, class: "d-flex align-items-center" do |f| %>
+          <%= f.hidden_field :view, value: @view %>
+          <label class="me-2 text-nowrap">📅 Semana:</label>
+          <%= f.select :week, 
+              options_for_select([
+                ['Esta semana', 0],
+                ['Semana pasada', 1],
+                ['Hace 2 semanas', 2],
+                ['Hace 3 semanas', 3],
+                ['Hace 4 semanas', 4]
+              ], @week_number), 
+              {}, 
+              { class: "form-select me-2", onchange: "this.form.submit();" } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Users Table -->
+  <div class="card">
+    <div class="card-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+          <% if @view == 'registration' %>
+            📋 Usuarios por Registro
+          <% else %>
+            📊 Usuarios con Actividad API
+            <% if @week_start && @week_end %>
+              <small class="text-muted">
+                (<%= @week_start.strftime('%d/%m') %> - <%= @week_end.strftime('%d/%m/%Y') %>)
+              </small>
+            <% end %>
+          <% end %>
+        </h5>
+        <small class="text-muted">
+          Mostrando <%= (@current_page - 1) * @per_page + 1 %>-<%= [@current_page * @per_page, @total_count].min %> 
+          de <%= number_with_delimiter(@total_count) %> usuarios
+        </small>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Fecha Registro</th>
+              <% if @view == 'api_activity' %>
+                <th>Llamadas API (semana)</th>
+              <% end %>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><code>#<%= user.id %></code></td>
+                <td>
+                  <strong><%= user.email %></strong>
+                </td>
+                <td>
+                  <small class="text-muted">
+                    <%= user.created_at.strftime('%d/%m/%Y %H:%M') %>
+                  </small>
+                </td>
+                <% if @view == 'api_activity' %>
+                  <td>
+                    <span class="badge badge-info" style="color: black;">
+                      <%= number_with_delimiter(@api_counts[user.id] || 0) %>
+                    </span>
+                  </td>
+                <% end %>
+                <td>
+                  <%= link_to "👁️ Ver Detalle", admin_user_path(user), class: "btn btn-sm btn-outline-primary" %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-between align-items-center mt-4">
+    <div>
+      <small class="text-muted">
+        Página <%= @current_page %> de <%= @total_pages %>
+      </small>
+    </div>
+    
+    <nav aria-label="Paginación de usuarios">
+      <ul class="pagination mb-0">
+        <!-- Previous Page -->
+        <% if @current_page > 1 %>
+          <li class="page-item">
+            <%= link_to "« Anterior", 
+                admin_users_path(page: @current_page - 1, per_page: @per_page, search: @search, view: @view, week: params[:week]), 
+                class: "page-link" %>
+          </li>
+        <% else %>
+          <li class="page-item disabled">
+            <span class="page-link">« Anterior</span>
+          </li>
+        <% end %>
+        
+        <!-- Current Page -->
+        <li class="page-item active">
+          <span class="page-link"><%= @current_page %></span>
+        </li>
+        
+        <!-- Next Page -->
+        <% if @current_page < @total_pages %>
+          <li class="page-item">
+            <%= link_to "Siguiente »", 
+                admin_users_path(page: @current_page + 1, per_page: @per_page, search: @search, view: @view, week: params[:week]), 
+                class: "page-link" %>
+          </li>
+        <% else %>
+          <li class="page-item disabled">
+            <span class="page-link">Siguiente »</span>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+    
+    <div>
+      <%= form_with url: admin_users_path, method: :get, local: true, class: "d-inline" do |f| %>
+        <%= f.hidden_field :search, value: @search %>
+        <%= f.hidden_field :view, value: @view %>
+        <%= f.hidden_field :week, value: params[:week] %>
+        <%= f.select :per_page, 
+            options_for_select([['25', 25], ['50', 50], ['100', 100]], @per_page), 
+            {}, 
+            { class: "form-select form-select-sm", onchange: "this.form.submit();" } %>
+      <% end %>
+    </div>
+  </div>
+</div>

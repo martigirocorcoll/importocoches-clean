@@ -1,0 +1,9 @@
+<% content_for :for_head do %>
+  <meta name='robots' content='noindex'>
+<% end %>
+<h1>Editing Encargo</h1>
+
+<%= render 'form', encargo: @encargo %>
+
+<%= link_to 'Show', @encargo %> |
+<%= link_to 'Back', encargos_path %>

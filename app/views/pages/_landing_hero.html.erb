@@ -1,0 +1,19 @@
+<div class="hero_img">
+  <h1 id="search"><%= t('pages.home.title') %></h1>
+  <div class = "main-form-home">
+    <div id="home-card-main">
+      <!-- Contact form instead of search -->
+      <div class="landing-contact-form">
+        <h3><%= t('landing.contact_title') %></h3>
+        <div class="native-form-container">
+          <%= render 'shared/unified_contact_form', 
+                     source: 'landing',
+                     form_type: 'hero_lead',
+                     placeholder: 'Cuéntanos qué tipo de coche te interesa...',
+                     submit_text: 'Solicitar Información' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

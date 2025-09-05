@@ -1,0 +1,9 @@
+<div>
+  <h2 id="main-card-title"><%= t('pages.home.cotxebusques') %></h2>
+  
+  <%= render 'shared/unified_contact_form', 
+             source: 'hero',
+             form_type: 'home_search',
+             placeholder: t('indicanoscoche'),
+             submit_text: t('enviar') %>
+</div>

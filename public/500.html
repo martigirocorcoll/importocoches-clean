@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Error del servidor - Importocotxe.ad</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #A12629 0%, #8B1E22 100%);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #A12629, #8B1E22);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.2em;
+      font-weight: 300;
+    }
+    .header p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 1.1em;
+    }
+    .content {
+      padding: 30px;
+    }
+    .message {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .message h2 {
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+    .message p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .highlight {
+      background: #f8f9fa;
+      border-left: 4px solid #A12629;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .action-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #A12629, #8B1E22);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      text-align: center;
+      font-weight: 500;
+      transition: transform 0.2s;
+    }
+    .action-btn:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: white;
+    }
+    .form-container {
+      margin-top: 30px;
+      border-top: 2px solid #f0f0f0;
+      padding-top: 30px;
+    }
+    .form-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 1.3em;
+    }
+    .clientify-form {
+      min-height: 400px;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      color: #666;
+      font-size: 0.9em;
+    }
+    .logo {
+      color: #A12629;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        border-radius: 10px;
+      }
+      .header {
+        padding: 20px;
+      }
+      .header h1 {
+        font-size: 1.8em;
+      }
+      .content {
+        padding: 20px;
+      }
+      .actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚠️ Error del servidor</h1>
+      <p>Error 500 - Algo ha salido mal en nuestro sistema</p>
+    </div>
+    
+    <div class="content">
+      <div class="message">
+        <h2>¡Ups! Tenemos un problema técnico</h2>
+        <p>Nuestro equipo técnico ya ha sido notificado y está trabajando para solucionarlo.</p>
+      </div>
+
+      <div class="highlight">
+        <strong>🔧 Lo que puedes hacer:</strong>
+        <ul style="margin: 10px 0 0 20px; color: #555;">
+          <li>Esperar unos minutos e intentar de nuevo</li>
+          <li>Recargar la página (F5 o Ctrl+R)</li>
+          <li>Limpiar caché y cookies del navegador</li>
+          <li>Contactarnos directamente si persiste</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <a href="javascript:location.reload()" class="action-btn">🔄 Recargar página</a>
+        <a href="/" class="action-btn">🏠 Ir al inicio</a>
+      </div>
+
+      <div class="form-container">
+        <h3 class="form-title">🆘 ¿El problema persiste?</h3>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">
+          Contáctanos y te ayudaremos personalmente
+        </p>
+        <div class="clientify-form">
+          <iframe 
+            src="https://apps.clientify.net/forms/simpleembed/#/forms/embedform/235312/106957" 
+            width="100%" 
+            height="500" 
+            frameborder="0" 
+            scrolling="auto"
+            style="border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        <a href="https://importocotxe.ad" class="logo">Importocotxe.ad</a> 
+        - Tu especialista en importación de coches desde Alemania
+      </p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+#card-images {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 50px 70px;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+@media (min-width: 200px) {
+  .main-img-container {
+      width: 100%;
+      margin: auto;
+    }
+}
+
+
+.main-img-container {
+ width: 85%;
+ margin: auto;
+}
+
+.carousel-img {
+  opacity: 0.6;
+}
+.carousel-img.active {
+  opacity: 1;
+}
+
+.carousel-arrow {
+  background-color: white;
+  border: none;
+  font-size: 25px;
+}
+
+@media (min-width: 200px) {
+  #carousel-arrow {
+  }
+}
+
+@media (min-width: 990px) {
+  #carousel-arrow {
+    padding: 25px;  }
+}
+
+@media (min-width: 200px) {
+  .carrousel-bottom {
+    display: none;
+  }
+}
+
+@media (min-width: 990px) {
+  .carrousel-bottom {
+    overflow-x: auto;
+    display: flex;
+    // justify-content: center;
+  }
+}
+
+@media (min-width: 200px) {
+  .pre-carrousel-bottom {
+    display: none;
+  }
+}
+
+@media (min-width: 990px) {
+  .pre-carrousel-bottom {
+    display: block;
+    // justify-content: center;
+  }
+}

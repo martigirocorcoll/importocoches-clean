@@ -1,0 +1,20 @@
+<% content_for :for_head do %>
+  <title> <%= @article.titulo %> </title>
+<% end %>
+
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+  <%= link_to "> Blog", articles_path, style:"text-decoration: none;" %>
+  > <%= @article.titulo %>
+</div>
+<p id="notice"><%= notice %></p>
+<div class = "blog-container">
+  <%= @article.content.to_plain_text.html_safe %>
+  <br>
+  <%= render 'shared/unified_contact_form', 
+      source: 'blog', 
+      form_type: 'blog_inquiry',
+      placeholder: t('indicanoscoche'),
+      submit_text: t('enviar') %>
+
+</div>

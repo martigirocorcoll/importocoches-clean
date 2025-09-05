@@ -1,0 +1,42 @@
+<% content_for :for_head do %>
+  <title> <%= t('head.importacio') %> Porsche Carrera <%= t('head.importocotxe') %></title>
+  <meta name='description' content="Encuentra los mejores precios en la importación de coches Porsche carrera a Andorra con Importocotxe. ¡Contáctanos hoy mismo!)">
+<% end %>
+
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+  <%= link_to t('bread.mmarca'), marca_path, style:"text-decoration: none;" %>
+  <%= link_to "> Porsche", marca_porsche_andorra_path, style:"text-decoration: none;" %>
+  > Carrera
+</div>
+<div class="container">
+      <h1 style = "text-align:center; color:black;"> <%= t('model.concreto', marca: @marca, model: @model) %><h1>
+      <h5 style = "text-align:center; color:gray; margin-bottom: 30px;"><%= t('h5totinclos') %> </h5>
+  <div class="flex">
+    <%= render "pages/bmw/contactmodal" %>
+    <%= render "shared/filters_sidebar" %>
+    <div class="ads">
+      <hr>
+      <div class="listing-top">
+      </div>
+      <%= render 'pages/bmw/listingmodel' %>
+    </div>
+  </div>
+  <div>
+    <h2><%= t('porsche_carrera_911.title') %></h2>
+    <p><%= t('porsche_carrera_911.description') %></p>
+
+    <% t('porsche_carrera_911.sections').each do |section| %>
+      <h3><%= section[:heading] %></h3>
+      <p><%= section[:content] %></p>
+    <% end %>
+    <br>
+    <p><%= t('porsche_carrera_911.conclusion') %></p>
+
+    <ul>
+      <% t('porsche_carrera_911.faqs').each do |faq| %>
+        <li><%= faq[:question] %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

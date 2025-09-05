@@ -1,0 +1,31 @@
+<div class="p-3">
+  <h2 class="main-card-title">Autorització de transport</h2>
+  <br>
+  <div style= "home-card-main">
+    <%= simple_form_for :filters, url: "/autoritzacio.pdf", method: "GET" do |f| %>
+
+            <h3>Dades del xófer:</h3>
+            <div class= "d d-flex">
+              <%= f.input :nom_conductor %>
+              <%= f.input :id_conductor %>
+            </div>
+            <div class= "d d-flex">
+              <%= f.input :placa_camio %>
+              <%= f.input :dades_contacte, placeholder: "transportes-alfaro@hotmail.com " %>
+            </div>
+            <h3>Dades del cotxe:</h3>
+            <div class= "d d-flex">
+              <%= f.input :marca_model %>
+              <%= f.input :bastidor %>
+            </div>
+            <h3>Dades del concessionari:</h3>
+            <div class= "d d-flex">
+            <%= f.input :direccio_recollida %>
+            <%= f.input :contacte_recollida %>
+            </div>
+            <%= f.submit "Fer autorització", class: "btn btn-secondary btn-lg" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

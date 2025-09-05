@@ -1,0 +1,27 @@
+<%= simple_form_for :filters, url: "#{I18n.locale}/cars", html: { data: {controller:"filters" }, id: "buscar-cotxe-main" }, method: "GET" do |f| %>
+  <h2 id="main-card-title"><%= t('pages.home.encuentra') %></h2>
+  <%= f.input :make, label: t('pages.home.marca'), collection: @makes, input_html: { data: { action:"change->filters#model" } } , prompt:"--Seleccione una marca--", disabled: "", required: true %>
+  <%= f.input :model, as: :select, label: t('pages.home.modelo') , input_html: { id:"models_dropdown", data: { model: @models }}, required: false%>
+  <div id= "home-card">
+    <div id="column-left">
+      <%= f.input :mileage_max, label: t('pages.home.km'), collection:[["5.000","5000"], ["10.000","10000"], ["20.000","20000"], ["30.000","30000"], ["40.000","40000"], ["50.000","50000"], ["60.000","60000"], ["70.000","70000"], ["80.000","80000"], ["90.000","90000"], ["100.000","100000"], ["125.000","125000"], ["150.000","150000"], ["200.000","200000"]], required: false%>
+      <%= f.input :first_registration_date, label: t('pages.home.primeramat'), collection:["2019", "2020", "2021", "2022", "2023", "2024"], required: false %>
+      <%= f.input :potencia, label: t('pages.home.potencia'), collection: [["90cv","66"],["120cv","88"],["150cv","110"],["200cv","147"],["300cv","220"],["400cv","294"],["550cv","404"]], required: false %>
+      <%= f.input :fuel, label: t('pages.home.fuel'), collection: @fuel_list, required: false %>
+      <%= f.input :fourwheeldrive, as: :boolean, required: false, label: "4x4", class: "form-check form-switch" %>
+      <%= f.invisible_captcha :subtitle %>
+    </div>
+    <div id="column">
+      <%= f.input :price_max, label: t('pages.home.precio'), as: :numeric, required: false %>
+      <%= f.input :transmision, label: t('pages.home.transmision'), collection: [["Manual","MANUAL_GEAR"],["Automático","SEMIAUTOMATIC_GEAR&gearbox=AUTOMATIC_GEAR"]], required: false %>
+      <%= f.input :model_description, label: t('pages.home.descripcion'), required: false, as: :text %>
+
+    </div>
+  </div>
+      <% if session[:api_counter]<5 || user_signed_in? %>
+        <%= f.submit t('pages.home.mostrar'), class: "home-button busca-cotxe-inicial", id: "btn_dis", disabled: true %>
+        <%# <%= f.submit t('pages.home.mostrar'), class: "home-button" %>
+      <% else %>
+        <%= link_to "<button class='home-button'>#{t('pages.home.login')}</button>".html_safe, new_user_registration_path %>
+      <% end %>
+<% end %>

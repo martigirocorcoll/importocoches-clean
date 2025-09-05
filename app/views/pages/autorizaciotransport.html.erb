@@ -1,0 +1,25 @@
+  <table style="width:100%">
+    <tr>
+      <td>
+        <%= image_tag image_url("logo.png") %>
+      </td>
+      <td>
+      </td>
+    </tr>
+  </table>
+<h1 style="text-align: center;">Pick-up authority</h1>
+<p>I, Martí Giró Corcoll as a manager of Brava A&M Solutions SL, authorize the following company to collect my car with its papers (whatever it has); Letter, invoice, COC, checkbook and 2/3 keys...<p>
+<br>
+<h2>The driver:</h2>
+<p> <b> Driver:</b> <%= @nom_conductor %></p>
+<p><b>ID number:</b> <%= @id_conductor %></p>
+<p><b>Truck plate number:</b> <%= @placa_camio %></p>
+<p><b>Contact:</b> <%= @dades_contacte %></p>
+<h2>The car to pick up:</h2>
+<p><b>Make/Type:</b> <%= @marca_model %></p>
+<p><b>Chassis number:</b> <%= @bastidor %></p>
+<h2>Pick up point:</h2>
+<p><b>Adress:</b> <%= @direccio_recollida %></p>
+<p><b>Telefon:</b> <%= @contacte_recollida %></p>
+<br>
+<p style="text-align: center;"><%= image_tag image_url("sello_firma.png") %></p>

@@ -1,0 +1,122 @@
+<% require 'base64' %>
+<% require 'open-uri' %>
+
+<!-- Page Header -->
+<div style="padding-bottom: 30px; margin-bottom: 30px;">
+  <table style="width:100%">
+    <tr>
+      <td>
+        <%= wicked_pdf_image_tag "logo.png", alt: "Importo Cotxe logo" %>
+      </td>
+      <td>
+        <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">+376 666 488</p>
+        <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">info@importocotxe.ad</p>
+        <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">https://www.importocotxe.ad</p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- Title -->
+<div>
+  <h1 style="text-align:center; font-family: Arial, Helvetica, sans-serif;">
+    <%= @car.make %> <%= @car.model_description %>
+  </h1>
+</div>
+<br><br>
+
+<!-- Primary Car Image (Base64 Embedded) -->
+<div style="text-align:center;">
+  <% if @car.images.first.present? %>
+    <% blob = @car.images.first.is_a?(String) ? URI.open(@car.images.first).read : @car.images.first.blob.download %>
+    <% data = Base64.strict_encode64(blob) %>
+    <% mime = @car.images.first.is_a?(String) ? MIME::Types.type_for(@car.images.first).first.content_type : @car.images.first.blob.content_type %>
+    <%= image_tag "data:#{mime};base64,#{data}", style: "max-width:100%; height:auto;", alt: "#{@car.make} #{@car.model_description}" %>
+  <% end %>
+</div>
+
+<div style="display: block; clear: both; page-break-after: always;"></div>
+
+<!-- Vehicle Details & Equipment (Smaller Text) -->
+<div style="font-size:12px;">
+  <div style="padding-bottom: 15px; margin-bottom: 20px;">
+    <table style="width:100%">
+      <tr>
+        <td>
+          <%= wicked_pdf_image_tag "logo.png", alt: "Importo Cotxe logo" %>
+        </td>
+        <td>
+          <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">+376 666 488</p>
+          <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">info@importocotxe.ad</p>
+          <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">https://www.importocotxe.ad</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <table style="width:100%; border-collapse: collapse; margin:auto;">
+      <tr>
+        <td style="width: 230px; border: 1px solid #BFBFBF;"><h4 style="text-align:center; padding: 10px 0; font-family: Arial, Helvetica, sans-serif;">Kilometraje</h4></td>
+        <td style="width: 230px; border: 1px solid #BFBFBF;"><h4 style="text-align:center; padding: 10px 0; font-family: Arial, Helvetica, sans-serif;">1ª Matriculación</h4></td>
+        <td style="width: 230px; border: 1px solid #BFBFBF;"><h4 style="text-align:center; padding: 10px 0; font-family: Arial, Helvetica, sans-serif;">Potencia</h4></td>
+        <td style="width: 230px; border: 1px solid #BFBFBF;"><h4 style="text-align:center; padding: 10px 0; font-family: Arial, Helvetica, sans-serif;">Combustible</h4></td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #BFBFBF; background-color: #FAECF0"><h5 style="text-align:center; padding: 15px 0; font-family: Arial, Helvetica, sans-serif;"><%= "#{number_with_precision(@car.mileage, precision: 0, delimiter: '.')} km" %></h5></td>
+        <td style="border: 1px solid #BFBFBF; background-color: #FAECF0"><h5 style="text-align:center; padding: 15px 0; font-family: Arial, Helvetica, sans-serif;"><%= DateTime.parse("#{@car.first_registration_date}-01").strftime("%m-%Y") %></h5></td>
+        <td style="border: 1px solid #BFBFBF; background-color: #FAECF0"><h5 style="text-align:center; padding: 15px 0; font-family: Arial, Helvetica, sans-serif;"><%= "#{(@car.power.to_i * 1.3595).round} cv" %></h5></td>
+        <td style="border: 1px solid #BFBFBF; background-color: #FAECF0"><h5 style="text-align:center; padding: 15px 0; font-family: Arial, Helvetica, sans-serif;"><%= @car.fuel %></h5></td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <h2 style="text-align:left; font-family: Arial, Helvetica, sans-serif; padding-top: 35px;">Equipamiento:</h2>
+    <h3 style="text-align:left; font-family: Arial, Helvetica, sans-serif; padding-top: 15px;">
+      <%= sanitize(@description) %>
+    </h3>
+    <h2 style="text-align:left; font-family: Arial, Helvetica, sans-serif; padding-top: 45px;">Precio final ................................................................ <%= @final_price %> €</h2>
+  </div>
+</div>
+
+<div style="display: block; clear: both; page-break-after: always;"></div>
+
+<!-- Image Gallery: 2 Columns x 3 Rows per Page -->
+<% @car.images.each_slice(6).with_index do |page_images, page_index| %>
+  <div style="page-break-after: <%= 'always' if page_index < (@car.images.size/6.0).ceil - 1 %>; margin-bottom: 20px;">
+    <table style="width:100%; border-collapse: collapse;">
+      <% page_images.each_slice(2) do |row_images| %>
+        <tr>
+          <% row_images.each do |img| %>
+            <% raw_data = img.is_a?(String) ? URI.open(img).read : img.blob.download %>
+            <% encoded  = Base64.strict_encode64(raw_data) %>
+            <% mime     = img.is_a?(String) ? MIME::Types.type_for(img).first.content_type : img.blob.content_type %>
+            <td style="width:50%; padding: 5px;">
+              <%= image_tag "data:#{mime};base64,#{encoded}", style: "width:100%; height:auto;" %>
+            </td>
+          <% end %>
+          <% if row_images.size < 2 %>
+            <td style="width:50%; padding: 5px;"></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+<!-- Final Footer -->
+<div style="padding-bottom: 15px;">
+  <table style="width:100%">
+    <tr>
+      <td>
+        <%= wicked_pdf_image_tag "logo.png", alt: "Importo Cotxe logo" %>
+      </td>
+      <td>
+        <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">+376 666 488</p>
+        <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">info@importocotxe.ad</p>
+        <p style="text-align:right; font-family: Arial, Helvetica, sans-serif;">https://www.importocotxe.ad</p>
+      </td>
+    </tr>
+  </table>
+</div>

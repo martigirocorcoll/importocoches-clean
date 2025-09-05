@@ -1,0 +1,86 @@
+
+<% if @ads && @ads.any? %>
+  <% @ads.each do |ad| %>
+    <% @car = Car.new(ad) %>
+    <% next if @car.photo.nil? %>
+    <% price = PriceCalculation.new(first_registration: @car.first_registration, price_bruto: @car.price_bruto, vat: @car.vat)%>
+    <% 
+      # Generate WhatsApp message with car details and page identifier
+      car_details = "#{@car.make} #{@car.description}"
+      car_year = DateTime.parse("#{@car.first_registration}-01").strftime("%m-%Y")
+      car_km = number_with_precision(@car.mileage, :precision => 0, :delimiter => '.')
+      final_price = number_to_currency(price.finalprice.round, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0)
+      page_identifier = "#{@brand_config[:display_name]} #{@model_config[:display_name]}"
+      
+      # WhatsApp URL now handled by controller with attribution tracking
+      whatsapp_url = whatsapp_redirect_path(source: 'audi', page_url: request.original_url)
+    %>
+    
+    <div class="card-product" style="position: relative;">
+      <img src=<%=@car.photo.attr('url')%> alt="ad photo">
+      <div class="card-product-infos">
+        <div class = "listing-card-title">
+          <%= @car.make %> <%= @car.description %>
+        </div>
+        <div class="font-card-listing">
+          <div class = "d-flex justify-content-around">
+            <div>
+              <div>
+                <i class="fa-regular fa-calendar-days mb-2"></i> <%= car_year %>
+              </div>
+              <div>
+                <i class="fa-solid fa-gauge mb-2"></i> <%= car_km %> km
+              </div>
+              <div>
+                <i class="fa-solid fa-bolt-lightning mb-2"></i> <%= "#{@car.power} kW - #{(@car.power.to_i * 1.3595).round} cv" %>
+              </div>
+            </div>
+            <div>
+              <div>
+                <i class="fa-solid fa-gears mb-2"></i> <%= @car.gearbox %>
+              </div>
+              <div>
+                <i class="fa-solid fa-gas-pump mb-2"></i> <%= @car.fuel %>
+              </div>
+              <div>
+                <i class="fa-solid fa-eye-dropper mb-2"></i> <%= @car.color %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listing-card-price">
+            <strong> <%= final_price %> € </strong> - <%= t('nextoprice') %>
+            <div class = "text-mini-listing"><%= t('todoincluido_html') %><i class="fa-solid fa-check tick"></i><%= t('vehiculo') %> <i class="fa-solid fa-check tick"></i><%= t('transport') %> <i class="fa-solid fa-check tick"></i><%= t('importacion') %> <i class="fa-solid fa-check tick"></i><%= t('matriculacion') %></i></div>
+        </div>
+        
+        <!-- WhatsApp inquiry button -->
+        <div style="margin-top: 15px; text-align: center;">
+          <%= link_to whatsapp_url, target: "_blank", class: "btn", style: "background-color: #25D366; color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3); transition: all 0.3s ease;" do %>
+            <i class="fab fa-whatsapp" style="font-size: 18px;"></i>
+            Solicitar Información
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div style="text-align: center; padding: 40px; color: #6c757d;">
+    <h3>Sin resultados disponibles</h3>
+    <p>Los datos están siendo actualizados. Inténtalo de nuevo en unos minutos.</p>
+  </div>
+<% end %>
+      <div class="card-product" style="background-color: #A2262B !important">
+        <div class="card-product-infos">
+          <div class = "listing-card-title" style="color: white !important;">
+          <strong><%= t('noencuentras') %></strong>
+          <p><%= t('indicanos') %></p>
+          </div>
+          <div class="font-card-listing" style= "text-align:center;">
+            <%= render 'shared/unified_contact_form', 
+                       source: 'audi',
+                       form_type: 'model_inquiry',
+                       placeholder: 'Indícanos qué Audi estás buscando...',
+                       submit_text: 'Buscar Audi' %>
+          </div>
+        </div>
+      </div>

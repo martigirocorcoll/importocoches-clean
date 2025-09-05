@@ -1,0 +1,24 @@
+NUEVO CONTACTO - IMPORTOCOTXE.AD
+
+NOMBRE: <%= @contact.name %>
+TELÉFONO: <%= @contact.phone %>
+EMAIL: <%= @contact.email %>
+
+<% if @contact.mobile_link.present? && @contact.price.present? %>
+ANUNCIO: <%= @contact.mobile_link %>
+PRECIO: <%= @contact.price %> EUR
+<% end %>
+
+ORIGEN DEL CONTACTO: <%= @contact.source&.humanize || "No especificado" %>
+
+<% if @contact.user.present? %>
+USUARIO REGISTRADO:
+👤 <%= @contact.user.email %> (ID: <%= @contact.user.id %>)
+Ver actividad completa: <%= Rails.application.routes.url_helpers.admin_user_url(@contact.user, host: 'importocotxe.ad') %>
+
+<% end %>
+INFORMACIÓN DE CAMPAÑA:
+<%= @attribution_info %>
+
+COMENTARIOS: 
+<%= @contact.comment %>

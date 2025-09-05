@@ -1,0 +1,9 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Filtros
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <%= link_to "Más barato primero", cars_path(request.params.merge(order:'&sort.field=price&sort.order=ASCENDING')) %>
+    <%= link_to "Más caro primero", cars_path(request.params.merge(order:'&sort.field=price&sort.order=DESCENDING')) %>
+  </div>
+</div>

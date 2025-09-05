@@ -1,0 +1,21 @@
+<div>
+  <br>
+  <h2 id="main-card-title" style="text-align: center;"><%= t('pages.home.cotxebusques') %></h2>
+  <%= simple_form_for @contact do |f| %>
+    <%= f.input :name, label: t('nombre') %>
+    <%= f.input :phone, label: t('telefono') %>
+    <%= f.input :email %>
+    <%= f.invisible_captcha :subtitle %>
+    <%= f.input :comment, label: t('comentarios'), placeholder: t('indicanoscoche') %>
+    <%= f.input :source, as: :hidden, input_html: { value: "blog" } %>
+    <%= f.submit t('enviar'), class: "home-button"  %>
+  <% end %>
+  <br>
+  <h2 id="main-card-title" style="text-align: center;"><%= t('pages.home.cotxebusques2') %></h2>
+  <%= link_to root_path do %>
+    <button class="home-button" style="background-color: gray !important;">
+      <%= t('pages.home.encuentra') %>
+    </button>
+  <% end %>
+
+</div>

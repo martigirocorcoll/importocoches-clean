@@ -1,0 +1,919 @@
+<%# <% content_for :for_head do %>
+  <%# <meta name='robots' content='noindex'> %>
+  <%# <meta property="og:title" content="<%= @car.model_description %>
+  <%# <meta property="og:type" content="website"> %>
+  <%# <meta property="og:image" content="<%= @car.images.first %>
+  <%# <meta property="og:url" content="<%= request.original_url %>
+
+<%# <% end %>
+
+<div id="show" style="overflow: hidden">
+  <div class="hero-mobile">
+    <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <% if @car.images.first.nil? %>
+            <img class="d-block w-100" alt="First slide" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1685013144/placeholder-image-1_lihcz8.jpg">
+          <% else %>
+            <img class="d-block w-100" src="<%= @car.images.first %>" alt="First slide">
+          <% end %>
+        </div>
+        <div>
+          <% unless @car.images[1...].nil? %>
+            <% @car.images[1...].each do |image| %>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="<%= image %>" alt="Next slide">
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="car-titles-mobile">
+    <h1 style="color: black !important;"><%= @car.make %> <%= @car.model %></h1>
+    <h2><%= CGI.unescapeHTML(@car.model_description).html_safe %></h2>
+  </div>
+  <div class="container-fluid px-4">
+    <div class="row show-content-modern">
+      <div class="col-lg-8 col-md-7 gallery-section">
+        <div class="gallery-card">
+          <div class="hero-desktop" data-controller="carousel">
+            <div class="gallery-container">
+              <div class="main-image-controls">
+                <button class="carousel-arrow-modern carousel-prev" data-action="click->carousel#previous">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="main-image-wrapper">
+                  <img src="<%= @car.images&.first || 'https://res.cloudinary.com/dd7x7bqya/image/upload/v1685013144/placeholder-image-1_lihcz8.jpg' %>" 
+                       class="main-car-image" 
+                       data-carousel-target="image"
+                       alt="<%= @car.make %> <%= @car.model %>">
+                </div>
+                <button class="carousel-arrow-modern carousel-next" data-action="click->carousel#next">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              
+              <% unless @car.images.nil? || @car.images.empty? %>
+                <div class="thumbnails-section">
+                  <div class="thumbnails-scroll">
+                    <% @car.images.each_with_index do |image, index| %>
+                      <img src="<%= image %>"
+                           class="thumbnail-modern <%= 'active' if index == 0 %>"
+                           data-carousel-target="images"
+                           data-action="click->carousel#select"
+                           alt="Imagen <%= index + 1 %>">
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-5 contact-section">
+        <div class="contact-card-modern">
+          <div class="car-info-header">
+            <h3 class="car-title-modern">
+              <%= link_to "#{@car.make} #{@car.model}", @car.mobile_link, target: :blank, class: "car-link-modern" %>
+            </h3>
+            <div class="price-info-display">
+              <div class="price-amount-large">
+                <%= number_to_currency(@final_price, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %> €
+              </div>
+            </div>
+          </div>
+
+          <div class="services-included">
+            <div class="price-with-services">
+              <span class="price-label"><%= t('cars.show.preciocontodo') %></span>
+              <div class="services-list">
+                <div class="service-item-modern">
+                  <i class="fa-solid fa-car service-icon"></i>
+                  <span><%= t('vehiculo') %></span>
+                </div>
+                <div class="service-item-modern">
+                  <i class="fa-solid fa-truck service-icon"></i>
+                  <span><%= t('transport') %></span>
+                </div>
+                <div class="service-item-modern">
+                  <i class="fa-solid fa-file-import service-icon"></i>
+                  <span><%= t('importacion') %></span>
+                </div>
+                <div class="service-item-modern">
+                  <i class="fa-solid fa-id-card service-icon"></i>
+                  <span><%= t('matriculacion') %></span>
+                </div>
+                <div class="service-item-modern">
+                  <i class="fa-solid fa-shield-halved service-icon"></i>
+                  <span><%= t('garantia') %></span>
+                </div>
+                <div class="service-item-modern">
+                  <i class="fa-solid fa-clipboard-check service-icon"></i>
+                  <span>ITV</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-actions-modern">
+            <%= link_to whatsapp_redirect_path(source: 'car_detail', page_url: request.original_url), 
+                        target: "_blank", 
+                        class: "whatsapp-btn-enhanced" do %>
+              <i class="fa-brands fa-whatsapp"></i>
+              <span><%= t('cars.show.cta') %></span>
+            <% end %>
+            
+            <div class="phone-contact-modern">
+              <span class="phone-label"><%= t('cars.show.llamaya') %></span>
+              <a href="tel:+376666488" class="phone-btn-modern">
+                <i class="fa-solid fa-phone"></i>
+                +376 666 488
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Car Details Modern Sections -->
+<div class="car-details-modern">
+  <div class="container">
+    
+    <!-- Technical Data Section -->
+    <div class="detail-section-modern">
+      <div class="section-header-modern">
+        <div class="section-icon-wrapper">
+          <i class="fa-solid fa-cog"></i>
+        </div>
+        <h2 class="section-title-modern"><%= t('cars.show.datostecnicos') %></h2>
+      </div>
+      <div class="section-content-modern">
+        <%= render 'datos_tecnicos', car: @car %>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="detail-section-modern">
+      <div class="section-header-modern">
+        <div class="section-icon-wrapper">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h2 class="section-title-modern"><%= t('cars.show.funciones') %></h2>
+      </div>
+      <div class="section-content-modern">
+        <div class="features-modern-grid">
+          <% @car.features.each do |feature| %>
+            <div class="feature-item-modern">
+              <div class="feature-check-wrapper">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="feature-text"><%= feature.content %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- How Importocotxe Works Section -->
+    <div class="detail-section-modern importocotxe-section">
+      <div class="section-header-modern">
+        <div class="section-icon-wrapper">
+          <i class="fa-solid fa-info-circle"></i>
+        </div>
+        <h2 class="section-title-modern"><%= t('cars.show.descripcionoriginaltext') %></h2>
+      </div>
+      <div class="section-content-modern">
+        <div class="importocotxe-explanation">
+          <%= t('pages.home.descripcioshow_html') %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Original Description & CTA -->
+    <div class="detail-section-modern">
+      <div class="section-header-modern">
+        <div class="section-icon-wrapper">
+          <i class="fa-solid fa-file-text"></i>
+        </div>
+        <h2 class="section-title-modern"><%= t('cars.show.descripcionoriginal') %></h2>
+      </div>
+      <div class="section-content-modern">
+        <div class="final-cta-section">
+          <%= link_to whatsapp_redirect_path(source: 'car_detail', page_url: request.original_url), 
+                      target: "_blank", 
+                      class: "whatsapp-cta-final" do %>
+            <i class="fa-brands fa-whatsapp"></i>
+            <span><%= t('cars.show.cta') %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Section -->
+    <% if user_signed_in? && current_user.email == "marti@gmail.com" %>
+      <div class="admin-section-modern">
+        <!-- Contract Generation Button -->
+        <div style="margin-bottom: 20px; text-align: center;">
+          <%= link_to new_contract_path(
+                car_id: @id,
+                marca_model: "#{@car.make} #{@car.model}",
+                km: @car.mileage,
+                primera_matriculacion: @car.first_registration_date,
+                venta_total: @final_price
+              ), 
+              class: "btn btn-primary", 
+              style: "background-color: #27ae60; border-color: #27ae60; padding: 10px 30px; font-size: 16px;" do %>
+            <i class="fa-solid fa-file-contract"></i> Generar Contrato de Reserva
+          <% end %>
+        </div>
+        
+        <%= render "ficha_form" %>
+      </div>
+    <% end %>
+    
+  </div>
+</div>
+
+<!-- Floating WhatsApp Button for Mobile -->
+<div class="floating-whatsapp-mobile" id="floatingWhatsApp">
+  <%= link_to whatsapp_redirect_path(source: 'car_detail', page_url: request.original_url), 
+              target: "_blank", 
+              class: "floating-whatsapp-btn" do %>
+    <i class="fa-brands fa-whatsapp"></i>
+    <span><%= t('cars.show.cta') %></span>
+  <% end %>
+</div>
+
+<%# <%= render "show_modal" %>
+<%# <%= render "show_modal_img1" %>
+
+<style>
+/* Modern Layout Improvements */
+.show-content-modern {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-section {
+  padding-right: 1.5rem;
+}
+
+.contact-section {
+  padding-left: 1.5rem;
+}
+
+/* Gallery Card */
+.gallery-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 991px) {
+  .gallery-section {
+    display: none;
+  }
+  
+  .contact-section {
+    padding-left: 0;
+  }
+  
+  .show-content-modern .col-lg-4,
+  .show-content-modern .col-md-5 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.gallery-container {
+  width: 100%;
+}
+
+.main-image-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.main-image-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.main-car-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow-modern {
+  background: #A2262B;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow-modern:hover {
+  background: #8B1F24;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnails */
+.thumbnails-section {
+  margin-top: 1rem;
+}
+
+.thumbnails-scroll {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #A2262B #f1f1f1;
+}
+
+.thumbnails-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.thumbnails-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.thumbnails-scroll::-webkit-scrollbar-thumb {
+  background: #A2262B;
+  border-radius: 3px;
+}
+
+.thumbnail-modern {
+  width: 90px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+
+.thumbnail-modern:hover,
+.thumbnail-modern.active {
+  opacity: 1;
+  border-color: #A2262B;
+  transform: scale(1.05);
+}
+
+/* Contact Card Modern */
+.contact-card-modern {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.car-info-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.car-title-modern {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #6b7280;
+}
+
+.car-link-modern {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.car-link-modern:hover {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.price-info-display {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.price-amount-large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #A2262B;
+  letter-spacing: -1px;
+  margin-bottom: 0.75rem;
+}
+
+/* Services Section */
+.services-included {
+  margin-bottom: 2rem;
+}
+
+.price-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.service-item-modern {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 3px solid #A2262B;
+  transition: all 0.2s ease;
+}
+
+.service-item-modern:hover {
+  background: #f1f5f9;
+  transform: translateX(2px);
+}
+
+.service-icon {
+  color: #A2262B;
+  font-size: 1rem;
+}
+
+.service-item-modern span {
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+/* Contact Actions */
+.contact-actions-modern {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+
+.whatsapp-btn-enhanced {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-btn-enhanced:hover {
+  background: #1DA851;
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 15px -3px rgba(37, 211, 102, 0.3);
+}
+
+.phone-contact-modern {
+  text-align: center;
+}
+
+.phone-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.phone-btn-modern {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #A2262B;
+  text-decoration: none;
+  border: 2px solid #A2262B;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.phone-btn-modern:hover {
+  background: #A2262B;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(162, 38, 43, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .contact-section {
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .contact-card-modern {
+    position: static;
+  }
+}
+
+/* Mobile Titles Spacing */
+.car-titles-mobile {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .services-list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .price-amount-large {
+    font-size: 2rem;
+  }
+  
+  .main-image-controls {
+    gap: 0.5rem;
+  }
+  
+  .carousel-arrow-modern {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .car-titles-mobile {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .show-content-modern {
+    margin: 1rem 0;
+  }
+  
+  .gallery-card,
+  .contact-card-modern {
+    padding: 1rem;
+  }
+  
+  .main-car-image {
+    max-height: 280px;
+  }
+}
+
+/* Modern Details Sections */
+.car-details-modern {
+  background: #f8fafc;
+  padding: 2rem 0;
+}
+
+.detail-section-modern {
+  background: white;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.section-header-modern {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.section-icon-wrapper {
+  background: #A2262B;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(162, 38, 43, 0.2);
+}
+
+.section-title-modern {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+.section-content-modern {
+  padding: 2.5rem;
+}
+
+/* Features Modern Grid */
+.features-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.feature-item-modern {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #A2262B;
+  transition: all 0.2s ease;
+}
+
+.feature-item-modern:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-check-wrapper {
+  background: #10b981;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Importocotxe Section */
+.importocotxe-section {
+  background: linear-gradient(135deg, #fef7ff 0%, #f3e8ff 100%);
+  border: 2px solid #e879f9;
+}
+
+.importocotxe-section .section-header-modern {
+  background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+}
+
+.importocotxe-section .section-icon-wrapper {
+  background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+}
+
+.importocotxe-explanation {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #a855f7;
+}
+
+/* Final CTA Section */
+.final-cta-section {
+  text-align: center;
+  padding: 1rem;
+}
+
+.whatsapp-cta-final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-cta-final:hover {
+  background: #1DA851;
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 15px -3px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-cta-final i {
+  font-size: 1.25rem;
+}
+
+/* Admin Section */
+.admin-section-modern {
+  background: #fffbeb;
+  border: 2px solid #fed7aa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Floating WhatsApp Button for Mobile */
+.floating-whatsapp-mobile {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.floating-whatsapp-mobile.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floating-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.floating-whatsapp-btn:hover {
+  background: #1DA851;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
+}
+
+.floating-whatsapp-btn i {
+  font-size: 1.25rem;
+}
+
+/* Show floating button only on mobile */
+@media (max-width: 991px) {
+  .floating-whatsapp-mobile {
+    display: block;
+  }
+}
+
+/* Mobile Responsive for Details */
+@media (max-width: 768px) {
+  .car-details-modern {
+    padding: 2rem 0;
+  }
+  
+  .section-header-modern {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .section-title-modern {
+    font-size: 1.5rem;
+  }
+  
+  .section-content-modern {
+    padding: 1.5rem;
+  }
+  
+  .features-modern-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .importocotxe-explanation {
+    padding: 1.5rem;
+  }
+  
+  .final-cta-section {
+    padding: 1rem;
+  }
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const floatingBtn = document.getElementById('floatingWhatsApp')
+  const originalBtn = document.querySelector('.whatsapp-btn-enhanced')
+  const fixedWhatsappBtn = document.querySelector('.whats-app')
+  
+  if (!floatingBtn || !originalBtn) return
+  
+  function isMobile() {
+    return window.innerWidth <= 991
+  }
+  
+  function toggleFloatingButton() {
+    const originalBtnRect = originalBtn.getBoundingClientRect()
+    const isOriginalVisible = originalBtnRect.top >= 0 && originalBtnRect.bottom <= window.innerHeight
+    const mobile = isMobile()
+    
+    if (isOriginalVisible) {
+      floatingBtn.classList.remove('show')
+      // Only hide/show fixed button on mobile
+      if (fixedWhatsappBtn && mobile) {
+        fixedWhatsappBtn.style.display = 'block'
+      }
+    } else {
+      floatingBtn.classList.add('show')
+      // Only hide/show fixed button on mobile
+      if (fixedWhatsappBtn && mobile) {
+        fixedWhatsappBtn.style.display = 'none'
+      }
+    }
+    
+    // Ensure fixed button is always visible on desktop
+    if (fixedWhatsappBtn && !mobile) {
+      fixedWhatsappBtn.style.display = 'block'
+    }
+  }
+  
+  // Check on scroll
+  window.addEventListener('scroll', toggleFloatingButton)
+  
+  // Check on resize
+  window.addEventListener('resize', toggleFloatingButton)
+  
+  // Initial check
+  toggleFloatingButton()
+})
+</script>

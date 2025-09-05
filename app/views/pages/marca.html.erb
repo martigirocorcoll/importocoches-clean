@@ -1,0 +1,258 @@
+<% content_for :for_head do %>
+  <title> 🚗 <%= t('head.marca') %></title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Marcas de coches importados",
+    "description": "Descubre todas las marcas de coches que importamos desde Alemania a Andorra.",
+    "url": "https://www.importocotxe.ad/marca",
+    "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1668073646/Captura_de_pantalla_2022-11-10_a_las_10.46.10-removebg-preview_ry5s3a.png",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Marcas",
+          "item": "https://www.importocotxe.ad/marca"
+        }
+      ]
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Brand",
+            "name": "BMW",
+            "url": "https://www.importocotxe.ad/marca/bmw-andorra/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Brand",
+            "name": "Mercedes",
+            "url": "https://www.importocotxe.ad/es/marca/mercedes-andorra"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Brand",
+            "name": "Porsche",
+            "url": "https://www.importocotxe.ad/es/marca/porsche-andorra"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Brand",
+            "name": "Audi",
+            "url": "https://www.importocotxe.ad/es/marca/audi-andorra"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Brand",
+            "name": "Volkswagen",
+            "url": "https://www.importocotxe.ad/es/marca/volkswagen-andorra"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Brand",
+            "name": "Mini",
+            "url": "https://www.importocotxe.ad/es/marca/mini-andorra"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Brand",
+            "name": "Cupra",
+            "url": "https://www.importocotxe.ad/es/marca/cupra-andorra"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Brand",
+            "name": "Tesla",
+            "url": "https://www.importocotxe.ad/es/marca/tesla-andorra"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Brand",
+            "name": "Lamborghini",
+            "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+<% end %>
+
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+  > <%= t('bread.marca') %>
+</div>
+<div class="seocontainer">
+<br>
+<h1 style="color: #A2262B !important; text-align: center !important;"><%= t('marca.titol') %></h1>
+<h2><%= t('marca.subtitol') %></h2>
+<%# <h3>Busca entre los modelos que más te convengan y nosotros te lo importamos a Andorra.</h3> %>
+<br>
+</div>
+
+
+
+<div class="seocards seocontainer">
+
+  <%= link_to marca_bmw_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732366/devon-janse-van-rensburg-cQHx11ku1Dk-unsplash_awimek.jpg); height: 100%; width: 100%;">
+      <span>BMW</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_mercedes_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731177/liam-martens-uUi5RQCyUdM-unsplash_xdjxst.jpg); height: 100%; width: 100%;">
+      <span>Mercedes</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_audi_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812955/302afc26-f0cf-4da0-a023-b060706af3ee_fmclsg.jpg); height: 100%; width: 100%;">
+      <span>Audi</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_porsche_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812954/porsche_992_head_on_hpudjw.jpg); height: 100%; width: 100%;">
+      <span>Porsche</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_volkswagen_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731576/chris-osmond-54tC25jNoWA-unsplash_axwylx.jpg); height: 100%; width: 100%;">
+      <span>Volkswagen</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_mini_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731719/devon-janse-van-rensburg-q039kSjYlD4-unsplash_f5kzny.jpg); height: 100%; width: 100%;">
+      <span>Mini</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_cupra_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732019/pierre-saigot-SqPs9Jg-8xk-unsplash_scflhl.jpg); height: 100%; width: 100%;">
+      <span>Cupra</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_tesla_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732123/dmitry-novikov-49gi04Retc4-unsplash_tsjq0k.jpg); height: 100%; width: 100%;">
+      <span>Tesla</span>
+    </div>
+  <% end %>
+
+  <%= link_to marca_lamborghini_andorra_path, class: "seocard-category" do %>
+    <div class="seocard-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732521/kyle-bushnell-gELKXGfiSe0-unsplash_kqcfdp.jpg); height: 100%; width: 100%;">
+      <span>Lamborghini</span>
+    </div>
+  <% end %>
+
+</div>
+
+<%@models = JSON.parse(File.read('lib/marca_model.json')) %>
+<% @makes =
+      [
+        "Abarth",
+        "Aixam",
+        "Alfa Romeo",
+        "Audi",
+        "Aston Martin",
+        "Bentley",
+        "BMW",
+        "Bugatti",
+        "Citroen",
+        "Cupra",
+        "Corvette",
+        "Dacia",
+        "DS",
+        "Ferrari",
+        "Fiat",
+        "Ford",
+        "Genesis",
+        "Honda",
+        "Hyundai",
+        "Isuzu",
+        "Iveco",
+        "Jaguar",
+        "Jeep",
+        "Kia",
+        "Koenigsegg",
+        "KTM",
+        "Lamborghini",
+        "Land Rover",
+        "Lexus",
+        "Lync and Co",
+        "Lotus",
+        "Maserati",
+        "Maxus",
+        "Maybach",
+        "Mazda",
+        "McLaren",
+        "Mercedes-Benz",
+        "MG",
+        "Mini",
+        "Mitsubishi",
+        "Nissan",
+        "Opel",
+        "Pagani",
+        "Peugeot",
+        "Polestar",
+        "Porsche",
+        "Renault",
+        "Rolls Royce",
+        "Seat",
+        "Skoda",
+        "Smart",
+        "Ssangyong",
+        "Subaru",
+        "Suzuki",
+        "Tesla",
+        "Toyota",
+        "VW",
+        "Volvo"
+      ] %>
+
+<div class="seocontainer">
+  <div style="margin:50px 0; text-align: center;">
+    <h2 style="color: #A2262B; margin-bottom: 20px;"><%= t('noencuentras') %></h2>
+    <p style="margin-bottom: 30px; color: #666;"><%= t('indicanos') %></p>
+    <%= render 'shared/unified_contact_form', 
+        source: 'web', 
+        form_type: 'brand_inquiry',
+        placeholder: t('indicanoscoche'),
+        submit_text: t('enviar') %>
+  </div>
+</div>

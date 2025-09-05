@@ -1,0 +1,523 @@
+<% content_for :for_head do %>
+  <title> 🚗 <%= t('head.faqs') %></title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Resolvemos dudas sobre la importación de coches en Andorra",
+    "description": "Respondemos todas las dudas sobre el proceso de importamcion de coches desde Alemania a Andorra.",
+    "url": "https://www.importocotxe.ad/faqs",
+    "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1668073646/Captura_de_pantalla_2022-11-10_a_las_10.46.10-removebg-preview_ry5s3a.png",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.importocotxe.ad/es/cars?filters%5Bmake%5D={make}&filters%5Bmodel%5D={model}&filters%5Bmileage_max%5D={mileage_max}&filters%5Bfirst_registration_date%5D={first_registration_date}&filters%5Bpotencia%5D={potencia}&filters%5Bfuel%5D={fuel}&filters%5Bsubtitle%5D={subtitle}&spinner=6aa982161e0c9015eaa660133561c234&filters%5Bprice_max%5D={price_max}&filters%5Btransmision%5D={transmision}&filters%5Bmodel_description%5D={model_description}&commit=Mostrar+resultados",
+      "query-input": [
+        "required name=make",
+        "optional name=model",
+        "optional name=mileage_max",
+        "optional name=first_registration_date",
+        "optional name=potencia",
+        "optional name=fuel",
+        "optional name=subtitle",
+        "optional name=price_max",
+        "optional name=transmision",
+        "optional name=model_description"
+      ]
+    },
+    "makesOffer": {
+      "@type": "OfferCatalog",
+      "name": "Catálogo de Marcas",
+      "url": "https://www.importocotxe.ad/marca",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "BMW",
+          "url": "https://www.importocotxe.ad/marca/bmw-andorra/"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Mercedes",
+          "url": "https://www.importocotxe.ad/es/marca/mercedes-andorra"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Porsche",
+          "url": "https://www.importocotxe.ad/es/marca/porsche-andorra"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Audi",
+          "url": "https://www.importocotxe.ad/es/marca/audi-andorra"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Volkswagen",
+          "url": "https://www.importocotxe.ad/es/marca/volkswagen-andorra"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Mini",
+          "url": "https://www.importocotxe.ad/es/marca/mini-andorra"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Cupra",
+          "url": "https://www.importocotxe.ad/es/marca/cupra-andorra"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Tesla",
+          "url": "https://www.importocotxe.ad/es/marca/tesla-andorra"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Lamborghini",
+          "url": "https://www.importocotxe.ad/es/marca/lamborghini-andorra"
+        }
+      ]
+    },
+  }
+  </script>
+<% end %>
+
+<!-- Breadcrumb -->
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+  > <%=t('faqs.faqs') %>
+</div>
+
+<!-- Hero Section -->
+<div class="faqs-hero">
+  <div class="hero-container">
+    <div class="hero-icon">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9,9h0a3,3 0,0,1,6,1c0,2-3,3-3,3"/>
+        <path d="M12,17h0"/>
+      </svg>
+    </div>
+    <h1 class="hero-title"><%= t('faqs.title') %></h1>
+    <p class="hero-description"><%= t('faqs.description') %></p>
+  </div>
+</div>
+
+<!-- FAQs Content -->
+<div class="faqs-content">
+  <div class="container-faqs">
+    
+    <div class="faq-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <h3><%= t('faqs.subtitle1') %></h3>
+      </div>
+      <div class="faq-grid">
+        <% t('faqs.sections1').each do |section| %>
+          <div class="faq-card">
+            <h4><%= section[:heading] %></h4>
+            <p><%= section[:content] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+        </div>
+        <h3><%= t('faqs.subtitle2') %></h3>
+      </div>
+      <div class="faq-grid">
+        <% t('faqs.sections2').each do |section| %>
+          <div class="faq-card">
+            <h4><%= section[:heading] %></h4>
+            <p><%= section[:content] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
+            <rect x="2" y="9" width="20" height="11" rx="2" ry="2"/>
+          </svg>
+        </div>
+        <h3><%= t('faqs.subtitle3') %></h3>
+      </div>
+      <div class="faq-grid">
+        <% t('faqs.sections3').each do |section| %>
+          <div class="faq-card">
+            <h4><%= section[:heading] %></h4>
+            <p><%= section[:content] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </div>
+        <h3><%= t('faqs.subtitle4') %></h3>
+      </div>
+      <div class="faq-grid">
+        <% t('faqs.sections4').each do |section| %>
+          <div class="faq-card">
+            <h4><%= section[:heading] %></h4>
+            <p><%= section[:content] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3><%= t('faqs.subtitle5') %></h3>
+      </div>
+      <div class="faq-grid">
+        <% t('faqs.sections5').each do |section| %>
+          <div class="faq-card">
+            <h4><%= section[:heading] %></h4>
+            <p><%= section[:content] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    
+    <!-- CTA Button at the end of FAQs -->
+    <div class="faqs-end-cta">
+      <%= link_to root_path do %>
+        <button class="cta-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <%= t('pages.home.encuentra') %>
+        </button>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+<!-- Contact Form Section -->
+<div class="faqs-contact">
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2>¿No has encontrado respuesta a tu duda?</h2>
+      <p>Escríbenos y te ayudamos personalmente con cualquier consulta sobre importación de coches</p>
+    </div>
+    <%= render 'shared/unified_contact_form', 
+        source: 'web', 
+        form_type: 'faq_inquiry',
+        placeholder: 'Cuéntanos tu duda y te responderemos lo antes posible...',
+        submit_text: 'Enviar consulta' %>
+  </div>
+</div>
+
+<style>
+/* Hero Section */
+.faqs-hero {
+  background: linear-gradient(135deg, #A2262B 0%, #8B1E22 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.faqs-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-icon {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* FAQs Content */
+.faqs-content {
+  background: transparent;
+  padding: 80px 0 120px 0;
+}
+
+.container-faqs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.faq-section {
+  margin-bottom: 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #A2262B;
+}
+
+.section-icon {
+  background: linear-gradient(135deg, #A2262B 0%, #8B1E22 100%);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  box-shadow: 0 4px 15px rgba(162, 38, 43, 0.3);
+}
+
+.section-header h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.faq-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(162, 38, 43, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #A2262B, #8B1E22);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.faq-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.faq-card:hover::before {
+  transform: scaleX(1);
+}
+
+.faq-card h4 {
+  color: #A2262B;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.faq-card p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Button at end of FAQs */
+.faqs-end-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 2px solid #e9ecef;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #A2262B 0%, #8B1E22 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(162, 38, 43, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(162, 38, 43, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Contact Form Section */
+.faqs-contact {
+  background: transparent;
+  padding: 80px 0;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .faqs-hero {
+    padding: 60px 0;
+  }
+  
+  .faqs-content {
+    padding: 60px 0 80px 0;
+  }
+  
+  .container-faqs {
+    padding: 0 30px;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .section-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .faq-card {
+    padding: 25px;
+  }
+  
+  .contact-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container,
+  .contact-container {
+    padding: 0 15px;
+  }
+  
+  .container-faqs {
+    padding: 0 20px;
+  }
+  
+  .faq-card {
+    padding: 20px;
+  }
+  
+  .section-header h3 {
+    font-size: 1.5rem;
+  }
+}
+</style>

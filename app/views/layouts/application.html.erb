@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <% if content_for? :for_head %>
+      <%= yield :for_head %>
+    <% else %>
+      <title> 🚗 importocotxe.ad - Importació de cotxes a Andorra</title>
+      <meta name='description' content="Més de 500.000 cotxes disponibles per a tu a Andorra i en menys de 3 setmanes. Posem al teu servei una plataforma on podrás buscar tu mateix el cotxe d'Alemanya veient en tot moment el preu final amb el que quedaria el cotxe a Andorra. També ens encarreguem després de tot per importar-te el cotxe sense que hagis de fer res.">
+    <% end %>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag asset_path='favicon-2.ico'%>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"985f2f9898724005cecd5bf15058ab95"})});</script>
+
+
+    <!--Clientify Tracking Begins-->
+    <script type="text/javascript">
+    if (typeof trackerCode ==='undefined'){
+        (function (d, w, u, o) {
+            w[o] = w[o] || function () {
+                (w[o].q = w[o].q || []).push(arguments)
+            };
+            a = d.createElement('script'),
+                m = d.getElementsByTagName('script')[0];
+            a.async = 1; a.src = u;
+            m.parentNode.insertBefore(a, m)
+        })(document, window, 'https://analytics.clientify.net/tracker.js', 'ana');
+        ana('setTrackerUrl', 'https://analytics.clientify.net');
+        ana('setTrackingCode', 'CF-106957-106957-5VUHP');
+        ana('trackPageview');
+    }</script>
+
+      <script defer src="https://analyticsplusdev.clientify.net/analytics_plus/pixel/AbyBB9gO1TJ62dOp"></script>
+    <!--Clientify Tracking Ends-->
+
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NKGG9B6');</script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE8DNYLH5G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VE8DNYLH5G');
+    </script>
+    
+    <!-- Clientify Iframe Form Tracking -->
+    <script>
+    // Monitor Meta Pixel warnings para detectar envíos de formularios iframe
+    if (typeof console !== 'undefined' && console.warn) {
+      var originalWarn = console.warn;
+      console.warn = function() {
+        var args = Array.prototype.slice.call(arguments);
+        var message = args.join(' ');
+        
+        // Detectar warning específico de "Form submitted"
+        if (message.includes('Form submitted') && message.includes('Meta Pixel')) {
+          
+          console.log('✅ Clientify iframe form submitted (Meta Pixel detection)');
+          
+          // Enviar evento a dataLayer para GTM
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'Form submitted',
+            'eventModel': {
+              'event_category': '235312',
+              'event_label': window.location.href
+            }
+          });
+        }
+        
+        // Llamar a la función original
+        return originalWarn.apply(this, arguments);
+      };
+    }
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <%# <link rel="alternate" hreflang="es" href="https://www.importocotxe.ad/" />
+    <link rel="alternate" hreflang="ca" href="https://www.importocotxe.ad/cat" />
+    <link rel="alternate" hreflang="fr" href="https://www.importocotxe.ad/fr" />
+    <link rel="alternate" hreflang="en" href="https://www.importocotxe.ad/en" />
+    <link rel="alternate" hreflang="ru" href="https://www.importocotxe.ad/ru" />
+    <link rel="alternate" hreflang="de" href="https://www.importocotxe.ad/de" />
+    <link rel="alternate" hreflang="nl" href="https://www.importocotxe.ad/nl" />
+    <link rel="alternate" hreflang="x-default" href="https://www.importocotxe.ad/" /> %>
+
+    <%= hreflang_tags %>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKGG9B6"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <%# <%= render 'layouts/eu_banner' %>
+    <%# <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar1' %>
+    <%= render 'shared/flashes' %>
+
+    <% if use_chatbot? %>
+      <!-- Este div será el “container target” que Stimulus detecta -->
+      <%= render 'shared/chatbot' %>
+    <% else %>
+      <%= render 'shared/whatsapp' %>
+    <% end %>
+
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+
+    <%= render 'shared/footer' %>
+
+  </body>
+</html>

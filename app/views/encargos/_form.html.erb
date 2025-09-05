@@ -1,0 +1,21 @@
+
+<%= simple_form_for(@encargo) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :fpago_coche %>
+    <%= f.input :frecogida %>
+    <%= f.input :fentrada_and %>
+    <%= f.input :fcobro_iva %>
+    <%= f.input :contacto %>
+    <%= f.input :cantidad_iva %>
+    <%= f.input :direccion_recog %>
+    <%= f.input :comentario %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

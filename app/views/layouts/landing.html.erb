@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <% if content_for? :for_head %>
+      <%= yield :for_head %>
+    <% else %>
+      <title> 🚗 importocotxe.ad - Importació de cotxes a Andorra</title>
+      <meta name='description' content="Més de 500.000 cotxes disponibles per a tu a Andorra i en menys de 3 setmanes. Posem al teu servei una plataforma on podrás buscar tu mateix el cotxe d'Alemanya veient en tot moment el preu final amb el que quedaria el cotxe a Andorra. També ens encarreguem després de tot per importar-te el cotxe sense que hagis de fer res.">
+    <% end %>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag asset_path='favicon-2.ico'%>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"985f2f9898724005cecd5bf15058ab95"})});</script>
+
+
+    <!--Clientify Tracking Begins-->
+    <script type="text/javascript">
+    if (typeof trackerCode ==='undefined'){
+        (function (d, w, u, o) {
+            w[o] = w[o] || function () {
+                (w[o].q = w[o].q || []).push(arguments)
+            };
+            a = d.createElement('script'),
+                m = d.getElementsByTagName('script')[0];
+            a.async = 1; a.src = u;
+            m.parentNode.insertBefore(a, m)
+        })(document, window, 'https://analytics.clientify.net/tracker.js', 'ana');
+        ana('setTrackerUrl', 'https://analytics.clientify.net');
+        ana('setTrackingCode', 'CF-106957-106957-5VUHP');
+        ana('trackPageview');
+    }</script>
+
+      <script defer src="https://analyticsplusdev.clientify.net/analytics_plus/pixel/AbyBB9gO1TJ62dOp"></script>
+    <!--Clientify Tracking Ends-->
+
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NKGG9B6');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Facebook Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1060319541448983');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1060319541448983&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel -->
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "nyh0nxu98j");
+    </script>
+    
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKGG9B6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Landing page content without navbar/footer -->
+    <%= yield %>
+
+    <!-- Load scripts for Clientify forms -->
+    <script src="https://mapa.clientify.net/v1/clientify.min.js"></script>
+  </body>
+</html>

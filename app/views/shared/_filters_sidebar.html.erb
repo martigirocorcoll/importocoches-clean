@@ -1,0 +1,63 @@
+<div class="filters-index">
+  <%= simple_form_for :filters, html: { data: { controller:"sidefilters", make: @make, modelo: @model }, id: "buscar-cotxe-alt" }, url: "/#{I18n.locale}/cars", method: "GET" do |f| %>
+    <% unless session[:api_counter].nil? %>
+      <% if session[:api_counter]<5 || user_signed_in? %>
+        <%= f.submit t('pages.home.mostrar'), id: "btn_dis", class: "home-button my-4" %>
+      <% else %>
+        <%= link_to "<button class='home-button'>#{t('pages.home.login')}</button>".html_safe, new_user_registration_path %>
+      <% end %>
+    <% else %>
+      <%= f.submit t('pages.home.mostrar'), id: "btn_dis", class: "home-button my-4" %>
+    <% end %>
+
+    <%= f.input :make, label: t('pages.home.marca'), collection: @makes, selected: @make, input_html: {data: { action:"change->sidefilters#model" }}, prompt:"--Seleccione una marca--", disabled: "--Seleccione una marca--", required: true  %>
+    <%= f.input :model, as: :select, label: t('pages.home.modelo') , input_html: { id:"models_dropdown", data: { model: @models }}, required: false%>
+    <%= f.input :model_description, label: t('pages.home.descripcion'), input_html: {value: @model_description}, required: false%>
+
+    <% if @first_registration_date=="" %>
+      <%= f.input :first_registration_date, label: t('pages.home.primeramat'), collection:["2019", "2020", "2021", "2022", "2023", "2024"], required: false %>
+    <% else %>
+      <%= f.input :first_registration_date, label: t('pages.home.primeramat'), collection:["2019", "2020", "2021", "2022", "2023", "2024"], selected: @first_registration_date, required: false %>
+    <% end %>
+
+    <% if @mileage_max=="" %>
+      <%= f.input :mileage_max, label: t('pages.home.km'), collection:[["5.000","5000"], ["10.000","10000"], ["20.000","20000"], ["30.000","30000"], ["40.000","40000"], ["50.000","50000"], ["60.000","60000"], ["70.000","70000"], ["80.000","80000"], ["90.000","90000"], ["100.000","100000"], ["125.000","125000"], ["150.000","150000"], ["200.000","200000"]], required: false %>
+    <% else %>
+      <%= f.input :mileage_max, label: t('pages.home.km'), collection:[["5.000","5000"], ["10.000","10000"], ["20.000","20000"], ["30.000","30000"], ["40.000","40000"], ["50.000","50000"], ["60.000","60000"], ["70.000","70000"], ["80.000","80000"], ["90.000","90000"], ["100.000","100000"], ["125.000","125000"], ["150.000","150000"], ["200.000","200000"]], selected: @mileage_max , required: false %>
+    <% end %>
+    <% if @potencia_minima=="" %>
+      <%= f.input :potencia, label: t('pages.home.potencia'), collection: [["0cv","0"],["90cv","66"],["120cv","88"],["150cv","110"],["200cv","147"],["300cv","220"],["400cv","294"],["550cv","404"]], required: false %>
+    <% else %>
+      <%= f.input :potencia, label: t('pages.home.potencia'), collection: [["0cv","0"],["90cv","66"],["120cv","88"],["150cv","110"],["200cv","147"],["300cv","220"],["400cv","294"],["550cv","404"]], selected: @potencia_minima ,required: false %>
+    <% end %>
+    <%# <div class="d-flex"> %>
+      <%# <%= f.input :price_min, label: t('pages.home.preciomin'), as: :numeric, required: false %>
+    <%= f.input :price_max, label: t('pages.home.precio'), as: :numeric, input_html: {value: @price_max}, required: false %>
+    <%# </div> %>
+    <% if @fuel=="" %>
+      <%= f.input :fuel, label: t('pages.home.fuel'), collection: @fuel_list, required: false%>
+    <% else %>
+      <%= f.input :fuel, label: t('pages.home.fuel'), collection: @fuel_list, selected: @fuel, required: false%>
+    <% end %>
+
+
+    <% if @transmision=="" %>
+      <%= f.input :transmision, label: t('pages.home.transmision'), collection: [["Todos","MANUAL_GEAR&gearbox=SEMIAUTOMATIC_GEAR&gearbox=AUTOMATIC_GEAR"],["Manual","MANUAL_GEAR"],["Automático","SEMIAUTOMATIC_GEAR&gearbox=AUTOMATIC_GEAR"]], required: false %>
+    <% else %>
+      <%= f.input :transmision, label: t('pages.home.transmision'), collection: [["Todos","MANUAL_GEAR&gearbox=SEMIAUTOMATIC_GEAR&gearbox=AUTOMATIC_GEAR"],["Manual","MANUAL_GEAR"],["Automático","SEMIAUTOMATIC_GEAR&gearbox=AUTOMATIC_GEAR"]], selected: @transmision, required: false %>
+    <% end %>
+
+    <%= f.input :fourwheeldrive, as: :boolean, required: false, input_html: { checked: @fourwheeldrive == "1" }, label: "4x4" %>
+
+
+    <% unless session[:api_counter].nil? %>
+      <% if session[:api_counter]<5 || user_signed_in? %>
+        <%= f.submit t('pages.home.mostrar'), id: "btn_dis_2", class: "home-button my-4" %>
+      <% else %>
+        <%= link_to "<button class='home-button'>#{t('pages.home.login')}</button>".html_safe, new_user_registration_path %>
+      <% end %>
+    <% else %>
+      <%= f.submit t('pages.home.mostrar'), id: "btn_dis_2", class: "home-button my-4" %>
+    <% end %>
+  <% end %>
+</div>

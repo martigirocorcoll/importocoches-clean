@@ -1,0 +1,12 @@
+<div class="seocontainer">
+  <div style="margin:50px; padding: 30px; border-radius: 10px; border: 5px solid #A2262B; text-align: center;">
+    <h2 style="color: #A2262B; margin-bottom: 30px;"><%= t('noencuentras') %></h2>
+    <p style="margin-bottom: 30px; color: #666;"><%= t('indicanos') %></p>
+    
+    <%= render 'shared/unified_contact_form', 
+               source: 'mini',
+               form_type: 'brand_inquiry',
+               placeholder: 'Indícanos qué Mini estás buscando...',
+               submit_text: 'Buscar Mini' %>
+  </div>
+</div>

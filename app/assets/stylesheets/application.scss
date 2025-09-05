@@ -1,0 +1,106 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+// @import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+body {
+  background-color: rgb(249, 249, 249);
+}
+
+.continer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.whats-app{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  left: 15px;
+  background-color: #25d366;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+}
+
+.whats-app-top {
+  position: fixed;
+  bottom: 80px;
+  padding: 5px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 25px;
+  text-align: center;
+  left: 15px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  animation: fadeIn 11s;
+  max-width: 250px;
+}
+
+@media (max-width: 720px) {
+  .whats-app-top {
+    width: 150px;
+    font-size: 17px !important;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    left: -500px;
+  }
+  90% {
+    left: -250px;
+  }
+
+  100% {
+    left: 15px;
+  }
+}
+
+
+@media (min-width: 720px) {
+.show-big-screen {
+    display: block;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 720px) {
+.show-big-screen {
+  display: none;
+}
+}
+
+@media (min-width: 720px) {
+  .show-little-screen {
+    display: none;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 720px) {
+  .show-little-screen {
+    display: block;
+    text-align: center;
+  }
+}

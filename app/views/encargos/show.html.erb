@@ -1,0 +1,52 @@
+<% content_for :for_head do %>
+  <meta name='robots' content='noindex'>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @encargo.nombre %>
+</p>
+
+<p>
+  <strong>Fpago coche:</strong>
+  <%= @encargo.fpago_coche %>
+</p>
+
+<p>
+  <strong>Frecogida:</strong>
+  <%= @encargo.frecogida %>
+</p>
+
+<p>
+  <strong>Fentrada and:</strong>
+  <%= @encargo.fentrada_and %>
+</p>
+
+<p>
+  <strong>Fcobro iva:</strong>
+  <%= @encargo.fcobro_iva %>
+</p>
+
+<p>
+  <strong>Contacto:</strong>
+  <%= @encargo.contacto %>
+</p>
+
+<p>
+  <strong>Cantidad iva:</strong>
+  <%= @encargo.cantidad_iva %>
+</p>
+
+<p>
+  <strong>Direccion recog:</strong>
+  <%= @encargo.direccion_recog %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @encargo.comentario %>
+</p>
+
+<%= link_to 'Edit', edit_encargo_path(@encargo) %> |
+<%= link_to 'Back', encargos_path %>

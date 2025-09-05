@@ -1,0 +1,125 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Bot Detection Alert -->
+<% if @llamada.likely_bot? %>
+  <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">🤖 Posible Bot Detectado</h4>
+    <p>Esta llamada API tiene características sospechosas que sugieren tráfico automatizado.</p>
+    <hr>
+    <p class="mb-0">
+      <% if @llamada.bot_user_agent? %>
+        <span class="badge badge-danger">User Agent de Bot</span>
+      <% end %>
+      <% if @llamada.suspicious_frequency? %>
+        <span class="badge badge-warning">Alta Frecuencia</span>
+      <% end %>
+      <% if @llamada.user_agent.blank? %>
+        <span class="badge badge-secondary">Sin User Agent</span>
+      <% end %>
+      <% if @llamada.referer.blank? && @llamada.request_method == 'POST' %>
+        <span class="badge badge-info">POST Sin Referer</span>
+      <% end %>
+    </p>
+  </div>
+<% else %>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">👤 Tráfico Legítimo</h4>
+    <p>Esta llamada API parece ser de un usuario real.</p>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">📊 Información de la Llamada</h5>
+      </div>
+      <div class="card-body">
+        <p><strong>Fecha:</strong> <%= @llamada.created_at.strftime('%d/%m/%Y %H:%M:%S') %></p>
+        <p><strong>Método:</strong> 
+          <span class="badge badge-<%= @llamada.request_method == 'POST' ? 'primary' : 'secondary' %>">
+            <%= @llamada.request_method || 'N/A' %>
+          </span>
+        </p>
+        <p><strong>Endpoint:</strong></p>
+        <pre class="bg-light p-2 rounded"><%= @llamada.endpoint %></pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">🌐 Información del Cliente</h5>
+      </div>
+      <div class="card-body">
+        <p><strong>IP Address:</strong> 
+          <code><%= @llamada.ip_address || 'N/A' %></code>
+        </p>
+        <p><strong>Session ID:</strong> 
+          <code><%= @llamada.session_id || 'N/A' %></code>
+        </p>
+        <p><strong>Referer:</strong></p>
+        <div class="bg-light p-2 rounded">
+          <%= @llamada.referer.present? ? @llamada.referer : 'Sin referer' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">🔍 User Agent</h5>
+      </div>
+      <div class="card-body">
+        <% if @llamada.user_agent.present? %>
+          <pre class="bg-light p-2 rounded"><%= @llamada.user_agent %></pre>
+          <% if @llamada.bot_user_agent? %>
+            <div class="mt-2">
+              <span class="badge badge-danger">⚠️ Este User Agent coincide con patrones de bots conocidos</span>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="text-muted">Sin User Agent (sospechoso)</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">📈 Análisis de Frecuencia</h5>
+      </div>
+      <div class="card-body">
+        <% if @llamada.ip_address.present? %>
+          <% same_ip_count = Llamada.where(ip_address: @llamada.ip_address, created_at: 1.hour.ago..Time.current).count %>
+          <p><strong>Llamadas desde esta IP en la última hora:</strong> 
+            <span class="badge badge-<%= same_ip_count > 10 ? 'danger' : 'success' %>">
+              <%= same_ip_count %>
+            </span>
+          </p>
+          
+          <% today_count = Llamada.where(ip_address: @llamada.ip_address, created_at: Date.current.all_day).count %>
+          <p><strong>Llamadas desde esta IP hoy:</strong> 
+            <span class="badge badge-<%= today_count > 50 ? 'danger' : today_count > 20 ? 'warning' : 'success' %>">
+              <%= today_count %>
+            </span>
+          </p>
+        <% else %>
+          <p class="text-muted">IP no disponible para análisis</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+  <%= link_to 'Editar', edit_llamada_path(@llamada), class: 'btn btn-primary' %> |
+  <%= link_to 'Volver', llamadas_path, class: 'btn btn-secondary' %>
+</div>

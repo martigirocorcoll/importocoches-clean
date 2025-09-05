@@ -1,0 +1,60 @@
+<!-- Spanish Footer -->
+<div class="footer flex-vertical" style="background: #1F2937; padding: 3rem 0 2rem; margin-top: 4rem;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div id="footer-logo">
+          <%= link_to root_path do %>
+            <%= image_tag('https://res.cloudinary.com/dd7x7bqya/image/upload/v1668103145/Importocotxe_blanco_png-07_mpwjsh.png', style:"max-width: 200px;") %>
+          <% end %>
+          <div class="mt-3" style="color: #E5E7EB; font-size: 0.95rem;">
+            Especialistas en importación de coches premium desde Alemania a España
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <h5 style="color: white; margin-bottom: 1.5rem; font-weight: 600;">Contacto España</h5>
+        <div style="color: #E5E7EB;">
+          <div style="margin-bottom: 1rem;">
+            <i class="bi bi-telephone-fill" style="color: #DC2626; margin-right: 0.5rem;"></i>
+            <a href="tel:<%= whatsapp_spain_number %>" style="color: #E5E7EB; text-decoration: none;"><%= whatsapp_spain_number %></a>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <i class="bi bi-whatsapp" style="color: #25D366; margin-right: 0.5rem;"></i>
+            <a href="<%= whatsapp_spain_url %>" style="color: #E5E7EB; text-decoration: none;">WhatsApp España</a>
+          </div>
+          <div>
+            <i class="bi bi-envelope-fill" style="color: #DC2626; margin-right: 0.5rem;"></i>
+            <a href="mailto:info@importocotxe.ad" style="color: #E5E7EB; text-decoration: none;">info@importocotxe.ad</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <h5 style="color: white; margin-bottom: 1.5rem; font-weight: 600;">Información</h5>
+        <div style="color: #E5E7EB; line-height: 2;">
+          <div>✅ 8 años de experiencia</div>
+          <div>✅ +300 coches importados</div>
+          <div>✅ Garantía oficial válida</div>
+          <div>✅ Proceso 100% legal</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="line-footer" style="border-top: 1px solid #374151; margin: 2rem 0 1.5rem;"></div>
+    
+    <div class="row">
+      <div class="col-12 text-center">
+        <div id="footer-links-position" style="margin-bottom: 1rem;">
+          <%= link_to 'Política de privacidad', privacy_policy_path, target: "_blank", class:"footer-links", style: "color: #9CA3AF; text-decoration: none; margin: 0 1rem;" %>
+          <%= link_to 'Aviso legal', aviso_legal_path, target: "_blank", class:"footer-links", style: "color: #9CA3AF; text-decoration: none; margin: 0 1rem;" %>
+          <%= link_to 'Política de cookies', cookie_policy_path, target: "_blank", class:"footer-links", style: "color: #9CA3AF; text-decoration: none; margin: 0 1rem;" %>
+        </div>
+        <div style="color: #6B7280; font-size: 0.9rem;">
+          © <%= Date.current.year %> Importocotxe - Importación legal de vehículos desde Alemania
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

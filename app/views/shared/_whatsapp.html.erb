@@ -1,0 +1,6 @@
+<div>
+  <p class = "whats-app-top"><i class="fa-solid fa-check" style="color: green; font-size: 14px;"></i> <%= t('watsapp') %></p>
+  <%= link_to whatsapp_redirect_path(source: 'main', page_url: request.original_url), class: "whats-app", target: "_blank" do %>
+    <i class="fa-brands fa-whatsapp"></i>
+  <% end %>
+</div>

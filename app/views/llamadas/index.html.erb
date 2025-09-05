@@ -1,0 +1,165 @@
+<p id="notice"><%= notice %></p>
+<h2>Mes: <%= Date.current.strftime('%m/%Y') %></h2>
+<h3>Llamadas API: <%= number_with_delimiter(@total_count) %></h3>
+<p class="text-muted">
+  <% display_count = params[:filter] ? @filtered_count : @total_count %>
+  Mostrando <%= (@current_page - 1) * @per_page + 1 %>-<%= [@current_page * @per_page, display_count].min %> 
+  de <%= number_with_delimiter(display_count) %> registros
+  <% if params[:filter] %>
+    <span class="badge badge-info">Filtrado: <%= params[:filter] %></span>
+  <% end %>
+</p>
+
+<!-- FILTERS DISABLED FOR SPEED -->
+<div class="alert alert-info">
+  <strong>⚡ Modo Rápido Activado:</strong> Filtros deshabilitados temporalmente para mejorar velocidad de carga.
+  <br><small>Mostrando las últimas llamadas del mes actual.</small>
+</div>
+
+<!-- Bot Detection Summary -->
+<div class="row mb-4">
+  <div class="col-md-3">
+    <div class="card bg-danger text-white">
+      <div class="card-body">
+        <h5 class="card-title">🤖 Bots Detectados</h5>
+        <h3><%= @bot_count %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card bg-warning text-white">
+      <div class="card-body">
+        <h5 class="card-title">⚠️ IPs Sospechosas</h5>
+        <h3><%= @suspicious_ips_count %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card bg-info text-white">
+      <div class="card-body">
+        <h5 class="card-title">📊 IPs Únicas</h5>
+        <h3><%= @unique_ips_count %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card bg-success text-white">
+      <div class="card-body">
+        <h5 class="card-title">✅ Tráfico Legítimo</h5>
+        <h3><%= @legitimate_count %></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>IP</th>
+      <th>User Agent</th>
+      <th>Método</th>
+      <th>Endpoint</th>
+      <th>🤖 Bot?</th>
+      <th colspan="3">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @llamadas_display.each do |llamada| %>
+      <tr>
+        <td><%= llamada.created_at&.strftime('%d/%m %H:%M') || 'N/A' %></td>
+        <td>
+          <code><%= llamada.ip_address || 'N/A' %></code>
+        </td>
+        <td>
+          <span class="text-truncate d-inline-block" style="max-width: 200px;" title="<%= llamada.user_agent %>">
+            <%= llamada.user_agent&.truncate(50) || 'N/A' %>
+          </span>
+        </td>
+        <td>
+          <span class="badge badge-<%= llamada.request_method == 'POST' ? 'primary' : 'secondary' %>">
+            <%= llamada.request_method || 'N/A' %>
+          </span>
+        </td>
+        <td>
+          <span class="text-truncate d-inline-block" style="max-width: 300px;" title="<%= llamada.endpoint %>">
+            <%= llamada.endpoint&.truncate(80) || 'N/A' %>
+          </span>
+        </td>
+        <td>
+          <span class="badge badge-secondary">⏩ Fast Mode</span>
+        </td>
+        <td><%= link_to 'Ver', llamada, class: 'btn btn-sm btn-outline-primary' %></td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- Simple Pagination -->
+<div class="d-flex justify-content-between align-items-center mt-4">
+  <div>
+    <%= link_to '+', new_llamada_path, class: 'btn btn-primary' %>
+  </div>
+  
+  <nav aria-label="Paginación">
+    <ul class="pagination mb-0">
+      <!-- Previous Page -->
+      <% if @current_page > 1 %>
+        <li class="page-item">
+          <%= link_to "« Anterior", llamadas_path(page: @current_page - 1, per_page: @per_page), class: "page-link" %>
+        </li>
+      <% else %>
+        <li class="page-item disabled">
+          <span class="page-link">« Anterior</span>
+        </li>
+      <% end %>
+      
+      <!-- Simplified pagination - only show few pages -->
+      <% if @current_page > 1 %>
+        <li class="page-item">
+          <%= link_to "1", llamadas_path(page: 1, per_page: @per_page), class: "page-link" %>
+        </li>
+      <% end %>
+      
+      <% if @current_page > 3 %>
+        <li class="page-item disabled"><span class="page-link">...</span></li>
+      <% end %>
+      
+      <li class="page-item active">
+        <span class="page-link"><%= @current_page %></span>
+      </li>
+      
+      <% if @current_page < @total_pages - 2 %>
+        <li class="page-item disabled"><span class="page-link">...</span></li>
+      <% end %>
+      
+      <% if @current_page < @total_pages %>
+        <li class="page-item">
+          <%= link_to @total_pages, llamadas_path(page: @total_pages, per_page: @per_page), class: "page-link" %>
+        </li>
+      <% end %>
+      
+      <!-- Next Page -->
+      <% if @current_page < @total_pages %>
+        <li class="page-item">
+          <%= link_to "Siguiente »", llamadas_path(page: @current_page + 1, per_page: @per_page), class: "page-link" %>
+        </li>
+      <% else %>
+        <li class="page-item disabled">
+          <span class="page-link">Siguiente »</span>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+  
+  <div>
+    <select onchange="location.href='<%= llamadas_path(page: 1) %>&per_page=' + this.value" class="form-select form-select-sm">
+      <option value="50" <%= 'selected' if @per_page == 50 %>>50 por página</option>
+      <option value="100" <%= 'selected' if @per_page == 100 %>>100 por página</option>
+      <option value="200" <%= 'selected' if @per_page == 200 %>>200 por página</option>
+    </select>
+  </div>
+</div>

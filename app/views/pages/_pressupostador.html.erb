@@ -1,0 +1,28 @@
+<div class="p-3">
+  <h2>Pressupostador</h2>
+  <%= simple_form_for :filters, url: "/dashboard", method: "GET" do |f| %>
+    <%= f.input :preu_neto %>
+    <%= f.input :garantia, as: :boolean, :input_html => { :checked => true } %>
+    <%= f.submit "Calcula", class: "btn btn-secondary btn-lg" %>
+  <% end %>
+
+  <div class="tp-3">
+    <% unless @params_present %>
+
+      <hr>
+      <p><b>Preu Andorra: <%= number_to_currency(@preu_and, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %>€</b></p>
+      <hr>
+      <p>Preu net: <%= number_to_currency(@preu_neto, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %>€</p>
+      <p>IGI: <%= number_to_currency(@igi, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %>€</p>
+      <p>Taxes: <%= number_to_currency(@tasas, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %>€</p>
+      <p>Transport: <%= number_to_currency(@transporte, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %>€</p>
+      <p>Banc: <%= number_to_currency(@banco, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0)%>€</p>
+      <p>Honoraris: <%= number_to_currency(@beneficio, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0)%>€</p>
+      <p>Garantia: <%= number_to_currency(@garan, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %>€</p>
+
+
+
+
+    <% end %>
+  </div>
+</div>

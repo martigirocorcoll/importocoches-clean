@@ -1,0 +1,198 @@
+<%# ///////////////////////////////////// %>
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <div class="auth-icon">
+        <i class="fa-solid fa-circle-user"></i>
+      </div>
+      <h2 class="auth-title"><%=t('pages.login')%></h2>
+      <p class="auth-subtitle">Accede a tu cuenta para continuar buscando coches</p>
+    </div>
+    
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="auth-form">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email", class: "auth-input" },
+                    wrapper_html: { class: "auth-input-wrapper" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password", class: "auth-input" },
+                    wrapper_html: { class: "auth-input-wrapper" } %>
+        
+        <% if devise_mapping.rememberable? %>
+          <div class="auth-checkbox">
+            <%= f.input :remember_me, as: :boolean, wrapper_html: { class: "checkbox-wrapper" } %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="auth-actions">
+        <%= f.button :submit, t('pages.login'), class: "auth-btn auth-btn-primary" %>
+      </div>
+    <% end %>
+    
+    <div class="auth-footer">
+      <p class="auth-alt-text"><%=t('pages.altt')%></p>
+      <%= link_to t('pages.signup'), new_registration_path(resource_name), class: "auth-btn auth-btn-secondary" %>
+    </div>
+  </div>
+</div>
+
+<style>
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #A2262B, #D32F2F);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-icon {
+  margin-bottom: 16px;
+}
+
+.auth-icon i {
+  font-size: 48px;
+  color: #A2262B;
+}
+
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+.auth-form {
+  margin-bottom: 24px;
+}
+
+.auth-input-wrapper {
+  margin-bottom: 20px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #A2262B;
+  box-shadow: 0 0 0 3px rgba(162, 38, 43, 0.1);
+}
+
+.auth-checkbox {
+  margin-top: 16px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-actions {
+  margin-bottom: 24px;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.auth-btn-primary {
+  background: #A2262B;
+  color: white;
+}
+
+.auth-btn-primary:hover {
+  background: #8B1F24;
+  transform: translateY(-1px);
+}
+
+.auth-btn-secondary {
+  background: transparent;
+  color: #A2262B;
+  border: 2px solid #A2262B;
+  margin-top: 12px;
+}
+
+.auth-btn-secondary:hover {
+  background: #A2262B;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.auth-footer {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.auth-alt-text {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 16px;
+  }
+  
+  .auth-card {
+    padding: 32px 24px;
+  }
+}
+</style>
+
+<%# <%= render "devise/shared/links" %>

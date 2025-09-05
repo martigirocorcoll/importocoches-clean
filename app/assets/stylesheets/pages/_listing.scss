@@ -1,0 +1,138 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (min-width: 200px) {
+  .flex {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 990px) {
+  .flex {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 200px) {
+  #banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+
+  }
+}
+
+@media (min-width: 990px) {
+  #banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.link {
+  text-decoration:none;
+  color:black;
+}
+.link:hover {
+    color:black;
+}
+
+// FILTERS //
+.filters-index{
+  background-color: white;
+  margin-top: 5px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.12);
+  padding: 25px;
+  height: auto;
+  border-radius: 10px;
+  top: 20px;
+}
+
+@media (min-width: 200px) {
+  .filters-index {
+    padding: 25px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 990px) {
+  .filters-index {
+    margin-right: 35px;
+    // height: 50%;
+    // position: sticky;
+    // overflow-y: scroll;
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+.form-control {
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  background-color: transparent;
+}
+
+.form-select {
+  background-color: transparent;
+}
+
+.form-select:focus {
+  background-color: transparent;
+}
+
+#order-button {
+  margin-top: 45px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 0.5px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.ads{
+  width: 100%;
+}
+
+.listing-top {
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 200px) {
+  .listing-top {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 990px) {
+  .listing-top {
+    flex-direction: row;
+  }
+}
+
+
+.dropdown {
+  .btn {
+    background: transparent;
+    color: black;
+  }
+}
+
+.dropdown-menu {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    font-weight: bold;
+  }
+  padding: 1rem;
+  width: 190px;
+
+}

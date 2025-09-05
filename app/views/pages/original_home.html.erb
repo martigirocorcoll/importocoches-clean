@@ -1,0 +1,25 @@
+<div>
+  <div class="hero_img">
+  <%# <%= image_tag "https://res.cloudinary.com/dd7x7bqya/image/upload/v1666268488/IMG_0707_3_cr9stx.jpg"%>
+    <%# <h1 id="search">Más de 500.000 coches disponibles para ti en Andorra y en menos de 3 semanas</h1> %>
+  <h1 id="search">Web en manteniment</h1>
+  <p style= "text-align: center;">Properament es reactivarà el buscador de cotxes.</p>
+  </div>
+  <div id="banner">
+    <div class="container">
+        <%= render 'pages/whatwedo' %>
+        <%# <%= render 'pages/listingshome' %> %>
+        <%= render 'pages/about' %>
+    </div>
+  </div>
+  </div>
+<div id="footer-home">
+  <div id="footer-home-text">
+    <%= t('pages.home.footer_html') %>
+  </div>
+  <%= link_to root_path do %>
+    <button id="btn-footer-home" style="width:250px">
+      <%= t('pages.home.encuentra') %>
+    </button>
+  <% end %>
+</div>

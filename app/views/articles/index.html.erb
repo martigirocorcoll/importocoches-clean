@@ -1,0 +1,54 @@
+<% content_for :for_head do %>
+  <title> <%= t('head.blog') %></title>
+<% end %>
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style:"text-decoration: none;" %>
+  > <%=t('bread.inicio')%>
+</div>
+<p id="notice"><%= notice %></p>
+<div class = "blog-container">
+  <h1 class= "text-center" ><%= t('head.blog') %></h1>
+
+  <% @articles.each do |article| %>
+    <% if article.locale.to_s == locale.to_s %>
+      <div class="container-blog mt-5">
+        <div class="row">
+          <div class="col-12">
+            <article class="blog-card">
+              <div class="blog-card__background">
+                <div class="card__background--wrapper">
+                  <div class="card__background--main" style="background-image: url('<%=article.image%>');">
+                    <div class="card__background--layer"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="blog-card__head">
+                <span class="date__box">
+                  <span class="date__day"><%= article.created_at.strftime("%d") %></span>
+                  <span class="date__month"><%= article.created_at.strftime("%^b") %></span>
+                </span>
+              </div>
+              <div class="blog-card__info">
+                <h5><%= article.titulo %></h5>
+                <p><%= article.description %></p>
+                <%= link_to 'Show', article, class: "btn-blog" %>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <section class="detail-page">
+        <div class="container-blog mt-5">
+
+        </div>
+      </section>
+    <% end %>
+  <% end %>
+
+
+
+
+
+
+  <br>
+</div>

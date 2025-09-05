@@ -1,0 +1,465 @@
+<% content_for :for_head do %>
+  <title> <%= @imported_car.brand %> <%= @imported_car.model %> <%= t('head.importocotxe') %></title>
+<% end %>
+
+
+
+<div style="background-color: white; margin-left:15px;">
+  <%= link_to t('bread.inicio'), root_path, style: "text-decoration: none;" %> &gt;
+  <%= link_to t('bread.importados'), imported_cars_path, style: "text-decoration: none;" %> &gt;
+  <%= @imported_car.brand %> <%= @imported_car.model %>
+</div>
+
+<p id="notice"><%= notice %></p>
+<!-- Hero -->
+<div id="show" style="overflow: hidden">
+  <div class="hero-mobile">
+    <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+      <div class="carousel-inner">
+        <!-- Video as first carousel item -->
+        <% if @imported_car.video_urls.present? && @imported_car.video_urls.to_s.lines.first.strip.present? %>
+          <% first_video_url = @imported_car.video_urls.to_s.lines.first.strip %>
+          <div class="carousel-item active">
+            <% if first_video_url.match?(/(youtube\.com|youtu\.be)/) %>
+              <% youtube_id = first_video_url.split(/v=|youtu\.be\/|shorts\//).last.split(/[&?]/).first %>
+              <div class="d-block w-100" style="position: relative; padding-bottom: 56.25%; height: 0;">
+                <iframe
+                  id="youtube-player-mobile"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                  src="https://www.youtube.com/embed/<%= youtube_id %>?rel=0&enablejsapi=1"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            <% else %>
+              <video class="d-block w-100" controls preload="none">
+                <source src="<%= first_video_url %>" type="video/mp4">
+              </video>
+            <% end %>
+          </div>
+        <% end %>
+        
+        <!-- Images -->
+        <div class="<%= @imported_car.video_urls.present? && @imported_car.video_urls.to_s.lines.first.strip.present? ? 'carousel-item' : 'carousel-item active' %>">
+          <% if @imported_car.ad_image_urls.nil? %>
+            <img class="d-block w-100" alt="First slide" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1685013144/placeholder-image-1_lihcz8.jpg">
+          <% else %>
+          <% imported_car_first_image_url = @imported_car.ad_image_urls.to_s.lines.first.strip %>
+            <img class="d-block w-100" src="<%= imported_car_first_image_url %>" alt="First slide">
+          <% end %>
+        </div>
+        <div>
+          <% unless @imported_car.ad_image_urls.to_s.lines[1...].nil? %>
+            <% @imported_car.ad_image_urls.to_s.lines[1...].each do |raw_url| %>
+            <% url = raw_url.strip %>
+              <div class="carousel-item">
+            <% next if url.blank? %>
+                <img class="d-block w-100" src="<%= url %>" alt="Next slide">
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <h1 style="color: black !important;"><%= @imported_car.brand %> <%= @imported_car.model %></h1>
+<h2>
+  <%= number_to_currency(
+        @imported_car.precio,
+        unit: "€",
+        separator: ",",
+        delimiter: ".",
+        format: "%n %u"
+      ) %>
+</h2>
+<%# <------------------------------------------------------------------------------------------------------- > %>
+  <div class="d-flex justify-content-center" id="header-show">
+    <div class="img-card hero-desktop" id="card-show">
+      <div  class="hero-desktop" data-controller="carousel">
+        <div class="text-center" id="card-height">
+          <div class= "d-flex align-items-center">
+            <button class="carousel-arrow" data-action="click->carousel#previous"><i class="fa-solid fa-angle-left"></i></button>
+            <div class="main-img-container">
+              <button type="button" class="btn btn-light" style="background-color: white;border-color: white;" data-toggle="modal" data-target="#exampleModal2">
+                <% if @imported_car.video_urls.present? && @imported_car.video_urls.to_s.lines.first.strip.present? %>
+                  <% first_video_url = @imported_car.video_urls.to_s.lines.first.strip %>
+                  <div id="video-show" class="img-fixed-height" data-carousel-target="image" style="display: block;">
+                    <% if first_video_url.match?(/(youtube\.com|youtu\.be)/) %>
+                      <% youtube_id = first_video_url.split(/v=|youtu\.be\/|shorts\//).last.split(/[&?]/).first %>
+                      <iframe
+                        id="youtube-player"
+                        class="img-fixed-height"
+                        style="width: 100%; object-fit: contain;"
+                        src="https://www.youtube.com/embed/<%= youtube_id %>?rel=0&enablejsapi=1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                      </iframe>
+                    <% else %>
+                      <video class="img-fixed-height" controls preload="none" style="width: 100%; object-fit: contain;">
+                        <source src="<%= first_video_url %>" type="video/mp4">
+                      </video>
+                    <% end %>
+                  </div>
+                  <img id="image-show" class="img-fixed-height" data-carousel-target="image" style="display: none; width: auto; object-fit: contain;">
+                <% else %>
+                  <% if @imported_car.ad_image_urls.to_s.lines.first.strip.present? %>
+                    <img id="image-show" src="<%= @imported_car.ad_image_urls.to_s.lines.first.strip %>" class="img-fixed-height" data-carousel-target="image" style="width: auto; object-fit: contain;">
+                  <% else %>
+                    <img id="image-show" class="img-fixed-height" data-carousel-target="image" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1685013144/placeholder-image-1_lihcz8.jpg" style="width: auto; object-fit: contain;">
+                  <% end %>
+                <% end %>
+              </button>
+            </div>
+
+            <button class="carousel-arrow" data-action="click->carousel#next"><i class="fa-solid fa-angle-right"></i></i></button>
+          </div>
+          <% unless @imported_car.ad_image_urls.to_s.lines.nil? %>
+            <div class = "pre-carrousel-bottom">
+              <div class="carrousel-bottom">
+                <!-- Video thumbnail as first element -->
+                <% if @imported_car.video_urls.present? && @imported_car.video_urls.to_s.lines.first.strip.present? %>
+                  <% first_video_url = @imported_car.video_urls.to_s.lines.first.strip %>
+                  <div
+                    class="p-3 carousel-img active video-thumbnail"
+                    style="border-radius:20px; height: 250px; background: #000; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; position: relative;"
+                    data-carousel-target="images"
+                    data-action="click->carousel#select"
+                    data-video-url="<%= first_video_url %>"
+                  >
+                    <i class="fa-solid fa-play fa-3x"></i>
+                    <% if first_video_url.match?(/(youtube\.com|youtu\.be)/) %>
+                      <% youtube_id = first_video_url.split(/v=|youtu\.be\/|shorts\//).last.split(/[&?]/).first %>
+                      <img 
+                        src="https://img.youtube.com/vi/<%= youtube_id %>/mqdefault.jpg" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px; opacity: 0.8;"
+                        alt="Video thumbnail"
+                      >
+                      <i class="fa-solid fa-play fa-3x" style="position: relative; z-index: 1;"></i>
+                    <% end %>
+                  </div>
+                <% end %>
+                
+                <!-- Images -->
+                <% @imported_car.ad_image_urls.to_s.lines.each_with_index do |image, index| %>
+                  <% active_class = (@imported_car.video_urls.present? && @imported_car.video_urls.to_s.lines.first.strip.present?) ? "" : "active" if index == 0 %>
+                  <img
+                    src="<%= image.strip %>"
+                    alt=""
+                    height="250px"
+                    class="p-3 carousel-img <%= active_class %>"
+                    style="border-radius:20px"
+                    data-carousel-target="images"
+                    data-action="click->carousel#select"
+                  >
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%# <------------------------------------------------------------------------------------------------------- > %>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+let youtubePlayer = null;
+let youtubePlayerMobile = null;
+
+// YouTube API callback
+function onYouTubeIframeAPIReady() {
+  console.log('YouTube API ready')
+  
+  // Desktop player
+  const iframe = document.getElementById('youtube-player')
+  if (iframe) {
+    youtubePlayer = new YT.Player('youtube-player', {
+      events: {
+        'onReady': function(event) {
+          console.log('YouTube desktop player ready')
+        }
+      }
+    })
+  }
+  
+  // Mobile player
+  const mobileIframe = document.getElementById('youtube-player-mobile')
+  if (mobileIframe) {
+    youtubePlayerMobile = new YT.Player('youtube-player-mobile', {
+      events: {
+        'onReady': function(event) {
+          console.log('YouTube mobile player ready')
+        }
+      }
+    })
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Page loaded, looking for carousel...')
+  
+  const carousel = document.querySelector('[data-controller="carousel"]')
+  if (!carousel) {
+    console.error('No carousel found!')
+    return
+  }
+  
+  const images = carousel.querySelectorAll('[data-carousel-target="images"]')
+  const mainImage = document.getElementById('image-show')
+  const mainVideo = document.getElementById('video-show')
+  
+  console.log('Found carousel with', images.length, 'items')
+  console.log('Main image element:', mainImage)
+  console.log('Main video element:', mainVideo)
+  
+  let currentIndex = 0
+  
+  function updateCarousel() {
+    console.log('Updating carousel to index:', currentIndex)
+    
+    // Remove active from all
+    images.forEach(img => img.classList.remove('active'))
+    
+    const currentItem = images[currentIndex]
+    if (!currentItem) return
+    
+    currentItem.classList.add('active')
+    
+    // Check if video thumbnail
+    if (currentItem.classList.contains('video-thumbnail')) {
+      console.log('Showing video')
+      if (mainVideo) mainVideo.style.display = 'block'
+      if (mainImage) mainImage.style.display = 'none'
+    } else {
+      console.log('Showing image:', currentItem.src)
+      
+      // Pause all videos when switching away from video
+      if (mainVideo) {
+        mainVideo.style.display = 'none'
+        
+        // Pause YouTube videos using API
+        if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
+          try {
+            console.log('Pausing YouTube video via API')
+            youtubePlayer.pauseVideo()
+          } catch (error) {
+            console.log('Error pausing YouTube video:', error)
+          }
+        }
+        
+        // Pause HTML5 videos
+        const videos = mainVideo.querySelectorAll('video')
+        videos.forEach(video => {
+          if (!video.paused) {
+            console.log('Pausing HTML5 video')
+            video.pause()
+          }
+        })
+        
+        // Note: Mobile videos are handled separately by Bootstrap carousel events
+      }
+      
+      if (mainImage) {
+        mainImage.style.display = 'block'
+        mainImage.src = currentItem.src
+      }
+    }
+  }
+  
+  // Arrow handlers
+  const nextBtn = carousel.querySelector('[data-action*="next"]')
+  const prevBtn = carousel.querySelector('[data-action*="previous"]')
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function(e) {
+      e.preventDefault()
+      console.log('Next clicked')
+      currentIndex = (currentIndex + 1) % images.length
+      updateCarousel()
+    })
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function(e) {
+      e.preventDefault()
+      console.log('Previous clicked')
+      currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1
+      updateCarousel()
+    })
+  }
+  
+  // Thumbnail clicks
+  images.forEach((img, index) => {
+    img.addEventListener('click', function() {
+      console.log('Thumbnail clicked:', index)
+      currentIndex = index
+      updateCarousel()
+    })
+  })
+  
+  // Initialize
+  updateCarousel()
+  
+  // Mobile carousel (Bootstrap) video pause functionality
+  const mobileCarousel = document.getElementById('carouselExampleIndicators')
+  if (mobileCarousel) {
+    console.log('Setting up mobile carousel video pause')
+    
+    // Listen for Bootstrap carousel slide events
+    $(mobileCarousel).on('slide.bs.carousel', function (e) {
+      console.log('Mobile carousel sliding from', e.from, 'to', e.to)
+      
+      // If sliding away from the first slide (video), pause it
+      if (e.from === 0) {
+        console.log('Sliding away from video slide, pausing mobile video')
+        
+        // Pause YouTube mobile player
+        if (youtubePlayerMobile && typeof youtubePlayerMobile.pauseVideo === 'function') {
+          try {
+            youtubePlayerMobile.pauseVideo()
+            console.log('Mobile YouTube video paused via API')
+          } catch (error) {
+            console.log('Error pausing mobile YouTube video:', error)
+          }
+        }
+        
+        // Pause HTML5 mobile videos
+        const mobileVideos = mobileCarousel.querySelectorAll('video')
+        mobileVideos.forEach(video => {
+          if (!video.paused) {
+            console.log('Pausing mobile HTML5 video')
+            video.pause()
+          }
+        })
+      }
+    })
+  }
+})
+</script>
+
+
+<div class="container">
+  <div class= "d-flex justify-content-between align-items-end">
+    <div>
+      <h2 id="datos-tecnicos-title"><%= t('cars.show.datostecnicos') %></h2>
+    </div>
+    <div>
+      <% if @imported_car.ficha_pdf.attached? %>
+        <%= link_to url_for(@imported_car.ficha_pdf), target: "_blank", rel: "noopener" do %>
+          <i class="fa-solid fa-file-pdf fa-3x"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+    <hr style="margin-bottom:3rem">
+    <%= render 'datos_tecnicos', car: @imported_car %>
+</div>
+
+
+<div class="container">
+
+  <!-- Videos -->
+    <h2 id="datos-tecnicos-title">Video</h2>
+    <hr style="margin-bottom:3rem">
+
+  <% @imported_car.video_urls.to_s.lines.each do |raw_url| %>
+    <% url = raw_url.strip %>
+    <% next if url.blank? %>
+
+<% if url.match?(/(youtube\.com|youtu\.be)/) %>
+  <%# Extract the YouTube ID (handles watch?v=…, youtu.be/… and shorts/…) %>
+  <% youtube_id = url
+      .split(/v=|youtu\.be\/|shorts\//)
+      .last
+      .split(/[&?]/)
+      .first %>
+
+  <% if url.match?(/shorts\//) %>
+    <!-- If it’s a Shorts URL, use a vertical aspect-ratio iframe -->
+    <div class="imported-car__video" style="margin-bottom: 1em; text-align: center;">
+      <iframe
+        loading="lazy"
+        width="360" height="640"
+        src="https://www.youtube.com/embed/<%= youtube_id %>?rel=0"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  <% else %>
+    <!-- Otherwise, show a regular landscape YouTube embed -->
+    <div class="imported-car__video" style="margin-bottom: 1em; text-align: center;">
+      <iframe
+        loading="lazy"
+        width="650" height="365"
+        src="https://www.youtube.com/embed/<%= youtube_id %>?rel=0"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  <% end %>
+<% else %>
+  <div class="imported-car__video" style="margin-bottom: 1em;">
+    <%= video_tag url, controls: true, preload: "none", style: "max-width: 100%;" %>
+  </div>
+<% end %>
+
+
+
+  <% end %>
+  <br>
+  <!-- Long descriptions by locale -->
+
+    <h2 id="datos-tecnicos-title"><%= t('bread.descripcion') %></h2>
+    <hr style="margin-bottom:3rem">
+    <p>
+      <%= @long_description.presence || "no hay descripción" %>
+    </p>
+
+
+
+
+
+
+  <!-- Otros coches importados -->
+    <h2 id="datos-tecnicos-title"><%= t('bread.otras') %></h2>
+    <hr style="margin-bottom:3rem">
+    <div class="d-flex align-items-center" style="overflow-x: auto; flex-wrap: nowrap;">
+      <% @imported_cars.first(5).each do |car| %>
+        <%= link_to imported_car_path(car), class: "importedcard-category"  do %>
+          <div
+            class="importedcard-category"
+            style="
+              background-image: url('<%= car.ad_image_urls.to_s.lines.first.strip %>');
+              background-size: cover;
+              background-position: center center;
+              height: 100%;
+              width: 350px;
+            ">
+            <div class="text-center">
+              <span><%= car.brand %> – <%= car.model %></span>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+<br>
+<%= render 'shared/unified_contact_form', 
+    source: 'import', 
+    form_type: 'import_inquiry',
+    placeholder: t('indicanoscoche'),
+    submit_text: t('enviar') %>
+</div>
+<br>

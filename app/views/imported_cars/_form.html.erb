@@ -1,0 +1,39 @@
+<%= simple_form_for(@imported_car) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :brand %>
+    <%= f.input :model %>
+    <%= f.input :year %>
+    <%= f.input :mileage %>
+    <%= f.input :horsepower %>
+    <%= f.input :fuel_type %>
+    <%= f.input :precio %>
+    <%= f.input :ficha_pdf %>
+    <%= f.input :imported_date,
+                as: :string,
+                input_html: { type: "date" },
+                label: "Imported date" %>
+
+    <% { es: 'ES', en: 'EN', cat: 'CAT', fr: 'FR' }.each do |locale, label| %>
+      <%= f.input "long_description_#{locale}",
+                  as: :rich_text_area,
+                  label: "Descripción larga (#{label})",
+                  input_html: { rows: 4 } %>
+    <% end %>
+
+    <%= f.input :ad_image_urls,
+                as: :text,
+                label: "Imágenes anuncio (una URL por línea)",
+                input_html: { rows: 4 } %>
+
+    <%= f.input :video_urls,
+                as: :text,
+                label: "Vídeos (una URL por línea)",
+                input_html: { rows: 4 } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

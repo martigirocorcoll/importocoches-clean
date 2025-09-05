@@ -1,0 +1,32 @@
+<h2>transportes pendientes</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Fpago coche</th>
+        <th>Contacto</th>
+        <th>Direccion recog</th>
+        <th>Comentario</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @encargos.each do |encargo| %>
+        <% if encargo.fpago_coche.present? && encargo.frecogida.blank? %>
+          <tr>
+            <td><%= encargo.nombre %></td>
+            <td><%= encargo.fpago_coche %></td>
+            <td><%= encargo.contacto %></td>
+            <td><%= encargo.direccion_recog %></td>
+            <td><%= encargo.comentario %></td>
+            <td><%= link_to 'Show', encargo %></td>
+            <td><%= link_to 'Edit', edit_encargo_path(encargo) %></td>
+            <td><%= link_to 'Destroy', encargo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>

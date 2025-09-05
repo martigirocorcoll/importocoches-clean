@@ -1,0 +1,42 @@
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content rounded-2">
+      <div class="modal-header text-right">
+        <h3 class="modal-title" id="exampleModalLabel"> </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+          <div data-controller="carousel">
+            <div class="text-center" id="card-height">
+              <div class= "d-flex align-items-center">
+                <button class="carousel-arrow" data-action="click->carousel#previous"><i class="fa-solid fa-angle-left"></i></button>
+                <div class="main-img-container">
+                    <img src="<%= @car.images.first %>" id="image-show" data-carousel-target="image">
+                </div>
+                <button class="carousel-arrow" data-action="click->carousel#next"><i class="fa-solid fa-angle-right"></i></i></button>
+              </div>
+              <div class = "pre-carrousel-bottom">
+                <div class="carrousel-bottom">
+                  <% @car.images.each_with_index do |image, index| %>
+                    <img
+                      src="<%= image %>"
+                      alt=""
+                      height="200px"
+                      class="p-3 carousel-img <%= "active" if index == 0 %>"
+                      style="border-radius:20px"
+                      data-carousel-target="images"
+                      data-action="click->carousel#select"
+                    >
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

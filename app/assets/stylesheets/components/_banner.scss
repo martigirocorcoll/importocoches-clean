@@ -1,0 +1,80 @@
+.main-form-home {
+  background: linear-gradient(0deg, rgb(161, 38, 41) 18%, rgba(0, 0, 0, 0) 18%);
+}
+
+.hero_img {
+  /* degradado + background optimizado */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/dd7x7bqya/image/upload/f_auto,q_auto,w_1200/v1750241660/andorra_background_z2wos0.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.hero_img_1 {
+  // display: flex;
+  // justify-content: space-evenly;
+  // background-color: #A12629;
+  background: #4C4C4C;
+  background: linear-gradient(0deg, #4C4C4C 30%, rgba(161, 38, 41, 1) 30%);
+  // animation: gradient 10s ease infinite;
+  // background: url('https://freepngimg.com/thumb/car/3-2-car-free-download-png.png');
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // margin-bottom: -40px;
+
+}
+
+
+@media (min-width: 200px) {
+  #banner {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 990
+) {
+  #banner {
+    text-align: center;
+    padding: 25px;
+  }
+}
+
+@media (min-width: 200px) {
+  #search {
+    color: white;
+    margin: auto auto;
+    padding-top: 2rem;
+    padding: 15px;
+    font-size: 30px !important;
+    text-align: center;
+    text-shadow: 2px 2px 8px #545454;
+  }
+}
+
+@media (min-width: 990px) {
+  #search {
+    color: white;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 4rem;
+    padding-top: 6rem;
+    text-align: center;
+    font-size: 60px !important;
+    text-shadow: 2px 2px 8px #545454;
+
+  }
+}
+
+#main-card-title {
+  color: #A12629;
+  margin-bottom: 2rem;
+}
+
+#main-card-title-2 {
+  color: #A12629;
+  font-size: 80px !important;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
