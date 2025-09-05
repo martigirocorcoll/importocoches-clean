@@ -1,4 +1,4 @@
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     let select0 = document.getElementById('models_dropdown')
@@ -16,7 +16,7 @@ export default class extends Controller {
     let select = document.getElementById('models_dropdown')
     while (select.options.length) select.remove(0)
     select.appendChild(new Option("", ""))
-    $.parseJSON(select.dataset.model)[marca].forEach(element => {
+    JSON.parse(select.dataset.model)[marca].forEach(element => {
       select.appendChild(new Option(element, element))
     });
     document.getElementById("btn_dis").disabled = false;
@@ -30,7 +30,7 @@ export default class extends Controller {
     console.log("Buscando marca");
     console.log(make);
     console.log(select1);
-    $.parseJSON(select1.dataset.model)[make].forEach(element => {
+    JSON.parse(select1.dataset.model)[make].forEach(element => {
       select1.appendChild(new Option(element, element))
     });
     select1.value = modelo;
