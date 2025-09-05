@@ -57,8 +57,8 @@ Rails.application.configure do
   # point helpers (and wicked_pdf_image_tag) at your live app URL
   # config.action_controller.asset_host = 'https://importocotxe.ad'
 
-  # Forzar siempre www.importocotxe.ad como dominio canónico
-  config.middleware.use Rack::CanonicalHost, 'www.importocotxe.ad'
+  # Forzar siempre www.importocoches.com como dominio canónico
+  config.middleware.use Rack::CanonicalHost, 'www.importocoches.com'
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
