@@ -14,7 +14,8 @@ module ImportyGarageApp
       generate.test_framework :test_unit, fixture: false
     end
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.1
+    config.active_support.cache_format_version = 7.1
     config.i18n.available_locales = [:en, :es, :fr, :cat, :ru, :de, :nl]
     config.i18n.default_locale = :es
     # config.middleware.use Rack::Locale
