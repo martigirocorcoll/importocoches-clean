@@ -6,7 +6,7 @@
 }
 
 .nav-link.active {
-  color: #A2262B !important;
+  color: #0066FF !important;
   /* Cambia el color del texto de la pestaña activa */
 }
 
@@ -131,7 +131,7 @@
 // Home: sit partial
 
 .sit-home{
-  background-color: #A2262B;
+  background-color: #0066FF;
 }
 
 #home-card-sit {
@@ -325,7 +325,7 @@
 
 // Home: problem partial
 .problem{
-  background-color: #A2262B;
+  background-color: #0066FF;
   padding-top: 4em;
   text-align: center;
   margin: auto;
@@ -375,7 +375,7 @@ h2 {
   margin: auto auto;
   border-radius: 25px;
   border: 2px solid rgba(255, 255, 255, 1);
-  background-color: #A2262B;
+  background-color: #0066FF;
   color: #ffffff;
   font-size: 25px;
   font-weight: 600;
@@ -398,7 +398,7 @@ h2 {
 }
 
 #footer-home {
-  background: rgba(162, 38, 43, 1);
+  background: rgba(0, 102, 255, 1);
   min-height: 320px;
   color: white;
   margin-top: 3rem;
@@ -493,7 +493,7 @@ h2 {
   border: white 1px solid;
 
   h5 {
-    color: #A2262B;
+    color: #0066FF;
     margin-bottom: 2em;
   }
 }
@@ -506,5 +506,5 @@ h2 {
 .titulo-about{
   font-size: 26px;
   margin-bottom: 10px;
-  color:#A2262B;
+  color:#0066FF;
 }

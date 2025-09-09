@@ -2,6 +2,7 @@
   "name": "importy-garage-app",
   "private": true,
   "dependencies": {
+    "@playwright/test": "^1.55.0",
     "@popperjs/core": "^2.11.2",
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.1.5",

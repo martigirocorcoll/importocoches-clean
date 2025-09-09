@@ -1,5 +1,5 @@
 .home-button {
-  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);
   color: white;
   width: 100%;
   border-radius: 10px;
@@ -10,13 +10,13 @@
   font-size: 18px;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(161, 38, 41, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.2);
 }
 
 .home-button:hover {
-  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(161, 38, 41, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
 }
 
 .whatsapp-button {
@@ -43,12 +43,12 @@
 
 
 .home-button:disabled {
-  background-color: #a1262883;
+  background-color: #0066FF83;
 }
 
 
 .nav-button {
-  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   color: white;
   width: 40px;
   border-radius: 50%;
@@ -60,17 +60,17 @@
   margin-left: 5px;
   margin-right: 5px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(161, 38, 41, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 102, 255, 0.2);
 }
 
 .nav-button:hover {
-  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(161, 38, 41, 0.3);
+  box-shadow: 0 3px 8px rgba(0, 102, 255, 0.3);
 }
 
 .nav-button-inverse {
-  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   color: white;
   width: 40px;
   border-radius: 50%;
@@ -82,13 +82,13 @@
   margin-left: 5px;
   margin-right: 5px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(161, 38, 41, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 102, 255, 0.2);
 }
 
 .nav-button-inverse:hover {
-  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(161, 38, 41, 0.3);
+  box-shadow: 0 3px 8px rgba(0, 102, 255, 0.3);
 }
 
 .show-button-inverse {
@@ -110,8 +110,8 @@
 
 .home-button-inverse {
   background-color: white;
-  color: #A12629 !important;
-  border-color: #A12629 !important;
+  color: #0066FF !important;
+  border-color: #0066FF !important;
   width: 100%;
   border-radius: 10px;
   height: 50px;
@@ -138,19 +138,19 @@
   height: 50px;
   width: 50px;
   padding: 5px;
-  background: linear-gradient(135deg, #A12629 0%, #8B1F24 100%);
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   color: white;
   border-radius: 5px;
   padding-right: 7px;
   padding-left: 7px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(161, 38, 41, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 102, 255, 0.2);
 }
 
 .btn-pagination-next:hover {
-  background: linear-gradient(135deg, #8B1F24 0%, #A12629 100%);
+  background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(161, 38, 41, 0.3);
+  box-shadow: 0 3px 8px rgba(0, 102, 255, 0.3);
   color: white;
 }
 
@@ -189,18 +189,18 @@
     
     &:hover {
       background-color: #f8f9fa;
-      color: #A12629;
+      color: #0066FF;
       text-decoration: none;
     }
   }
   
   .current {
-    background-color: #A12629 !important;
+    background-color: #0066FF !important;
     color: white !important;
     font-weight: 500;
     
     &:hover {
-      background-color: #A12629 !important;
+      background-color: #0066FF !important;
       color: white !important;
     }
   }
