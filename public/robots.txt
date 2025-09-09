@@ -4,12 +4,13 @@
 Sitemap: http://www.importocotxe.ad/sitemap
 
 User-agent: *
-Allow: /*.css
-Allow: /*.js
-Disallow: /user/
-Disallow: /dashboard.html
-Disallow: /*car?
-Disallow: /*cars?
+Disallow: /
+# Allow: /*.css
+# Allow: /*.js
+# Disallow: /user/
+# Disallow: /dashboard.html
+# Disallow: /*car?
+# Disallow: /*cars?
 
 # Bloqueo de bots y crawlers poco utiles
 User-agent: MSIECrawler

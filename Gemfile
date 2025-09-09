@@ -43,6 +43,8 @@ gem "figaro"
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'bootstrap', '~> 5.2.0'
+gem 'jquery-rails'
 group :development, :test do  
   gem 'pry-byebug', '~> 3.10'
   gem 'pry-rails', '~> 0.3'
