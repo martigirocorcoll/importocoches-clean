@@ -85,7 +85,7 @@
   }
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   #show {
   background-size: contain;
   padding-top: 2rem;
@@ -99,7 +99,7 @@
   }
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   #header-show {
     flex-direction: row;
   }
@@ -224,14 +224,14 @@
   }
 }
 
-@media (min-width: 990px) {
-  .hero-mobile {
+@media (max-width: 991px) {
+  .hero-desktop {
     display: none;
   }
 }
 
-@media (max-width: 990px) {
-  .hero-desktop {
+@media (min-width: 992px) {
+  .hero-mobile {
     display: none;
   }
 }
