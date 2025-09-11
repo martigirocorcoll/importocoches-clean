@@ -1,13 +1,111 @@
-//comú
+// Homepage - Professional Light Theme with Glassmorphism
+// Following the same design patterns as the show page
 
+// Modern Navigation Tabs with Glassmorphism - matching show page design
 .nav-link {
-  color: gray;
-  /* Cambia el color del texto de la pestaña inactiva */
+  color: #6b7280;
+  background: transparent;
+  border: none;
+  border-radius: 16px 16px 0 0;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  
+  &:hover {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.05);
+    transform: translateY(-1px);
+  }
+  
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
 }
 
 .nav-link.active {
-  color: #0066FF !important;
-  /* Cambia el color del texto de la pestaña activa */
+  color: #2563eb !important;
+  background: rgba(37, 99, 235, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid #2563eb;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border-radius: 2px;
+  }
+}
+
+// Modern Tab Container
+.nav-tabs {
+  border-bottom: 1px solid rgba(37, 99, 235, 0.15);
+  margin-bottom: 2rem;
+  
+  .nav-item {
+    margin-bottom: -1px;
+  }
+}
+
+// Tab Content Styling
+.tab-content {
+  .tab-pane {
+    padding: 1.5rem 0;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Improve form elements inside tabs
+#home-card-main {
+  .form-control, .form-select {
+    border: 2px solid rgba(37, 99, 235, 0.15);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    
+    &:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+      outline: none;
+    }
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
+    }
+  }
 }
 
 @media (min-width: 200px) {
@@ -130,16 +228,61 @@
 
 // Home: sit partial
 
-.sit-home{
-  background-color: #0066FF;
+// Modern Background with Subtle Gradient - matching show page
+.sit-home {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+  position: relative;
+  
+  // Subtle floating decorative elements for professional look
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.06), transparent);
+    filter: blur(60px);
+    z-index: 0;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: -8%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.04), transparent);
+    filter: blur(80px);
+    z-index: 0;
+  }
+  
+  // Ensure content is above decorative elements
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
+// Modern Sit Card with Professional Glassmorphism
 #home-card-sit {
   text-align: center;
-  background-color: rgb(245, 245, 245);
-  box-shadow: 0px 5px 8px 3px rgba(25, 20, 20, 0.1);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+  border-radius: 24px;
+  border: 1px solid rgba(37, 99, 235, 0.15);
   width: 100%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+  }
 }
 
 @media (min-width: 200px) {
@@ -160,28 +303,54 @@
   margin-bottom: 5em;
 }
 
-.sit-card{
-  background-color: white;
+// Modern Sit Cards with Glassmorphism
+.sit-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
   margin: 15px;
-  padding: 15px;
-  border-radius: 25px;
-  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   width: 300px;
-  img+p{
-    margin-top:10px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.2);
+  }
+  
+  img+p {
+    margin-top: 1rem;
+    color: #374151;
+    line-height: 1.6;
   }
 }
 
 .sit-card-2 {
-  background-color: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
   margin: 15px;
-  padding: 15px;
-  border-radius: 25px;
-  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   width: 350px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.2);
+  }
 
   img+p {
-    margin-top: 10px;
+    margin-top: 1rem;
+    color: #374151;
+    line-height: 1.6;
   }
 }
 
@@ -196,17 +365,25 @@
   }
 }
 
+// Video Cards with Modern Glass Effect
 .sit-card-vid {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
   margin: 15px;
   padding: 0;
-  border-radius: 25px;
-  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   width: 300px;
-
-  /* Responsive vertical 9:16 */
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.2);
+  }
 }
 
 .sit-card-vid .youtube-thumbnail,
@@ -369,20 +546,30 @@ h2 {
 
 
 // Specific CSS for your home-page
+// Modern CTA Button with Glass Effect
 #btn-footer-home {
   height: 80px;
   width: 75%;
   margin: auto auto;
-  border-radius: 25px;
-  border: 2px solid rgba(255, 255, 255, 1);
-  background-color: #0066FF;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  backdrop-filter: blur(10px) saturate(180%);
   color: #ffffff;
   font-size: 25px;
   font-weight: 600;
   line-height: 25px;
-  letter-spacing: 0em;
   text-align: center;
-  box-shadow: 0px 5px 8px 2px rgba(25, 20, 20, 0.1);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.6);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 @media (min-width: 200px) {
@@ -482,19 +669,36 @@ h2 {
 
   }
 }
+// Modern Home Cards with Glassmorphism - matching show page style
 .home-card {
   max-width: 450px;
   margin: 20px;
-  padding: 30px;
+  padding: 2rem;
   white-space: normal;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 5px 8px 3px rgba(25, 20, 20, 0.1);
-  border: white 1px solid;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.2);
+  }
 
   h5 {
-    color: #0066FF;
-    margin-bottom: 2em;
+    color: #2563eb;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-shadow: none;
+  }
+
+  p {
+    color: #374151;
+    line-height: 1.6;
   }
 }
 
