@@ -1,11 +1,31 @@
-// Define variables for your color scheme
+// Professional Light Theme + Glassmorphism Palette
+$light-primary: #f8fafc;          // Main light background
+$light-secondary: #f1f5f9;        // Secondary light elements
+$white-pure: #ffffff;             // Pure white for cards
+$blue-electric: #2563eb;          // Professional electric blue
+$blue-light: #3b82f6;             // Vibrant blue accents
+$blue-soft: #60a5fa;              // Soft blue for highlights
+$blue-ultra-light: #dbeafe;       // Very light blue backgrounds
 
-// For example:
-$blue-electric: #0066FF;  // Color principal para híbridos/eléctricos
-$red: #0066FF;            // Cambiado a azul eléctrico para consistencia
-$blue: #0D6EFD;           // Azul secundario
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+// Glassmorphism effects for light theme
+$glass-white: rgba(255, 255, 255, 0.8);        // White glass effect
+$glass-white-strong: rgba(255, 255, 255, 0.95); // Strong white glass
+$glass-blue: rgba(37, 99, 235, 0.05);          // Subtle blue glass
+$glass-blue-medium: rgba(37, 99, 235, 0.1);    // Medium blue glass
+$glass-border: rgba(37, 99, 235, 0.15);        // Professional blue borders
+
+// Professional grays and text colors
+$gray-900: #111827;               // Dark text
+$gray-700: #374151;               // Medium dark text
+$gray-500: #6b7280;               // Medium text
+$gray-300: #d1d5db;               // Light borders
+$gray-100: #f3f4f6;               // Very light backgrounds
+
+// Legacy colors for compatibility (updated to professional palette)
+$red: #2563eb;            // Updated to professional blue
+$blue: #3b82f6;           // Vibrant blue
+$yellow: #f59e0b;         // Professional amber
+$orange: #ea580c;         // Professional orange
+$green: #059669;          // Professional green
+$gray: #111827;           // Professional dark gray
+$light-gray: #f3f4f6;     // Professional light gray
