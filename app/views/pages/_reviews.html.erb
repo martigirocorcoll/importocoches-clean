@@ -1,50 +1,299 @@
-<div class="reviews">
-  <div class="container">
-    <h2 style= "color: white !important;"><%= t('newhome.review') %></h2>
-    <div class="review-slider">
-
-      <div class="valoracion">
-        <h4 style="font-size: 90px !important; color: black; text-align: left;">''</h4>
-        <p style="color: white !important; margin-bottom: 10px;">Desde el inicio ha sido una gran gestión, todo fácil y ágil. Han cumplido con todos los plazos acordados. Muy recomendable.</p>
-        <div class="valoracion-nombre"><h4 style="color: white !important; font-size: 30px !important;">Fernando Orosa</h4></div>
-      </div>
-
-      <div class="valoracion">
-        <h4 style="font-size: 90px !important; color: black; text-align: left;">''</h4>
-        <p style="color: white !important; margin-bottom: 10px;">Muy profesionales, serios, el coche está impecable como en las fotos. 100% recomendable. Gracias por todo y volveré a contactar con vosotros.</p>
-        <div class="valoracion-nombre"><h4 style="color: white !important; font-size: 30px !important;">Jonatan</h4></div>
-      </div>
-
-      <div class="valoracion">
-        <h4 style="font-size: 90px !important; color: black; text-align: left;">''</h4>
-        <p style="color: white !important; margin-bottom: 10px;">Empresa muy seria , les compre un Fiat i todo fue OK, pagado por adelantado pero sin problema alguno, habia tomado antes de hacerles el pedido referencias suyas, i realmente superaron mis expectativas. Lo recomiendo personalmente.</p>
-        <div class="valoracion-nombre"><h4 style="color: white !important; font-size: 30px !important;">Xavi Coma</h4></div>
-      </div>
-
-      <div class="valoracion">
-        <h4 style="font-size: 90px !important; color: black; text-align: left;">''</h4>
-        <p style="color: white !important; margin-bottom: 10px;">They were very helpful selecting and importing a car, and ensuring there was no damage/was in good condition.</p>
-        <div class="valoracion-nombre"><h4 style="color: white !important; font-size: 30px !important;">Kyran Burraston</h4></div>
-      </div>
-
-      <div class="valoracion">
-        <h4 style="font-size: 90px !important; color: black; text-align: left;">''</h4>
-        <p style="color: white !important; margin-bottom: 10px;">Después de buscar mucho por Andorra y no encontrar nada, encontré el modelo que buscaba en ImportoCotxe a muy buen precio y prácticamente nuevo. En pocas semanas ya lo tenía en casa listo para circular. Ellos se encargan de todo. 100% recomendado.</p>
-        <div class="valoracion-nombre"><h4 style="color: white !important; font-size: 30px !important;">Bernat Gomis</h4></div>
-      </div>
-
-      <div class="valoracion">
-        <h4 style="font-size: 90px !important; color: black; text-align: left;">''</h4>
-        <p style="color: white !important; margin-bottom: 10px;">Trato muy profesional desde el inicio hasta la entrega. ¡Muy recomendable!</p>
-        <div class="valoracion-nombre"><h4 style="color: white !important; font-size: 30px !important;">Gerard Gelonch</h4></div>
-      </div>
-
+<div class="reviews-modern">
+  <div class="reviews-container">
+    
+    <!-- Section Header -->
+    <div class="reviews-header">
+      <div class="reviews-badge">TESTIMONIOS</div>
+      <h2 class="reviews-title"><%= t('newhome.review') %></h2>
+      <p class="reviews-subtitle">Lo que dicen nuestros clientes sobre nosotros</p>
     </div>
-    <a href="https://maps.app.goo.gl/cS7PvQpprWgFcAvC8" target="_blank">
-      <%= image_tag("5starsgoogle.png", width: 300) %>
-    </a>
-      <br>
-      <h2 style= "color: white !important;">Importocotxe.ad</h2>
+
+    <!-- Reviews Carousel -->
+    <div class="reviews-carousel">
+      <div class="swiper reviews-swiper">
+        <div class="swiper-wrapper">
+          
+          <!-- Review 1 -->
+          <div class="swiper-slide">
+            <div class="review-card-enhanced">
+              <div class="review-car-section">
+                <div class="car-image-placeholder">
+                  <!-- Placeholder for BMW X3 photo -->
+                  <div class="car-placeholder">🚗</div>
+                  <div class="car-info">
+                    <span class="car-model">BMW X3</span>
+                    <span class="car-year">2022</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-content-section">
+                <div class="review-verification">
+                  <div class="verified-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Cliente Verificado</span>
+                  </div>
+                  <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="review-quote">
+                  <i class="fas fa-quote-left quote-icon"></i>
+                  <p>Desde el inicio ha sido una gran gestión, todo fácil y ágil. Han cumplido con todos los plazos acordados. Muy recomendable.</p>
+                </div>
+                <div class="review-author">
+                  <h4>Fernando Orosa</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="swiper-slide">
+            <div class="review-card-enhanced">
+              <div class="review-car-section">
+                <div class="car-image-placeholder">
+                  <!-- Placeholder for Mercedes photo -->
+                  <div class="car-placeholder">🚗</div>
+                  <div class="car-info">
+                    <span class="car-model">Mercedes C-Class</span>
+                    <span class="car-year">2023</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-content-section">
+                <div class="review-verification">
+                  <div class="verified-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Cliente Verificado</span>
+                  </div>
+                  <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="review-quote">
+                  <i class="fas fa-quote-left quote-icon"></i>
+                  <p>Muy profesionales, serios, el coche está impecable como en las fotos. 100% recomendable. Gracias por todo y volveré a contactar con vosotros.</p>
+                </div>
+                <div class="review-author">
+                  <h4>Jonatan</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="swiper-slide">
+            <div class="review-card-enhanced">
+              <div class="review-car-section">
+                <div class="car-image-placeholder">
+                  <!-- Placeholder for Fiat photo -->
+                  <div class="car-placeholder">🚗</div>
+                  <div class="car-info">
+                    <span class="car-model">Fiat 500</span>
+                    <span class="car-year">2022</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-content-section">
+                <div class="review-verification">
+                  <div class="verified-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Cliente Verificado</span>
+                  </div>
+                  <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="review-quote">
+                  <i class="fas fa-quote-left quote-icon"></i>
+                  <p>Empresa muy seria, les compré un Fiat y todo fue OK, pagado por adelantado pero sin problema alguno. Realmente superaron mis expectativas. Lo recomiendo personalmente.</p>
+                </div>
+                <div class="review-author">
+                  <h4>Xavi Coma</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="swiper-slide">
+            <div class="review-card-enhanced">
+              <div class="review-car-section">
+                <div class="car-image-placeholder">
+                  <!-- Placeholder for Audi photo -->
+                  <div class="car-placeholder">🚗</div>
+                  <div class="car-info">
+                    <span class="car-model">Audi A4</span>
+                    <span class="car-year">2023</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-content-section">
+                <div class="review-verification">
+                  <div class="verified-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Cliente Verificado</span>
+                  </div>
+                  <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="review-quote">
+                  <i class="fas fa-quote-left quote-icon"></i>
+                  <p>They were very helpful selecting and importing a car, and ensuring there was no damage and was in good condition.</p>
+                </div>
+                <div class="review-author">
+                  <h4>Kyran Burraston</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="swiper-slide">
+            <div class="review-card-enhanced">
+              <div class="review-car-section">
+                <div class="car-image-placeholder">
+                  <!-- Placeholder for BMW photo -->
+                  <div class="car-placeholder">🚗</div>
+                  <div class="car-info">
+                    <span class="car-model">BMW 320d</span>
+                    <span class="car-year">2022</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-content-section">
+                <div class="review-verification">
+                  <div class="verified-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Cliente Verificado</span>
+                  </div>
+                  <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="review-quote">
+                  <i class="fas fa-quote-left quote-icon"></i>
+                  <p>Después de buscar mucho por Andorra y no encontrar nada, encontré el modelo que buscaba en ImportoCotxe a muy buen precio y prácticamente nuevo. Ellos se encargan de todo. 100% recomendado.</p>
+                </div>
+                <div class="review-author">
+                  <h4>Bernat Gomis</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 6 -->
+          <div class="swiper-slide">
+            <div class="review-card-enhanced">
+              <div class="review-car-section">
+                <div class="car-image-placeholder">
+                  <!-- Placeholder for Porsche photo -->
+                  <div class="car-placeholder">🚗</div>
+                  <div class="car-info">
+                    <span class="car-model">Porsche Cayenne</span>
+                    <span class="car-year">2023</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-content-section">
+                <div class="review-verification">
+                  <div class="verified-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Cliente Verificado</span>
+                  </div>
+                  <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <div class="review-quote">
+                  <i class="fas fa-quote-left quote-icon"></i>
+                  <p>Trato muy profesional desde el inicio hasta la entrega. ¡Muy recomendable!</p>
+                </div>
+                <div class="review-author">
+                  <h4>Gerard Gelonch</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+
+    <!-- Google Reviews Badge -->
+    <div class="reviews-footer">
+      <a href="https://maps.app.goo.gl/cS7PvQpprWgFcAvC8" target="_blank" class="google-reviews-link">
+        <%= image_tag("5starsgoogle.png", alt: "5 estrellas en Google Reviews", class: "google-stars") %>
+      </a>
+      <h3 class="brand-name">5.0 ⭐ en Google Reviews - 100% Clientes Satisfechos</h3>
+    </div>
 
   </div>
 </div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const swiper = new Swiper('.reviews-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      }
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+});
+</script>

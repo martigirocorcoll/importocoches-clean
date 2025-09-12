@@ -67,195 +67,185 @@
 </div>
 
 <!-- Original SIT Section -->
-<div class= "sit-home">
-  <div id="home-card-sit">
-    <div class="barrra-vermella">
-      <p style="color:#0066FF ;"> </p>
+<div class="sit-home-modern">
+  <div class="sit-container">
+    <!-- Section Header -->
+    <div class="sit-header">
+      <div class="sit-badge">SIT</div>
+      <h2 class="sit-main-title"><%= t('newhome.sitsub') %></h2>
+      <p class="sit-description"><%= t('newhome.sitdesc') %></p>
     </div>
-    <h2 id="main-card-title-2">SIT</h2>
-    <h2 id="main-card-title"><%= t('newhome.sitsub') %></h2>
-    <p style="font-size: 28px !important; width: 90%; margin: auto; line-height: 28px !important; margin-bottom: 2em;"><%= t('newhome.sitdesc') %></p>
 
-    <div class="sit-block">
-      <h4 style="font-size: 32px !important;"><%= t('newhome.sit1') %></h4>
-      <div class= "sit-cards">
-        <div class= "sit-card">
-          <h2><%= t('newhome.sitcom') %></h2>
-          <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372753/undraw_forgot_password_re_hxwm_bjtrvv.svg" alt="">
-          <p><%= t('newhome.sitcomd') %></p>
-        </div>
-        <div class= "sit-card">
-          <h2><%= t('newhome.sitcom') %></h2>
-          <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372819/undraw_search_re_x5gq_dsj50n.svg" alt="ilustracion plataforma buscar coches de importación">
-          <p><%= t('newhome.sit2comd') %></p>
-        </div>
-        <div class="sit-card-vid"
-          data-controller="youtube"
-          data-youtube-id-value="<%= t('video.trobar') %>">
-          <!-- Miniatura estática -->
-          <div class="youtube-thumbnail"
-              style="background-image:
-                url('https://i.ytimg.com/vi/<%= t('video.trobar') %>/hqdefault.jpg');
-                border-radius: 25px;">
+    <!-- Timeline Process -->
+    <div class="sit-timeline">
+      
+      <!-- Phase 1: Finding -->
+      <div class="timeline-phase" data-phase="1">
+        <div class="phase-number">01</div>
+        <div class="phase-content">
+          <h3 class="phase-title"><%= t('newhome.sit1') %></h3>
+          <div class="phase-cards-full">
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <h4><%= t('newhome.sitcom') %></h4>
+              <p><%= t('newhome.sitcomd') %></p>
+            </div>
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h4>Búsqueda Personalizada</h4>
+              <p><%= t('newhome.sit2comd') %></p>
+            </div>
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h4><%= t('newhome.sitgar') %></h4>
+              <p><%= t('newhome.sitgard') %></p>
+            </div>
           </div>
-          <!-- Botón de play -->
-          <button class="youtube-play-button"
-                  aria-label="Reproducir vídeo">
-          </button>
         </div>
       </div>
-    </div>
-    <div class="sit-block">
-      <h4 style="font-size: 32px !important;"><%= t('newhome.sit2') %></h4>
-      <div class="sit-cards-column">
-        <div class= "sit-cards">
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitgar') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372851/undraw_automobile_repair_ywci_pkdofc.svg" alt="">
-            <p><%= t('newhome.sitgard') %></p>
-          </div>
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitcompra') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372852/undraw_business_deal_re_up4u-2_ahsah9.svg" alt="">
-            <p><%= t('newhome.sitcomprad') %></p>
-          </div>
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitcau') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372855/undraw_discount_d-4-bd-2_y9p34m.svg" alt="">
-            <p><%= t('newhome.sitcaud') %></p>
+
+      <!-- Video Break 1 -->
+      <div class="video-break-section">
+        <div class="video-break-container">
+          <div class="video-card hero-video"
+            data-controller="youtube"
+            data-youtube-id-value="<%= t('video.trobar') %>">
+            <div class="video-preview hero-preview"
+                style="background-image: url('https://i.ytimg.com/vi/<%= t('video.trobar') %>/hqdefault.jpg');">
+              <div class="video-overlay">
+                <i class="fas fa-play"></i>
+                <span>Ver cómo encontramos tu coche</span>
+              </div>
+            </div>
           </div>
         </div>
-        <br>
-        <div class= "sit-cards">
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitrans') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372856/undraw_navigator_a479-3_oulkww.svg" alt="">
-            <p><%= t('newhome.sitransd') %></p>
+      </div>
+      
+      <!-- Phase 2: Management -->
+      <div class="timeline-phase" data-phase="2">
+        <div class="phase-number">02</div>
+        <div class="phase-content">
+          <h3 class="phase-title"><%= t('newhome.sit2') %></h3>
+          <div class="phase-cards-full">
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4><%= t('newhome.sitcau') %></h4>
+              <p><%= t('newhome.sitcaud') %></p>
+            </div>
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-shipping-fast"></i>
+              </div>
+              <h4><%= t('newhome.sitrans') %></h4>
+              <p><%= t('newhome.sitransd') %></p>
+            </div>
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h4><%= t('newhome.sitim') %></h4>
+              <p><%= t('newhome.sitimd') %></p>
+            </div>
           </div>
-          <div class="sit-card-vid"
+        </div>
+      </div>
+
+      <!-- Video Break 2 -->
+      <div class="video-break-section">
+        <div class="video-break-container">
+          <div class="video-card hero-video"
             data-controller="youtube"
             data-youtube-id-value="<%= t('video.proces') %>">
-            <!-- Miniatura estática -->
-            <div class="youtube-thumbnail"
-                style="background-image:
-                  url('https://i.ytimg.com/vi/<%= t('video.proces') %>/hqdefault.jpg');
-                  border-radius: 25px;">
+            <div class="video-preview hero-preview"
+                style="background-image: url('https://i.ytimg.com/vi/<%= t('video.proces') %>/hqdefault.jpg');">
+              <div class="video-overlay">
+                <i class="fas fa-play"></i>
+                <span>Ver todo el proceso de gestión</span>
+              </div>
             </div>
-            <!-- Botón de play -->
-            <button class="youtube-play-button"
-                    aria-label="Reproducir vídeo">
-            </button>
-          </div>
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitim') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372857/undraw_outer_space_re_u9vd_hdhff3.svg" alt="">
-            <p><%= t('newhome.sitimd') %></p>
           </div>
         </div>
       </div>
-      <div class="sit-cards-row">
-        <div class= "sit-cards">
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitgar') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372851/undraw_automobile_repair_ywci_pkdofc.svg" alt="">
-            <p><%= t('newhome.sitgard') %></p>
+      
+      <!-- Phase 3: Delivery -->
+      <div class="timeline-phase" data-phase="3">
+        <div class="phase-number">03</div>
+        <div class="phase-content">
+          <h3 class="phase-title"><%= t('newhome.sit3') %></h3>
+          <div class="phase-cards-full">
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h4><%= t('newhome.sitprep') %></h4>
+              <p><%= t('newhome.sitprepd') %></p>
+            </div>
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h4><%= t('newhome.sitent') %></h4>
+              <p><%= t('newhome.sitentd') %></p>
+            </div>
+            <div class="modern-sit-card">
+              <div class="card-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <h4><%= t('newhome.sitgaran') %></h4>
+              <p><%= t('newhome.sitgarand') %></p>
+            </div>
           </div>
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitcompra') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372852/undraw_business_deal_re_up4u-2_ahsah9.svg" alt="">
-            <p><%= t('newhome.sitcomprad') %></p>
-          </div>
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitcau') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372855/undraw_discount_d-4-bd-2_y9p34m.svg" alt="">
-            <p><%= t('newhome.sitcaud') %></p>
-          </div>
-          <div class= "sit-card">
-            <h2><%= t('newhome.sitrans') %></h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372856/undraw_navigator_a479-3_oulkww.svg" alt="">
-            <p><%= t('newhome.sitransd') %></p>
-          </div>
-          <div class= "sit-card">
-            <h2>Importació tipus express</h2>
-            <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372857/undraw_outer_space_re_u9vd_hdhff3.svg" alt="">
-            <p><%= t('newhome.sitimd') %></p>
-          </div>
-          <div class="sit-card-vid"
+        </div>
+      </div>
+
+      <!-- Video Break 3 -->
+      <div class="video-break-section">
+        <div class="video-break-container">
+          <div class="video-card hero-video"
             data-controller="youtube"
             data-youtube-id-value="<%= t('video.entreguem') %>">
-            <!-- Miniatura estática -->
-            <div class="youtube-thumbnail"
-                style="background-image:
-                  url('https://i.ytimg.com/vi/<%= t('video.entreguem') %>/hqdefault.jpg');
-                  border-radius: 25px;">
+            <div class="video-preview hero-preview"
+                style="background-image: url('https://i.ytimg.com/vi/<%= t('video.entreguem') %>/hqdefault.jpg');">
+              <div class="video-overlay">
+                <i class="fas fa-play"></i>
+                <span>Ver cómo te entregamos tu coche</span>
+              </div>
             </div>
-            <!-- Botón de play -->
-            <button class="youtube-play-button"
-                    aria-label="Reproducir vídeo">
-            </button>
           </div>
-
         </div>
       </div>
-    </div>
-    <div class="sit-block">
-      <h4 style="font-size: 32px !important;"><%= t('newhome.sit3') %></h4>
-      <div class= "sit-cards">
-        <div class= "sit-card">
-          <h2><%= t('newhome.sitprep') %></h2>
-          <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372853/undraw_certification_re_ifll_mui8t0.svg" alt="">
-          <p><%= t('newhome.sitprepd') %></p>
-        </div>
-        <div class= "sit-card">
-          <h2><%= t('newhome.sitent') %></h2>
-          <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372856/undraw_electric_car_b-7-hl-6_ixbjpf.svg" alt="">
-          <p><%= t('newhome.sitentd') %></p>
-        </div>
-        <div class= "sit-card">
-          <h2><%= t('newhome.sitgaran') %></h2>
-          <img  class="sit-card-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699372853/undraw_chore_list_re_2lq8_ebvyya.svg" alt="">
-          <p><%= t('newhome.sitgarand') %></p>
-        </div>
-        <div class= "sit-card-vid"
-            data-controller="youtube"
-            data-youtube-id-value="<%= t('video.entreguem') %>">
-            <!-- Miniatura estática -->
-            <div class="youtube-thumbnail"
-                style="background-image:
-                  url('https://i.ytimg.com/vi/<%= t('video.entreguem') %>/hqdefault.jpg');
-                  border-radius: 25px;">
-            </div>
-            <!-- Botón de play -->
-            <button class="youtube-play-button"
-                    aria-label="Reproducir vídeo">
-            </button>
+    
+    </div> <!-- Close timeline -->
+
+    <!-- Final CTA Section -->
+    <div class="sit-final-section">
+      <h2 class="final-title"><%= t('newhome.sitfin') %></h2>
+      
+      <div class="final-video"
+          data-controller="youtube"
+          data-youtube-id-value="<%= t('video.main') %>">
+        <div class="video-preview main-video"
+            style="background-image: url('https://i.ytimg.com/vi/<%= t('video.main') %>/hqdefault.jpg');">
+          <div class="video-overlay">
+            <i class="fas fa-play"></i>
+            <span>Ver todo el proceso</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <h2><%= t('newhome.sitfin') %></h2>
-    <br>
-    <div class="container-video"
-        data-controller="youtube"
-        data-youtube-id-value="<%= t('video.main') %>">
-
-      <!-- miniatura 16:9 -->
-      <div class="youtube-thumbnail"
-          style="background-image:
-            url('https://i.ytimg.com/vi/<%= t('video.main') %>/hqdefault.jpg');">
-      </div>
-
-      <!-- play button -->
-      <button class="youtube-play-button"
-              aria-label="Reproducir vídeo">
-      </button>
-    </div>
-
-    <%= link_to root_path do %>
-      <button id="btn-footer-home">
+      <%= link_to root_path, class: "modern-cta-button" do %>
         <%= t('pages.home.encuentra') %>
-      </button>
-    <% end %>
+        <i class="fas fa-arrow-right"></i>
+      <% end %>
+    </div>
 
   </div>
 </div>
