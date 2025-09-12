@@ -637,6 +637,337 @@
 }
 
 
+// Modern GTI Section with Responsive Video Grid
+.gti-modern {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  // Floating animations - matching other sections
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  // Decorative elements
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite;
+    filter: blur(60px);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 12s ease-in-out infinite reverse;
+    filter: blur(60px);
+  }
+}
+
+.gti-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  
+  @media (min-width: 1200px) {
+    padding: 0 40px;
+  }
+}
+
+// Section Header - consistent with SIT/Reviews
+.gti-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  
+  .gti-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(37, 99, 235, 0.35);
+    }
+  }
+  
+  .gti-main-title {
+    font-size: clamp(36px, 6vw, 56px) !important;
+    font-weight: 800 !important;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gti-description {
+    font-size: clamp(18px, 3vw, 22px);
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+}
+
+// Responsive Services Grid
+.gti-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+// Modern Service Cards with Video
+.gti-service-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.08);
+  position: relative;
+  
+  // Top accent line
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.6));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow: 0 24px 48px rgba(37, 99, 235, 0.15);
+    
+    &::before {
+      opacity: 1;
+    }
+    
+    .video-card {
+      transform: scale(1.02);
+    }
+  }
+}
+
+// Video Container - Compact 16:9 Aspect Ratio
+.service-video-container {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  
+  .video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16/9;
+    background: #000;
+    max-width: 90%;
+    margin: 0 auto;
+    
+    .video-preview {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      
+      .video-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+        
+        i {
+          font-size: 2.5rem;
+          margin-bottom: 0.5rem;
+          transition: transform 0.3s ease;
+        }
+        
+        span {
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+      
+      &:hover .video-overlay {
+        background: rgba(37, 99, 235, 0.8);
+        
+        i {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+// Service Content
+.service-content {
+  padding: 1.5rem;
+  
+  .service-title {
+    font-size: clamp(18px, 3.5vw, 24px) !important;
+    font-weight: 800 !important;
+    color: #0f172a;
+    margin-bottom: 1.2rem;
+    line-height: 1.25;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.01em;
+  }
+  
+  .service-description {
+    color: #475569;
+    line-height: 1.65;
+    font-size: clamp(14px, 2.5vw, 16px);
+    margin: 0;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+}
+
+// GTI Footer with CTA
+.gti-footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.1);
+  
+  .gti-final-title {
+    font-size: clamp(24px, 5vw, 36px) !important;
+    font-weight: 700 !important;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+// Modern CTA Button - consistent with other sections
+.gti-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.5);
+    color: white;
+    text-decoration: none;
+    
+    &::before {
+      opacity: 1;
+    }
+    
+    i {
+      transform: translateX(5px);
+    }
+  }
+  
+  i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+}
+
+// Mobile Optimizations
+@media (max-width: 768px) {
+  .gti-modern {
+    padding: 4rem 0;
+  }
+  
+  .gti-services-grid {
+    gap: 2rem;
+  }
+  
+  .service-video-container {
+    padding: 1rem 1rem 0 1rem;
+  }
+  
+  .service-content {
+    padding: 1rem;
+  }
+}
+
 // Home: sit partial
 
 // Modern Background with Subtle Gradient - matching show page

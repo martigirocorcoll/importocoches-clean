@@ -1,43 +1,89 @@
-<div class= "sit-home">
-  <div id="home-card-sit">
-    <div class="barrra-vermella">
-      <p style="color:#0066FF ;"> </p>
+<div class="gti-modern">
+  <div class="gti-container">
+    
+    <!-- Section Header -->
+    <div class="gti-header">
+      <div class="gti-badge">GTI</div>
+      <h2 class="gti-main-title"><%= t('newhome.gti') %></h2>
+      <p class="gti-description"><%= t('newhome.gtides') %></p>
     </div>
-    <h2 id="main-card-title-2">GTI</h2>
-    <h2 id="main-card-title"><%= t('newhome.gti') %></h2>
-    <p style="font-size: 28px !important; width: 90%; margin: auto; line-height: 28px !important; margin-bottom: 2em;"><%= t('newhome.gtides') %></p>
 
-    <div class="sit-block">
-      <div class= "sit-cards">
-
-        <div class= "sit-card-2">
-          <h4 style="font-size: 32px !important;"><%= t('newhome.gti1') %></h4>
-          <iframe loading="lazy" class="mt-2 mb-2" style="border-radius: 25px;" width="300" height="350" src="https://www.youtube.com/embed/<%= t('video.garantia') %>" title="Garantia d'importacio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
-          <p><%= t('newhome.gti1des') %></p>
+    <!-- GTI Services Grid -->
+    <div class="gti-services-grid">
+      
+      <!-- Service 1: Garantía de Importación -->
+      <div class="gti-service-card">
+        <div class="service-video-container">
+          <div class="video-card"
+               data-controller="youtube"
+               data-youtube-id-value="<%= t('video.garantia') %>">
+            <div class="video-preview"
+                 style="background-image: url('https://i.ytimg.com/vi/<%= t('video.garantia') %>/hqdefault.jpg');">
+              <div class="video-overlay">
+                <i class="fas fa-play"></i>
+                <span>Ver Video</span>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class= "sit-card-2">
-          <h4 style="font-size: 32px !important;"><%= t('newhome.gti2') %></h4>
-          <iframe loading="lazy" class="mt-2 mb-2" style="border-radius: 25px;" width="300" height="350" src="https://www.youtube.com/embed/<%= t('video.entrega') %>" title="Busquem d'entrega" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
-          <p><%= t('newhome.gti2des') %></p>
+        <div class="service-content">
+          <h3 class="service-title"><%= t('newhome.gti1') %></h3>
+          <p class="service-description"><%= t('newhome.gti1des') %></p>
         </div>
-
-        <div class= "sit-card-2">
-          <h4 style="font-size: 32px !important;"><%= t('newhome.gti3') %></h4>
-          <iframe loading="lazy" class="mt-2 mb-2" style="border-radius: 25px;" width="300" height="350" src="https://www.youtube.com/embed/<%= t('video.mecanica') %>" title="Garantia mecànica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
-          <p><%= t('newhome.gti3des') %> </p>
-        </div>
-
       </div>
+
+      <!-- Service 2: Búsqueda y Entrega -->
+      <div class="gti-service-card">
+        <div class="service-video-container">
+          <div class="video-card"
+               data-controller="youtube"
+               data-youtube-id-value="<%= t('video.entrega') %>">
+            <div class="video-preview"
+                 style="background-image: url('https://i.ytimg.com/vi/<%= t('video.entrega') %>/hqdefault.jpg');">
+              <div class="video-overlay">
+                <i class="fas fa-play"></i>
+                <span>Ver Video</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title"><%= t('newhome.gti2') %></h3>
+          <p class="service-description"><%= t('newhome.gti2des') %></p>
+        </div>
+      </div>
+
+      <!-- Service 3: Garantía Mecánica -->
+      <div class="gti-service-card">
+        <div class="service-video-container">
+          <div class="video-card"
+               data-controller="youtube"
+               data-youtube-id-value="<%= t('video.mecanica') %>">
+            <div class="video-preview"
+                 style="background-image: url('https://i.ytimg.com/vi/<%= t('video.mecanica') %>/hqdefault.jpg');">
+              <div class="video-overlay">
+                <i class="fas fa-play"></i>
+                <span>Ver Video</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title"><%= t('newhome.gti3') %></h3>
+          <p class="service-description"><%= t('newhome.gti3des') %></p>
+        </div>
+      </div>
+
     </div>
 
-    <h2><%= t('newhome.gtifin') %></h2>
-    <br>
-    <%= link_to root_path do %>
-      <button id="btn-footer-home">
+    <!-- Final CTA Section -->
+    <div class="gti-footer">
+      <h2 class="gti-final-title"><%= t('newhome.gtifin') %></h2>
+      <%= link_to root_path, class: "gti-cta-button" do %>
         <%= t('pages.home.encuentra') %>
-      </button>
-    <% end %>
+        <i class="fas fa-arrow-right"></i>
+      <% end %>
+    </div>
 
   </div>
 </div>
