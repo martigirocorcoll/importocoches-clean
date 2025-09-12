@@ -1,0 +1,225 @@
+// Modern Glassmorphism Forms - Global Styles
+// These styles apply to all unified contact forms across the application
+
+.unified-contact-form {
+  .form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    .form-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+      
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    
+    .form-title {
+      color: #1e293b;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-subtitle {
+      color: rgba(30, 41, 59, 0.7);
+      font-size: 0.875rem;
+    }
+  }
+
+  .modern-contact-form {
+    .desktop-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .input-group {
+      .simple-input-wrapper {
+        input.form-input, 
+        .form-input {
+          width: 100% !important;
+          padding: 1rem 1rem 1rem 3.5rem !important;
+          background: rgba(255, 255, 255, 0.6) !important;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(59, 130, 246, 0.2) !important;
+          border-radius: 12px !important;
+          font-size: 1rem !important;
+          color: #1e293b !important;
+          transition: all 0.3s ease;
+          box-sizing: border-box;
+
+          &:focus {
+            outline: none !important;
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-color: rgba(59, 130, 246, 0.4) !important;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+            transform: translateY(-1px);
+          }
+
+          &::placeholder {
+            color: rgba(30, 41, 59, 0.6) !important;
+          }
+        }
+
+        // Name field icon
+        input[name="contact[name]"] {
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23475569" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>') !important;
+          background-repeat: no-repeat !important;
+          background-position: 18px center !important;
+        }
+
+        // Phone field icon
+        input[name="contact[phone]"] {
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23475569" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>') !important;
+          background-repeat: no-repeat !important;
+          background-position: 18px center !important;
+        }
+
+        // Email field icon
+        input[name="contact[email]"] {
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23475569" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>') !important;
+          background-repeat: no-repeat !important;
+          background-position: 18px center !important;
+        }
+
+        // Textarea icon
+        textarea[name="contact[comment]"] {
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23475569" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>') !important;
+          background-repeat: no-repeat !important;
+          background-position: 18px 20px !important;
+        }
+      }
+    }
+
+    // Email field (full width)
+    .input-group:nth-child(3) {
+      grid-column: 1 / -1;
+      
+      .simple-input-wrapper .form-input {
+        padding-left: 3.5rem;
+      }
+    }
+
+    // Message textarea
+    .textarea-group {
+      margin-bottom: 1.5rem;
+      
+      .simple-input-wrapper {
+        textarea.form-input,
+        textarea.form-textarea,
+        .form-textarea {
+          width: 100% !important;
+          min-height: 120px !important;
+          padding: 1rem 1rem 1rem 3.5rem !important;
+          background: rgba(255, 255, 255, 0.6) !important;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(59, 130, 246, 0.2) !important;
+          border-radius: 12px !important;
+          font-size: 1rem !important;
+          color: #1e293b !important;
+          resize: vertical;
+          font-family: inherit;
+          transition: all 0.3s ease;
+          box-sizing: border-box;
+
+          &:focus {
+            outline: none !important;
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-color: rgba(59, 130, 246, 0.4) !important;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+            transform: translateY(-1px);
+          }
+
+          &::placeholder {
+            color: rgba(30, 41, 59, 0.6) !important;
+          }
+        }
+      }
+    }
+
+    // Submit button
+    .form-submit {
+      text-align: center;
+      
+      .btn-submit {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: white;
+        border: none;
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        position: relative;
+        overflow: hidden;
+        min-width: 200px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          transition: left 0.5s ease;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+          
+          &::before {
+            left: 100%;
+          }
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Special styling for forms within glassmorphism containers
+.glassmorphism-form-container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 35px 70px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+}

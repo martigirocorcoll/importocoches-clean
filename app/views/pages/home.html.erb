@@ -165,18 +165,31 @@
   <%= render 'pages/reviews' %>
   <%= render 'pages/gti' %>
   <%= render 'pages/faqs' %>
-  <%# <%= render 'pages/social' %>
-  <%= render 'pages/copyhome' %>
+  <%= render 'pages/social' %>
+  <%# <%= render 'pages/copyhome' %>
 
-  <!-- General inquiry form section -->
-  <div class="seocontainer" style="margin: 60px auto; text-align: center;">
-    <h2 style="color: #0066FF; margin-bottom: 20px;">¿Tienes alguna duda?</h2>
-    <p style="margin-bottom: 30px; color: #666;">Contáctanos y te ayudaremos a encontrar el EV que buscas</p>
-    <%= render 'shared/unified_contact_form',
-        source: 'web',
-        form_type: 'general_inquiry',
-        placeholder: 'Cuéntanos qué coche buscas o cualquier duda que tengas...',
-        submit_text: 'Enviar consulta' %>
+  <!-- Final CTA section with modern glassmorphism -->
+  <div class="final-cta-section">
+    <div class="container">
+      <div class="final-cta-header">
+        <h2>¿Tienes alguna duda?</h2>
+        <p>Contáctanos y te ayudaremos a encontrar el EV que buscas</p>
+      </div>
+      <div class="glassmorphism-form-container">
+        <div class="final-cta-form-header">
+          <div class="form-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Contacta con nosotros</h3>
+          <p>Te responderemos en menos de 24 horas</p>
+        </div>
+        <%= render 'shared/unified_contact_form',
+            source: 'web',
+            form_type: 'general_inquiry',
+            placeholder: 'Cuéntanos qué coche buscas o cualquier duda que tengas...',
+            submit_text: 'Enviar consulta' %>
+      </div>
+    </div>
   </div>
 </div>
 <%# <%= render 'pages/whatwedo' %>
