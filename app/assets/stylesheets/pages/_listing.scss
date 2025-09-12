@@ -1,7 +1,10 @@
 .flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 200px) {
@@ -13,6 +16,7 @@
 @media (min-width: 990px) {
   .flex {
     flex-direction: row;
+    gap: 2rem;
   }
 }
 
@@ -61,12 +65,8 @@
 
 @media (min-width: 990px) {
   .filters-index {
-    margin-right: 35px;
-    // height: 50%;
-    // position: sticky;
-    // overflow-y: scroll;
-    flex: 0 0 auto;
-    width: 25%;
+    flex: 0 0 300px;
+    max-width: 300px;
   }
 }
 
@@ -97,7 +97,9 @@
 }
 
 .ads{
-  width: 100%;
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .listing-top {

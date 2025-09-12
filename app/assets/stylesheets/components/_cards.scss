@@ -128,24 +128,30 @@
 //////////////// INDEX ////////////////
 .card-product {
   display: flex;
-  margin: 35px;
-  margin-left: 0px;
-  box-shadow: 3px 3px 5px rgba(25, 20, 20, 0.1);
-  background-color: white;
-  border-radius: 10px;
-
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .card-product:hover {
-  box-shadow: 3px 3px 10px rgba(25, 20, 20, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 @media (min-width: 200px) {
   .card-product {
-    margin-bottom: 35px;
     flex-direction: column;
-    margin-right: 0px;
     overflow: hidden;
+    margin: 15px 0;
   }
 }
 
@@ -153,7 +159,8 @@
   .card-product {
     flex-direction: row;
     overflow: hidden;
-    min-height: 200px;
+    min-height: 180px;
+    margin: 20px 0;
   }
 }
 
