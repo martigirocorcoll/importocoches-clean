@@ -3,8 +3,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 20px;
 }
 
 @media (min-width: 200px) {
@@ -13,10 +15,20 @@
   }
 }
 
-@media (min-width: 990px) {
+@media (min-width: 990px) and (max-width: 1199px) {
+  .flex {
+    flex-direction: column-reverse;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
   .flex {
     flex-direction: row;
     gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 }
 
@@ -54,6 +66,8 @@
   height: auto;
   border-radius: 10px;
   top: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (min-width: 200px) {
@@ -63,7 +77,14 @@
   }
 }
 
-@media (min-width: 990px) {
+@media (min-width: 990px) and (max-width: 1199px) {
+  .filters-index {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
   .filters-index {
     flex: 0 0 300px;
     max-width: 300px;
@@ -99,7 +120,20 @@
 .ads{
   flex: 1;
   min-width: 0;
-  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1199px) {
+  .ads{
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ads{
+    max-width: calc(100% - 332px); // Total width minus filter width and gap
+  }
 }
 
 .listing-top {
