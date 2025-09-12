@@ -1,22 +1,48 @@
+// Premium CTA Primary Button - Corporate Blue
 .home-button {
-  background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);
+  background: linear-gradient(135deg, #0052CC 0%, #003D99 100%);
   color: white;
   width: 100%;
-  border-radius: 10px;
-  height: 50px;
+  border-radius: 12px;
+  height: 54px;
   border: none;
   margin-top: 22px;
-  font-family: 'Work Sans';
+  font-family: 'Work Sans', sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 82, 204, 0.3), 
+              0 2px 8px rgba(0, 82, 204, 0.2);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.2), 
+      transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
 }
 
 .home-button:hover {
-  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  background: linear-gradient(135deg, #003D99 0%, #0052CC 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 82, 204, 0.4), 
+              0 4px 12px rgba(0, 82, 204, 0.3);
+  color: white;
 }
 
 .whatsapp-button {
@@ -108,21 +134,39 @@
   font-weight: 400;
 }
 
+// Premium CTA Secondary Button - White with Blue Border
 .home-button-inverse {
-  background-color: white;
-  color: #0066FF !important;
-  border-color: #0066FF !important;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: #0052CC !important;
+  border: 2px solid #0052CC !important;
   width: 100%;
-  border-radius: 10px;
-  height: 50px;
-  border: solid;
-  padding: 10px;
-  margin-top: 40px;
+  border-radius: 12px;
+  height: 54px;
+  padding: 12px 24px;
+  margin-top: 16px;
   margin-bottom: 40px;
   text-decoration: none;
-  font-family: 'Work Sans';
-  font-size: 15px;
-  font-weight: 400;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 
+              0 2px 8px rgba(0, 82, 204, 0.1);
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    background: rgba(0, 82, 204, 0.05);
+    border-color: #003D99 !important;
+    color: #003D99 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3), 
+                0 4px 12px rgba(0, 82, 204, 0.2);
+    text-decoration: none;
+  }
 }
 
 .btn-pagination {

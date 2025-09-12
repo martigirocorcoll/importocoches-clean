@@ -1,3 +1,72 @@
+<div class="german-advantages-section">
+  <div class="german-advantages-container">
+    
+    <!-- Main Content Grid -->
+    <div class="advantages-grid">
+      
+      <!-- Left: Premium Car Image -->
+      <div class="car-showcase">
+        <div class="car-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1544829099-b9a0c5303bea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+               alt="Premium German car - Audi RS" 
+               class="showcase-image"
+               loading="lazy">
+          <!-- Overlay badge -->
+          <div class="german-badge">
+            <span>🇩🇪 Made in Germany</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right: Advantages Content -->
+      <div class="advantages-content">
+        <div class="section-header">
+          <h2>¿Por qué elegir coches de Alemania?</h2>
+          <p class="section-subtitle">Descubre las ventajas que hacen la diferencia</p>
+        </div>
+        
+        <div class="advantages-list">
+          
+          <!-- Advantage 1: Better Price -->
+          <div class="advantage-item">
+            <div class="advantage-icon">
+              <i class="fas fa-euro-sign"></i>
+            </div>
+            <div class="advantage-text">
+              <h3>Mejor Precio</h3>
+              <p>Ahorra hasta un 30% comprando directamente en el mercado alemán. Sin intermediarios, sin márgenes inflados.</p>
+            </div>
+          </div>
+          
+          <!-- Advantage 2: Greater Variety -->
+          <div class="advantage-item">
+            <div class="advantage-icon">
+              <i class="fas fa-th-large"></i>
+            </div>
+            <div class="advantage-text">
+              <h3>Mayor Variedad</h3>
+              <p>Acceso a miles de vehículos premium disponibles en el mayor mercado automovilístico de Europa.</p>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="advantages-cta">
+          <%= link_to "#{I18n.locale}/cars", class: "german-cta-button" do %>
+            Ver Coches Disponibles
+            <i class="fas fa-arrow-right"></i>
+          <% end %>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+<!-- Original SIT Section -->
 <div class= "sit-home">
   <div id="home-card-sit">
     <div class="barrra-vermella">
@@ -181,9 +250,6 @@
               aria-label="Reproducir vídeo">
       </button>
     </div>
-
-
-
 
     <%= link_to root_path do %>
       <button id="btn-footer-home">

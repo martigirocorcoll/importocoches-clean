@@ -5,50 +5,52 @@
   z-index: 2;
 }
 
-// Modern Hero Section - Professional Light Theme matching show page
-// FORCE OVERRIDE ALL BACKGROUND IMAGES
+// Premium Car Hero Section - Aspirational Design
 .hero_img {
-  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%) !important;
-  background-image: none !important;
-  background-size: auto !important;
-  background-position: center !important;
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.8) 0%, rgba(0, 82, 204, 0.4) 50%, rgba(0, 82, 204, 0.6) 100%), 
+              url('https://images.unsplash.com/photo-1617531653332-bd46c24f2068?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1996&q=80') !important;
+  background-size: cover !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
-  background-attachment: scroll !important;
+  background-attachment: fixed !important;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
   
-  // Subtle floating decorative elements for professional look
+  // Premium overlay with subtle gradient
   &::before {
     content: '';
     position: absolute;
-    top: 10%;
-    right: -8%;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.08), transparent);
-    filter: blur(60px);
-    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(0, 82, 204, 0.7) 0%, 
+      rgba(0, 82, 204, 0.3) 40%, 
+      rgba(0, 102, 255, 0.2) 70%, 
+      transparent 100%);
+    z-index: 1;
   }
   
+  // Subtle light accent for depth
   &::after {
     content: '';
     position: absolute;
-    bottom: 20%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.06), transparent);
-    filter: blur(80px);
-    z-index: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, 
+      rgba(0, 82, 204, 0.4) 0%, 
+      transparent 100%);
+    z-index: 1;
   }
   
-  // Ensure content is above decorative elements
+  // Ensure content is above overlays
   > * {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 }
 
@@ -82,32 +84,34 @@
   }
 }
 
-// Modern Hero Title - Professional Typography
+// Premium Hero Title - Luxury Car Market Typography
 @media (min-width: 200px) {
   #search {
-    color: #111827;
+    color: #ffffff;
     margin: auto auto;
     padding-top: 2rem;
     padding: 15px;
     font-size: 32px !important;
     text-align: center;
     font-weight: 700;
-    text-shadow: none;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 
+                 0 2px 8px rgba(0, 82, 204, 0.2);
     line-height: 1.2;
   }
 }
 
 @media (min-width: 990px) {
   #search {
-    color: #111827;
-    width: 80%;
+    color: #ffffff;
+    width: 85%;
     margin: auto;
     padding-bottom: 4rem;
     padding-top: 6rem;
     text-align: center;
     font-size: 64px !important;
     font-weight: 700;
-    text-shadow: none;
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4), 
+                 0 3px 12px rgba(0, 82, 204, 0.3);
     line-height: 1.1;
     letter-spacing: -0.02em;
   }

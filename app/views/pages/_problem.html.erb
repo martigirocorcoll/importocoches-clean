@@ -1,15 +1,53 @@
-<div class="problem">
-  <div class="container">
-    <h2><%= t('newhome.problemtitle') %></h2>
-    <div class= "vertical-flex">
-      <div class= "mt-2">
-        <p class="problem-text"><%= t('newhome.problemdescrp') %></p>
-        <p class="problem-text"><%= t('newhome.problemdescrp2') %></p>
+<div class="premium-value-section">
+  <div class="premium-container">
+    <!-- Main Headline -->
+    <div class="premium-headline">
+      <h2>¿Por qué elegir coches premium alemanes?</h2>
+      <p class="premium-subtitle">No te conformes con menos cuando puedes tener lo mejor</p>
+    </div>
+
+    <!-- Value Propositions Grid -->
+    <div class="premium-benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-crown"></i>
+        </div>
+        <h3>Exclusividad Garantizada</h3>
+        <p>Acceso directo a los mejores concesionarios alemanes con vehículos únicos</p>
       </div>
-      <div class= "mt-2">
-      <img class="problem-img" loading="lazy" src="https://res.cloudinary.com/dd7x7bqya/image/upload/v1699454333/WhatsApp_Image_2023-11-08_at_15.09.57_eoc6k7.jpg" alt="foto de coche">
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-shield-check"></i>
+        </div>
+        <h3>Calidad Certificada</h3>
+        <p>Cada vehículo pasa por una inspección rigurosa de 150 puntos</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3>Marcas Premium</h3>
+        <p>BMW, Mercedes, Porsche, Audi - Solo lo mejor del mercado alemán</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-concierge-bell"></i>
+        </div>
+        <h3>Servicio Completo</h3>
+        <p>Nos encargamos de todo: búsqueda, inspección, importación y entrega</p>
       </div>
     </div>
-    <h2 class="mt-2"><%= t('newhome.problemend') %></h2>
+
+    <!-- Premium CTA -->
+    <div class="premium-cta-section">
+      <h3>La solución es importarlo</h3>
+      <%= link_to "#{I18n.locale}/cars", class: "premium-cta-button" do %>
+        Descubre Nuestra Selección Premium
+        <i class="fas fa-arrow-right"></i>
+      <% end %>
+    </div>
   </div>
 </div>

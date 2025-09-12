@@ -500,46 +500,240 @@
 }
 
 
-// Home: problem partial
-.problem{
-  background-color: #0066FF;
-  padding-top: 4em;
-  text-align: center;
-  margin: auto;
-  padding-bottom: 4em;
 
-.container{
-    max-width: 1300px;
-    width: 90%;
-}
-
-h2 {
-    font-size: 32px !important;
-    font-weight: 600 !important;
-    line-height: 38px !important;
-    color: white;
+// German Advantages Section - Clean and Focused Design
+.german-advantages-section {
+  background: #ffffff;
+  padding: 6rem 0 8rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  // Subtle background pattern
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.02) 0%, transparent 50%);
+    z-index: 1;
   }
 }
 
-.problem-img {
+.german-advantages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+// Left Side - Car Showcase
+.car-showcase {
+  position: relative;
+}
+
+.car-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.showcase-image {
   width: 100%;
-  padding: 1em;
-  border-radius: 35px;
-
+  height: 400px;
+  object-fit: cover;
+  display: block;
 }
 
+.german-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
 
+// Right Side - Content
+.advantages-content {
+  padding: 2rem 0;
+}
 
-@media (min-width: 990px) {
-  .problem-text {
-      color: white !important;
-      padding-right: 2em;
+.section-header {
+  margin-bottom: 3rem;
+  
+  h2 {
+    font-size: clamp(28px, 4vw, 42px) !important;
+    font-weight: 700 !important;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .section-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+}
+
+.advantages-list {
+  margin-bottom: 3rem;
+}
+
+.advantage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(37, 99, 235, 0.02);
+    border-color: rgba(37, 99, 235, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.08);
+    
+    .advantage-icon {
+      background: #2563eb;
+      color: white;
+      transform: scale(1.1);
     }
+  }
 }
 
-@media (min-width: 200px) {
-  .problem-text {
+.advantage-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #2563eb;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.advantage-text {
+  flex: 1;
+  
+  h3 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.advantages-cta {
+  text-align: left;
+}
+
+.german-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white !important;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  
+  &:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    text-decoration: none;
     color: white !important;
+    
+    i {
+      transform: translateX(3px);
+    }
+  }
+  
+  i {
+    transition: transform 0.3s ease;
+  }
+}
+
+// Mobile responsiveness for German section
+@media (max-width: 768px) {
+  .german-advantages-section {
+    padding: 4rem 0 6rem 0;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .showcase-image {
+    height: 300px;
+  }
+  
+  .advantages-content {
+    padding: 0;
+  }
+  
+  .advantage-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .advantage-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+  
+  .advantages-cta {
+    text-align: center;
+  }
+  
+  .german-cta-button {
+    padding: 16px 32px;
+    font-size: 18px;
   }
 }
 
