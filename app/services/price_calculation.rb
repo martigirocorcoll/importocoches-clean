@@ -1,21 +1,22 @@
 class PriceCalculation
 
   def initialize(args = {})
-    @transporte = 1300
-    @tasas = 750
-    @margen_bruto = 0.06
-    @margen_bruto_reduced = 0.03
+    @transporte = 1200
+    @tasas = 600
+    @margen_bruto = 0.02
+    @margen_bruto_reduced = 0.005
     @primera_matriculacion = :first_registration == nil ? Date.strptime(args[:first_registration], '%Y-%m') : 0
     @price_bruto = args[:price_bruto].to_f
     @vat = args[:vat].to_f
   end
 
+
   def finalprice
-    return (pricead + @tasas + @transporte + banco + beneficio + garantia)
+    return (pricees + @tasas + @transporte + banco + beneficio)
   end
 
   def finalpricereduced
-    return (pricead + @tasas + @transporte + banco + beneficioreduced)
+    return (pricees + @tasas + @transporte + banco + beneficioreduced)
   end
 
   private
@@ -30,27 +31,31 @@ class PriceCalculation
     end
   end
 
-  def pricead
-    return @price_bruto / (1+@vat) * (1.045)
+  def pricees
+    return @price_bruto
+  end
+
+  def pricees_dedu
+    return @price_bruto / (1+@vat) * (1.21)
   end
 
   def banco
-    return @price_bruto * 0.0042
+    return @price_bruto * 0.004
   end
 
   def beneficio
-    if (@margen_bruto * @price_bruto * 1.045).to_i < 1500
-      return 1500
+    if ((1000 + @margen_bruto * @price_bruto) * 1.21).to_i < 1200
+      return 1200
     else
-      return (@margen_bruto * @price_bruto * 1.045).to_i
+      return ((1000 + @margen_bruto * @price_bruto) * 1.21).to_i
     end
   end
 
   def beneficioreduced
-    if (@margen_bruto_reduced * @price_bruto * 1.045).to_i < 650
-      return 650
+    if ((1000 + @margen_bruto_reduced * @price_bruto )* 1.21).to_i < 750
+      return 750
     else
-      return (@margen_bruto_reduced * @price_bruto * 1.045).to_i
+      return ((1000 + @margen_bruto_reduced * @price_bruto )* 1.21).to_i
     end
   end
 end
