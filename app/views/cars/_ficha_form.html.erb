@@ -1,7 +1,10 @@
 <div class = "main-form" style="background-color: white; border-radius: 10px; padding: 30px; margin-bottom: 30px; box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.1);">
   <%= simple_form_for :filters, url: "/carficha.pdf", method: "GET" do |f| %>
           <%= f.hidden_field :id, value: @id %>
-          <%= f.input :description, as: :rich_text_area %>
+          <div class="form-group">
+            <%= f.label :description, "Description" %>
+            <%= f.text_area :description, rows: 4, class: 'form-control', placeholder: 'Escribe aquí la descripción...' %>
+          </div>
           <%= f.input :price, value: @final_price, placeholder: number_to_currency(@final_price, :unit => "", :separator => ",", :delimiter => ".", :precision=> 0) %>
           <%= f.submit "Fer fitxa", class: "btn btn-secondary btn-lg" %>
       </div>
