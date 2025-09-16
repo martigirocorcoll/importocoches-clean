@@ -1,18 +1,47 @@
-<div class="footer flex-vertical">
-  <div id="footer-logo">
-    <%= link_to root_path do  %>
-      <%= image_tag('https://res.cloudinary.com/dd7x7bqya/image/upload/v1668103145/Importocotxe_blanco_png-07_mpwjsh.png', style:"max-width: 80%;") %>
-    <% end %>
-    <div class="mt-2"style="text-align: center; ">
-      <a href="tel:+376666488" style="color: white; text-decoration:none;">+376 666 488</a> | <a href="mailto:info@importocotxe.ad" style="color: white; text-decoration:none;">info@importocotxe.ad</a>
+<div class="footer">
+  <div class="footer-main">
+    <!-- Logo - EXTRA GRANDE -->
+    <div class="footer-logo-section">
+      <%= link_to root_path do  %>
+        <%= image_tag('https://res.cloudinary.com/dd7x7bqya/image/upload/v1758010011/Logo_importocotxes_by_white_eqm8nr.png', alt: "Importocotxe - Coches alemanes España", class: "footer-logo-xl") %>
+      <% end %>
+    </div>
+
+    <!-- Solo Marcas al lado del logo -->
+    <div class="footer-brands-only">
+      <h4>Marcas</h4>
+      <div class="footer-brands-columns">
+        <ul class="footer-links">
+          <li><%= link_to 'BMW España', marca_bmw_andorra_path %></li>
+          <li><%= link_to 'Mercedes España', marca_mercedes_andorra_path %></li>
+          <li><%= link_to 'Audi España', marca_audi_andorra_path %></li>
+          <li><%= link_to 'Porsche España', marca_porsche_andorra_path %></li>
+          <li><%= link_to 'Volkswagen España', marca_volkswagen_andorra_path %></li>
+        </ul>
+        <ul class="footer-links">
+          <li><%= link_to 'Mini España', marca_mini_andorra_path %></li>
+          <li><%= link_to 'Cupra España', marca_cupra_andorra_path %></li>
+          <li><%= link_to 'Tesla España', marca_tesla_andorra_path %></li>
+          <li><%= link_to 'Lamborghini España', marca_lamborghini_andorra_path %></li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div id="line-footer"></div>
-  <div id="footer-links-position">
-    <%= link_to 'Política de privacidad', privacy_policy_path, target: "_blank", class:"footer-links" %>
-    <%= link_to 'Aviso legal', aviso_legal_path, target: "_blank", class:"footer-links" %>
-    <%= link_to 'Política de cookies', cookie_policy_path, target: "_blank", class:"footer-links" %>
-    <%= link_to 'Reclamacions', "https://www.govern.ad/ca/tematiques/comerc-i-consum/comerc", target: "_blank", class:"footer-links" %>
 
+  <!-- Información en línea separada debajo -->
+  <div class="footer-info-bottom">
+    <div class="footer-links-horizontal">
+      <a href="https://importocotxe.ad" target="_blank">Importar coches a Andorra</a> |
+      <%= link_to 'Política de privacidad', privacy_policy_path, target: "_blank" %> |
+      <%= link_to 'Aviso legal', aviso_legal_path, target: "_blank" %> |
+      <%= link_to 'Política de cookies', cookie_policy_path, target: "_blank" %>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-contact-bottom">
+      <a href="tel:+376666488">+376 666 488</a> |
+      <a href="mailto:info@importocotxe.ad">info@importocotxe.ad</a>
+    </div>
   </div>
 </div>

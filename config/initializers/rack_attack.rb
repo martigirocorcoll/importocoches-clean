@@ -1,3 +1,6 @@
+# Skip Rack::Attack in development environment
+return unless Rails.env.production?
+
 class Rack::Attack
   # Configure Cache (use Rails cache or Redis)
   Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new

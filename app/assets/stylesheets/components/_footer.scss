@@ -1,42 +1,245 @@
 .footer {
   background: #4c4c4c;
+  color: white;
+  padding: 60px 0 20px 0;
+}
+
+// Nuevo layout: Logo grande + dos columnas
+.footer-main {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: auto;
-  color: rgba(0,0,0,0.3);
-  padding: 50px 100px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
 }
 
-.flex-vertical {
-  display: block;
-}
-
-#footer-logo {
+.footer-logo-section {
+  flex: 0 0 auto;
   text-align: center;
-  border-bottom: 1px solid white;
-  width: auto;
-  padding-bottom: 20px;
+}
+
+.footer-logo-xl {
+  max-width: 450px;
+  margin-bottom: 0;
+}
+
+// Solo sección de marcas al lado del logo
+.footer-brands-only {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+
+  h4 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.footer-brands-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+
+  ul {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+// Contacto abajo
+.footer-contact-bottom {
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 8px;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Información en línea separada debajo
+.footer-info-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #666;
+  margin: 0 20px;
+}
+
+.footer-section {
+  h4 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.footer-logo {
+  max-width: 250px;
+  margin-bottom: 25px;
+}
+
+.footer-contact {
+  a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.6;
+
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 .footer-links {
-  text-decoration: none;
-  color: white;
-}
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
-.footer-links:hover{
-    text-decoration: underline;
-    color:white;
+  li {
+    margin-bottom: 12px;
   }
 
-#footer-links-position {
-  margin-top: 20px;
-  text-align: center;
+  a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
 }
 
+.footer-bottom {
+  border-top: 1px solid #666;
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
 
-@media (min-width: 200px) {
-  #footer-home-text {
-    padding: 20px;
+  p {
+    color: #999;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+// Información con mejor contraste
+.footer-info-bottom {
+  .footer-links-horizontal {
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #e5e5e5;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Improved visual hierarchy
+.footer-section {
+  h4 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.footer-contact {
+  a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.8;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.footer-links {
+  a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .footer-brands-only {
+    max-width: none;
+  }
+
+  .footer-brands-columns {
+    gap: 30px;
+  }
+
+  .footer-logo-xl {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main {
+    padding: 0 20px 30px 20px;
+  }
+
+  .footer-brands-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer {
+    padding: 40px 0 20px 0;
+  }
+
+  .footer-logo-xl {
+    max-width: 280px;
+  }
+
+  .footer-info-bottom .footer-links-horizontal a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .footer-contact-bottom a {
+    display: block;
+    margin: 4px 0;
   }
 }

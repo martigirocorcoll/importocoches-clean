@@ -48,7 +48,6 @@ Rails.application.routes.draw do
     get '/dashboard', to: 'pages#dashboard'
     get '/autoritzacio', to: 'pages#autorizaciotransport'
     get '/about', to: 'pages#funcionament'
-    get '/importar-coche-espana', to: 'pages#importar_espana'
     get '/us', to: 'pages#nosaltres'
     get '/marca', to: 'pages#marca'
     get '/faqs', to: 'pages#faqs'
