@@ -182,52 +182,41 @@
 
 </div>
 
-<%@models = JSON.parse(File.read('lib/marca_model.json')) %>
+<% @models = JSON.parse(File.read('lib/marca_model.json')) %>
 <% @makes =
       [
-        "Abarth",
-        "Aixam",
+"Abarth",
         "Alfa Romeo",
         "Audi",
-        "Aston Martin",
-        "Bentley",
         "BMW",
-        "Bugatti",
+        "Bentley",
+        "BYD",
         "Citroen",
         "Cupra",
-        "Corvette",
         "Dacia",
         "DS",
-        "Ferrari",
         "Fiat",
         "Ford",
         "Genesis",
-        "Honda",
         "Hyundai",
-        "Isuzu",
-        "Iveco",
         "Jaguar",
         "Jeep",
         "Kia",
-        "Koenigsegg",
-        "KTM",
         "Lamborghini",
         "Land Rover",
         "Lexus",
-        "Lync and Co",
         "Lotus",
+        "Lucid",
         "Maserati",
         "Maxus",
-        "Maybach",
         "Mazda",
-        "McLaren",
         "Mercedes-Benz",
         "MG",
         "Mini",
         "Mitsubishi",
+        "Nio",
         "Nissan",
         "Opel",
-        "Pagani",
         "Peugeot",
         "Polestar",
         "Porsche",
@@ -242,15 +231,16 @@
         "Tesla",
         "Toyota",
         "VW",
-        "Volvo"
-      ] %>
+        "Volvo",
+        "XPENG"
+      ]%>
 
 <div class="seocontainer">
   <div style="margin:50px 0; text-align: center;">
     <h2 style="color: #0066FF; margin-bottom: 20px;"><%= t('noencuentras') %></h2>
     <p style="margin-bottom: 30px; color: #666;"><%= t('indicanos') %></p>
-    <%= render 'shared/unified_contact_form', 
-        source: 'web', 
+    <%= render 'shared/unified_contact_form',
+        source: 'web',
         form_type: 'brand_inquiry',
         placeholder: t('indicanoscoche'),
         submit_text: t('enviar') %>

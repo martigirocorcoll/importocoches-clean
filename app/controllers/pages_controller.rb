@@ -58,7 +58,7 @@ class PagesController < ApplicationController
     @preu_and = @preu_neto + @igi + @tasas + @transporte + @banco + @beneficio + @garan
     @params_present = params[:filters].nil?
   end
-  
+
   def dashboard_transport
     # This will render the transport authorization form
   end
@@ -69,47 +69,47 @@ class PagesController < ApplicationController
 
   def show_brand
     brand_slug = params[:brand_slug]
-    
+
     unless BrandConfiguration.valid_brand_slug?(brand_slug)
       raise ActionController::RoutingError, 'Not Found'
     end
-    
+
     @brand_config = BrandConfiguration.get_brand_by_slug(brand_slug)
     @brand_name = @brand_config[:display_name]
     @brand_models = @brand_config[:models]
     @contact = Contact.new
-    
+
     # Set variables for existing templates
     set_brand_variables(@brand_config[:name])
-    
+
     render "pages/#{brand_slug.split('-').first}/index"
   end
 
   def show_model
     brand_slug = params[:brand_slug]
     model_slug = params[:model_slug]
-    
+
     unless BrandConfiguration.valid_brand_slug?(brand_slug)
       raise ActionController::RoutingError, 'Not Found'
     end
-    
+
     unless BrandConfiguration.valid_model_slug?(brand_slug, model_slug)
       raise ActionController::RoutingError, 'Not Found'
     end
-    
+
     @brand_config = BrandConfiguration.get_brand_by_slug(brand_slug)
     @model_config = BrandConfiguration.get_model_by_slug(brand_slug, model_slug)
     @contact = Contact.new
-    
+
     # Set legacy variables for compatibility
     @marca = @brand_config[:display_name]
-    
+
     # Get cached data or show message that cache is being built
     cached_data = SeoCacheService.get_cached_data(@brand_config[:name], model_slug)
-    
+
     if cached_data
       @model = cached_data[:model]
-      @modell = cached_data[:modell] 
+      @modell = cached_data[:modell]
       @endpoint = cached_data[:endpoint]
       @ads = cached_data[:ads]
       @cached_at = cached_data[:cached_at]
@@ -120,10 +120,10 @@ class PagesController < ApplicationController
       @modell = @model_config[:api_name]
       @ads = []
       @cache_missing = true
-      
+
       Rails.logger.warn "⚠️ Cache missing for #{@brand_config[:name]}/#{model_slug} - needs refresh"
     end
-    
+
     # Log API call for bot detection (but not making actual API call)
     Llamada.create!(
       endpoint: @endpoint || "cached_model_page",
@@ -134,7 +134,7 @@ class PagesController < ApplicationController
       request_method: request.method,
       user: current_user
     )
-    
+
     # Use unified model template
     render "shared/model_page"
   end
@@ -151,7 +151,7 @@ class PagesController < ApplicationController
       @endpoint = "https://services.mobile.de/search-api/search?vatable=1&&classification=refdata/classes/Car/makes/BMW/modelgroups/#{@modell.upcase}&damageUnrepaired=0&firstRegistrationDate.min=2019-01"
       doc = ApiCaller.new(@endpoint).call
       @ads = doc.xpath('//ad:ad')
-      
+
       # Log API call for bot detection
       Llamada.create!(
         endpoint: @endpoint,
@@ -162,7 +162,7 @@ class PagesController < ApplicationController
         request_method: request.method,
         user: current_user
       )
-      
+
       render 'pages/bmw/serie1'
     end
 
@@ -770,49 +770,37 @@ class PagesController < ApplicationController
     @makes =
       [
         "Abarth",
-        "Aixam",
         "Alfa Romeo",
         "Audi",
-        "Aston Martin",
-        "Bentley",
         "BMW",
-        "Bugatti",
+        "Bentley",
         "BYD",
         "Citroen",
         "Cupra",
-        "Corvette",
         "Dacia",
         "DS",
-        "Ferrari",
         "Fiat",
         "Ford",
         "Genesis",
-        "Honda",
         "Hyundai",
-        "Isuzu",
-        "Iveco",
         "Jaguar",
         "Jeep",
         "Kia",
-        "Koenigsegg",
-        "KTM",
         "Lamborghini",
         "Land Rover",
         "Lexus",
-        "Lync and Co",
         "Lotus",
+        "Lucid",
         "Maserati",
         "Maxus",
-        "Maybach",
         "Mazda",
-        "McLaren",
         "Mercedes-Benz",
         "MG",
         "Mini",
         "Mitsubishi",
+        "Nio",
         "Nissan",
         "Opel",
-        "Pagani",
         "Peugeot",
         "Polestar",
         "Porsche",
@@ -827,7 +815,8 @@ class PagesController < ApplicationController
         "Tesla",
         "Toyota",
         "VW",
-        "Volvo"
+        "Volvo",
+        "XPENG"
       ]
   end
 
