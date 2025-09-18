@@ -14,7 +14,7 @@ class WhatsappController < ApplicationController
     Contact.create!(
       name: "WhatsApp Lead #{Time.current.strftime('%d/%m %H:%M')}",
       phone: "pending-whatsapp",
-      email: "info@importocotxe.ad",
+      email: "info@importocoches.com",
       source: determine_source,
       # Use page_url parameter from the link, or fallback to referer
       page_url: params[:page_url] || request.referer || 'Direct access',
@@ -39,7 +39,7 @@ class WhatsappController < ApplicationController
 
 
   def generate_whatsapp_url(contact)
-    phone_number = "+376666488" # Tu número de WhatsApp
+    phone_number = "+34621339515" # Tu número de WhatsApp
     message = build_whatsapp_message(contact)
     encoded_message = CGI.escape(message)
 

@@ -549,3 +549,82 @@ C) **Lista completa** - Te doy todos los textos que encontré
 
 ### **PRÓXIMA ACCIÓN INMEDIATA:**
 ¿Empezamos por las traducciones o prefieres configurar primero el email español?
+
+## SISTEMA DE TRADUCCIONES MULTI-IDIOMA
+
+### **✅ COMPLETADO (Sept 2024):**
+
+#### **Migración España en es.yml** ✅
+1. **Cambios Universales Aplicados:**
+   - ✅ Dominio: `importocotxe.ad` → `importocoches.com`
+   - ✅ País: Referencias "Andorra" → "España" (200+ cambios)
+   - ✅ Teléfono: `+376 666 488` → `+34 666 488 488`
+   - ✅ Impuestos: "IGI" → "IVA"
+   - ✅ URLs: Todas las rutas actualizadas para España
+
+2. **Mejoras Copywriting Homepage Aplicadas:**
+   - ✅ **Título Hero**: "Servicio de Importación Total" → "Tu coche ideal de Alemania, sin moverte de casa"
+   - ✅ **Subtítulo Hero**: Añadido "Más variedad, mejores precios y nosotros hacemos toda la gestión por ti"
+   - ✅ **Problema Usuario**: Menos negativo, más enfocado en oportunidad
+   - ✅ **SIT Principal**: "Servicio de Importación Total" → "Nosotros hacemos todo por ti"
+   - ✅ **3 Pasos SIT**: Más específicos y orientados al valor
+   - ✅ **Garantías**: "Garantía Total Importación" → "Sin riesgos para ti" (más tranquilizador)
+   - ✅ **CTAs**: "Encuentra aquí tu coche" → "Ver coches disponibles ahora"
+
+3. **Subprocesos SIT Mejorados:**
+   - ✅ **Compra**: Enfoque en gestión contratos/negociación vs pagos bancarios
+   - ✅ **IVA**: Simplificado sin jerga técnica
+   - ✅ **Entrega**: "Placas andorranas" → "placas españolas"
+
+### **🔄 WORKFLOW TRADUCCIONES PENDIENTES:**
+
+#### **Archivos a Traducir (6 idiomas):**
+- `fr.yml` - Francés (Prioridad 1)
+- `en.yml` - Inglés (Prioridad 1)
+- `cat.yml` - Catalán (Prioridad 1)
+- `de.yml` - Alemán (Prioridad 2)
+- `nl.yml` - Holandés (Prioridad 2)
+- `ru.yml` - Ruso (Prioridad 2)
+
+#### **Proceso de Traducción Simplificado:**
+
+**INPUT:** `es.yml` (fuente de verdad con todos los cambios aplicados)
+**PROCESO:**
+1. Localizar key idéntica en archivo destino (ej: `pages.home.title`)
+2. **SOLO traducir el valor** al idioma correspondiente
+3. Mantener estructura YAML exacta
+4. **NO aplicar cambios universales** (ya están en es.yml)
+
+**EJEMPLO:**
+```yaml
+# es.yml (fuente - todo actualizado)
+pages:
+  home:
+    title: "Tu coche ideal de Alemania, sin moverte de casa"
+    subtitle: "Más variedad, mejores precios y nosotros hacemos toda la gestión por ti"
+
+# fr.yml (solo traducir valores)
+pages:
+  home:
+    title: "Votre voiture idéale d'Allemagne, sans bouger de chez vous"
+    subtitle: "Plus de variété, meilleurs prix et nous gérons tout pour vous"
+
+# en.yml (solo traducir valores)
+pages:
+  home:
+    title: "Your ideal car from Germany, without leaving home"
+    subtitle: "More variety, better prices and we handle everything for you"
+```
+
+#### **RESULTADO ESPERADO:**
+- 7 archivos de idioma sincronizados (es.yml + 6 traducciones)
+- Mismo contenido optimizado en todos los idiomas
+- Copywriting mejorado adaptado lingüísticamente
+- Cambios universales España aplicados globalmente
+
+### **ESTADO ACTUAL:**
+- ✅ **es.yml**: Completamente actualizado (fuente de verdad)
+- ⏳ **Traducciones**: Pendientes de aplicar workflow
+
+### **PRÓXIMO PASO:**
+Ejecutar workflow de traducciones usando es.yml como base para los 6 idiomas restantes.

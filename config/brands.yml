@@ -2,7 +2,7 @@ bmw:
   name: "BMW"
   display_name: "BMW"
   api_name: "BMW"
-  slug: "bmw-andorra"
+  slug: "bmw-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732366/devon-janse-van-rensburg-cQHx11ku1Dk-unsplash_awimek.jpg"
   models:
     serie1:
@@ -64,7 +64,7 @@ mercedes:
   name: "MERCEDES"
   display_name: "Mercedes-Benz"
   api_name: "mercedes-benz"
-  slug: "mercedes-andorra"
+  slug: "mercedes-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731177/liam-martens-uUi5RQCyUdM-unsplash_xdjxst.jpg"
   models:
     a:
@@ -126,7 +126,7 @@ audi:
   name: "AUDI"
   display_name: "Audi"
   api_name: "AUDI"
-  slug: "audi-andorra"
+  slug: "audi-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812955/302afc26-f0cf-4da0-a023-b060706af3ee_fmclsg.jpg"
   models:
     a1:
@@ -188,7 +188,7 @@ porsche:
   name: "PORSCHE"
   display_name: "Porsche"
   api_name: "PORSCHE"
-  slug: "porsche-andorra"
+  slug: "porsche-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711812954/porsche_992_head_on_hpudjw.jpg"
   models:
     macan:
@@ -238,7 +238,7 @@ volkswagen:
   name: "VW"
   display_name: "Volkswagen"
   api_name: "VW"
-  slug: "volkswagen-andorra"
+  slug: "volkswagen-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731576/chris-osmond-54tC25jNoWA-unsplash_axwylx.jpg"
   models:
     polo:
@@ -288,7 +288,7 @@ mini:
   name: "MINI"
   display_name: "Mini"
   api_name: "MINI"
-  slug: "mini-andorra"
+  slug: "mini-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711731719/devon-janse-van-rensburg-q039kSjYlD4-unsplash_f5kzny.jpg"
   models:
     cooper:
@@ -314,7 +314,7 @@ cupra:
   name: "CUPRA"
   display_name: "Cupra"
   api_name: "CUPRA"
-  slug: "cupra-andorra"
+  slug: "cupra-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732019/pierre-saigot-SqPs9Jg-8xk-unsplash_scflhl.jpg"
   models:
     ateca:
@@ -346,7 +346,7 @@ tesla:
   name: "TESLA"
   display_name: "Tesla"
   api_name: "TESLA"
-  slug: "tesla-andorra"
+  slug: "tesla-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732123/dmitry-novikov-49gi04Retc4-unsplash_tsjq0k.jpg"
   models:
     models:
@@ -378,7 +378,7 @@ lamborghini:
   name: "LAMBORGHINI"
   display_name: "Lamborghini"
   api_name: "LAMBORGHINI"
-  slug: "lamborghini-andorra"
+  slug: "lamborghini-espana"
   logo: "https://res.cloudinary.com/dd7x7bqya/image/upload/v1711732521/kyle-bushnell-gELKXGfiSe0-unsplash_kqcfdp.jpg"
   models:
     aventador:

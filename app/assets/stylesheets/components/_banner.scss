@@ -94,9 +94,21 @@
     font-size: 32px !important;
     text-align: center;
     font-weight: 700;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
                  0 2px 8px rgba(0, 82, 204, 0.2);
     line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 1rem auto 2rem auto;
+    max-width: 90%;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8),
+                 0 2px 8px rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
   }
 }
 
@@ -105,15 +117,28 @@
     color: #ffffff;
     width: 85%;
     margin: auto;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     padding-top: 6rem;
     text-align: center;
     font-size: 64px !important;
     font-weight: 700;
-    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4), 
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4),
                  0 3px 12px rgba(0, 82, 204, 0.3);
     line-height: 1.1;
     letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 auto 4rem auto;
+    max-width: 80%;
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.8),
+                 0 3px 12px rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
   }
 }
 
