@@ -753,16 +753,9 @@ class PagesController < ApplicationController
   def set_fuels
     @fuel_list =
       [
-        "Gasolina",
-        "Diésel",
-        "Gas de automoción",
-        "Gas natural",
         "Eléctrico",
         "Híbrido (gasolina/eléctrico)",
-        "Hidrógeno",
-        "Etanol (FFV,E85, etc.)",
-        "Híbrido (diésel/eléctrico",
-        "Otro"
+        "Híbrido (diésel/eléctrico)"
       ]
   end
 
@@ -1553,9 +1546,9 @@ class PagesController < ApplicationController
     @models = JSON.parse(File.read('lib/marca_model.json'))
     @marca = brand_name
     @fuel_list = [
-      "Gasolina", "Diésel", "Gas de automoción", "Gas natural", "Eléctrico",
-      "Híbrido (gasolina/eléctrico)", "Hidrógeno", "Etanol (FFV,E85, etc.)",
-      "Híbrido (diésel/eléctrico", "Otro"
+      "Eléctrico",
+      "Híbrido (gasolina/eléctrico)",
+      "Híbrido (diésel/eléctrico)"
     ]
     @makes = [
       "Abarth", "Aixam", "Alfa Romeo", "Audi", "Aston Martin", "Bentley", "BMW",

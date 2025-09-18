@@ -213,16 +213,9 @@ class CarsController < ApplicationController
   def set_fuels
     @fuel_list =
       [
-        "Gasolina",
-        "Diésel",
-        "Gas de automoción",
-        "Gas natural",
         "Eléctrico",
         "Híbrido (gasolina/eléctrico)",
-        "Hidrógeno",
-        "Etanol (FFV,E85, etc.)",
-        "Híbrido (diésel/eléctrico",
-        "Otro"
+        "Híbrido (diésel/eléctrico)"
       ]
   end
 
