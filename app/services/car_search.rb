@@ -32,7 +32,7 @@ class CarSearch
     else
       first_registration_date = "&firstRegistrationDate.min=#{@first_registration_date}-01"
     end
-    fuel = "&fuel=#{find_fuel}" unless @fuel.blank?
+    fuel = build_fuel_filter
     make = "&classification=refdata/classes/Car/makes/#{@make.upcase}" unless @make.blank?
     model = "/models/#{@model.upcase}" unless @model.blank?
     model_description = "&modelDescription=#{@model_description}" unless @model_description.blank?
@@ -40,6 +40,16 @@ class CarSearch
     "https://services.mobile.de/search-api/search?vatable=1&#{make}#{model}#{model_description}#{potencia}#{transmision}&damageUnrepaired=0#{price_min}#{price_max}#{mileage_max}#{first_registration_date}#{fuel}#{fourwheeldrive}#{@order}"
 
 
+  end
+
+  def build_fuel_filter
+    if @fuel.blank?
+      # Sin selección: filtrar automáticamente por los 3 tipos eco-friendly
+      "&fuel=ELECTRICITY&fuel=HYBRID&fuel=HYBRID_DIESEL"
+    else
+      # Con selección: usar solo el seleccionado
+      "&fuel=#{find_fuel}"
+    end
   end
 
   def find_fuel
@@ -60,7 +70,7 @@ class CarSearch
       "HYDROGENIUM"
     when "Etanol (FFV,E85, etc.)"
       "ETHANOL"
-    when "Híbrido (diésel/eléctrico"
+    when "Híbrido (diésel/eléctrico)"
       "HYBRID_DIESEL"
     when "Otro"
       "OTHER"
