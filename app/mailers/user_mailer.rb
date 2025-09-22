@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
   def welcome(user)
     @user = user
 
-    mail to: @user.email, subject: 'Benvingut a importocotxe.ad', bcc: 'info@importocotxe.ad'
+    mail to: @user.email, subject: 'Bienvenido a importocoches.com', bcc: 'info@importocoches.com'
   end
 end

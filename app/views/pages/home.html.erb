@@ -9,7 +9,7 @@
     "url": "https://www.importocoches.com/",
     "logo": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1758010011/Logo_importocotxes_reducido-02_znbdpp.png",
     "image": "https://res.cloudinary.com/dd7x7bqya/image/upload/v1758010011/Logo_importocotxes_reducido-02_znbdpp.png",
-    "description": "Empresa especializada en la importación de coches desde Alemania a España. Encuentra coches por marca y modelo y contáctanos para más información.",
+    "description": "<%= t('schema.business_description') %>",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Calle Alcalá 123",
@@ -21,7 +21,7 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+34621339515",
-      "contactType": "Customer Service",
+      "contactType": "<%= t('schema.customer_service') %>",
       "areaServed": "ES",
       "availableLanguage": ["es", "en", "fr"]
     },
@@ -43,7 +43,7 @@
     },
     "makesOffer": {
       "@type": "OfferCatalog",
-      "name": "Catálogo de Marcas",
+      "name": "<%= t('schema.brand_catalog') %>",
       "url": "https://www.importocoches.com/marca",
       "itemListElement": [
         {
@@ -172,22 +172,22 @@
   <div class="final-cta-section">
     <div class="container">
       <div class="final-cta-header">
-        <h2>¿Tienes alguna duda?</h2>
-        <p>Contáctanos y te ayudaremos a encontrar el coche que buscas</p>
+        <h2><%= t('home_final.title') %></h2>
+        <p><%= t('home_final.subtitle') %></p>
       </div>
       <div class="glassmorphism-form-container">
         <div class="final-cta-form-header">
           <div class="form-icon">
             <i class="fas fa-envelope"></i>
           </div>
-          <h3>Contacta con nosotros</h3>
-          <p>Te responderemos en menos de 24 horas</p>
+          <h3><%= t('home_final.form_title') %></h3>
+          <p><%= t('home_final.form_subtitle') %></p>
         </div>
         <%= render 'shared/unified_contact_form',
             source: 'web',
             form_type: 'general_inquiry',
-            placeholder: 'Cuéntanos qué coche buscas o cualquier duda que tengas...',
-            submit_text: 'Enviar consulta' %>
+            placeholder: t('home_final.placeholder'),
+            submit_text: t('home_final.submit') %>
       </div>
     </div>
   </div>

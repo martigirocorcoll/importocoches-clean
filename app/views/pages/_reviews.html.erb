@@ -3,9 +3,9 @@
     
     <!-- Section Header -->
     <div class="reviews-header">
-      <div class="reviews-badge">TESTIMONIOS</div>
+      <div class="reviews-badge"><%= t('reviews.badge') %></div>
       <h2 class="reviews-title"><%= t('newhome.review') %></h2>
-      <p class="reviews-subtitle">Lo que dicen nuestros clientes sobre nosotros</p>
+      <p class="reviews-subtitle"><%= t('reviews.subtitle') %></p>
     </div>
 
     <!-- Reviews Carousel -->
@@ -30,7 +30,7 @@
                 <div class="review-verification">
                   <div class="verified-badge">
                     <i class="fas fa-check-circle"></i>
-                    <span>Cliente Verificado</span>
+                    <span><%= t('reviews.verified') %></span>
                   </div>
                   <div class="review-stars">
                     <i class="fas fa-star"></i>
@@ -68,7 +68,7 @@
                 <div class="review-verification">
                   <div class="verified-badge">
                     <i class="fas fa-check-circle"></i>
-                    <span>Cliente Verificado</span>
+                    <span><%= t('reviews.verified') %></span>
                   </div>
                   <div class="review-stars">
                     <i class="fas fa-star"></i>
@@ -106,7 +106,7 @@
                 <div class="review-verification">
                   <div class="verified-badge">
                     <i class="fas fa-check-circle"></i>
-                    <span>Cliente Verificado</span>
+                    <span><%= t('reviews.verified') %></span>
                   </div>
                   <div class="review-stars">
                     <i class="fas fa-star"></i>
@@ -144,7 +144,7 @@
                 <div class="review-verification">
                   <div class="verified-badge">
                     <i class="fas fa-check-circle"></i>
-                    <span>Cliente Verificado</span>
+                    <span><%= t('reviews.verified') %></span>
                   </div>
                   <div class="review-stars">
                     <i class="fas fa-star"></i>
@@ -182,7 +182,7 @@
                 <div class="review-verification">
                   <div class="verified-badge">
                     <i class="fas fa-check-circle"></i>
-                    <span>Cliente Verificado</span>
+                    <span><%= t('reviews.verified') %></span>
                   </div>
                   <div class="review-stars">
                     <i class="fas fa-star"></i>
@@ -220,7 +220,7 @@
                 <div class="review-verification">
                   <div class="verified-badge">
                     <i class="fas fa-check-circle"></i>
-                    <span>Cliente Verificado</span>
+                    <span><%= t('reviews.verified') %></span>
                   </div>
                   <div class="review-stars">
                     <i class="fas fa-star"></i>
@@ -255,7 +255,7 @@
       <a href="https://maps.app.goo.gl/cS7PvQpprWgFcAvC8" target="_blank" class="google-reviews-link">
         <%= image_tag("5starsgoogle.png", alt: "5 estrellas en Google Reviews", class: "google-stars") %>
       </a>
-      <h3 class="brand-name">5.0 ⭐ en Google Reviews - 100% Clientes Satisfechos</h3>
+      <h3 class="brand-name"><%= t('reviews.google_rating') %></h3>
     </div>
 
   </div>

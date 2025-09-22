@@ -7,10 +7,10 @@ class ContactMailer < ApplicationMailer
   #
   def contact
     @contact = params[:contact]
-    
+
     mail(
-      subject: '¡Nou contacte de importocotxe.ad!',
-      to: 'info@importocotxe.ad'
+      subject: '¡Nuevo contacto de importocoches.com!',
+      to: 'info@importocoches.com'
     )
   end
   

@@ -8,6 +8,6 @@ class ContactoMailer < ApplicationMailer
   def received(contact)
     @contact = contact
 
-    mail to: @contact.email, subject: 'Importocotxe.ad: Petició rebuda'
+    mail to: @contact.email, subject: 'Importocoches.com: Petición recibida'
   end
 end

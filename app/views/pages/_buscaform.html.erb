@@ -1,6 +1,6 @@
 <%= simple_form_for :filters, url: "#{I18n.locale}/cars", html: { data: {controller:"filters" }, id: "buscar-cotxe-main" }, method: "GET" do |f| %>
   <h2 id="main-card-title"><%= t('pages.home.encuentra') %></h2>
-  <%= f.input :make, label: t('pages.home.marca'), collection: @makes, input_html: { data: { action:"change->filters#model" } } , prompt:"--Seleccione una marca--", disabled: "", required: true %>
+  <%= f.input :make, label: t('pages.home.marca'), collection: @makes, input_html: { data: { action:"change->filters#model" } } , prompt: t('form_select.choose_brand'), disabled: "", required: true %>
   <%= f.input :model, as: :select, label: t('pages.home.modelo') , input_html: { id:"models_dropdown", data: { model: @models }}, required: false%>
   <div id= "home-card">
     <div id="column-left">

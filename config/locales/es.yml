@@ -397,17 +397,51 @@ es:
     gti3: "3. Garantía mecánica"
     gti3des: "Durante 12 meses después de la compra tendrás garantía mecánica completa. Puedes conducir con total tranquilidad."
     gtifin: "Protección completa para que disfrutes tu coche sin preocupaciones."
-    faq: "Respondemos las preguntas más comunes."
+    sitcau: "Gestión especializada"
+    sitcaud: "Nos encargamos de todos los aspectos legales y de gestión para que tengas tu coche sin complicaciones"
+    faq: "Preguntas frecuentes"
+    xs: "Importocotxe en redes sociales"
+    xssub: "En las redes sociales, promocionamos la importación de coches, compartimos breves reseñas de coches y mostramos características interesantes de algunos de los coches que importamos."
+    xsfol: "¡Síguenos!"
     faq1: "¿También importan coches nuevos?"
     faq2: "¿Ofrecen opciones de financiamiento?"
     faq3: "¿Cuánto ganan por coche?"
     faq4: "¿Me ayudan a buscar el coche?"
     faq5: "¿Aceptan coches como parte de pago?"
     faq6: "¿Qué hacen si un coche no llega como se espera?"
-    faq7: "¿Los coches en el motor de búsqueda son reales?"
-    xs: "Importocotxe en redes sociales"
-    xssub: "En las redes sociales, promocionamos la importación de coches, compartimos breves reseñas de coches y mostramos características interesantes de algunos de los coches que importamos."
-    xsfol: "¡Síguenos!"
+    faq7: "¿Los coches en el motor de búsqueda son reales?"  # Nuevas claves para textos hardcodeados
+  home_final:
+    title: "¿Tienes alguna duda?"
+    subtitle: "Contáctanos y te ayudaremos a encontrar el coche que buscas"
+    form_title: "Contacta con nosotros"
+    form_subtitle: "Te responderemos en menos de 24 horas"
+    placeholder: "Cuéntanos qué coche buscas o cualquier duda que tengas..."
+    submit: "Enviar consulta"
+
+  form_select:
+    choose_brand: "--Seleccione una marca--"
+
+  reviews:
+    badge: "TESTIMONIOS"
+    subtitle: "Lo que dicen nuestros clientes sobre nosotros"
+    verified: "Cliente Verificado"
+    google_rating: "5.0 ⭐ en Google Reviews - 100% Clientes Satisfechos"
+
+  german_advantages:
+    title: "¿Por qué elegir coches de Alemania?"
+    subtitle: "Descubre las ventajas que hacen la diferencia"
+    better_price_title: "Mejor Precio"
+    better_price_desc: "Ahorra hasta un 30% comprando directamente en el mercado alemán. Sin intermediarios, sin márgenes inflados."
+    variety_title: "Mayor Variedad"
+    variety_desc: "Acceso a miles de vehículos premium disponibles en el mayor mercado automovilístico de Europa."
+    cta_button: "Ver Coches Disponibles"
+    made_in_germany: "🇩🇪 Made in Germany"
+
+  video_overlays:
+    see_video: "Ver Video"
+    how_we_find: "Ver cómo encontramos tu coche"
+    management_process: "Ver todo el proceso de gestión"
+    delivery_process: "Ver cómo te entregamos tu coche"
     cpt: "Somos un equipo pequeño pero en crecimiento"
     cp1: "Llevamos abiertos desde mayo de 2023 y en los primeros 5 meses ya hemos podido ayudar a más de 30 personas a conseguir el coche que buscaban."
     cp2: "Esto no significa que seamos nuevos en el mundo de la importación. De hecho, llevamos más de 7 años importando coches a España."
@@ -1887,7 +1921,7 @@ es:
       - heading: "¿Cuáles son los costos asociados con la importación?"
         content: "Los costos son el propio coche en origen con su IVA, el transporte, la homologación e ITV, el impuesto de circulación, la matriculación y las placas de matrícula. No hay que olvidar también el seguro posterior y los gastos bancarios que puedan existir."
       - heading: "¿Si no soy de España, puedo importar un coche con vosotros?"
-        content: "Solo podemos importar coches para residentes en España o sociedades españolas. Para residentes en Andorra, recomendamos los servicios de www.importocotxe.ad. Si no eres español ni andorrano, te recomendamos que busques un importador en tu país."
+        content: "Solo podemos importar coches para residentes en España o sociedades españolas. Si no eres español, te recomendamos que busques un importador en tu país."
     subtitle2: "2. Costos y Opciones de Pago con Importocotxe"
     sections2:
       - heading: "¿Cuáles son los costos asociados a importocoches.com?"
@@ -1963,3 +1997,7 @@ Desde nuestra plataforma web donde veis todos los coches disponibles sabiendo el
         content: "Nos gusta enviar información acerca del equipamiento del vehículo, información acerca el estado de las piezas de desgaste (frenos, neumáticos…), indicamos la fecha y kilometraje del próximo servicio de mantenimiento periódico y enviamos fotografías para una correcta visualización del coche."
       - heading: "¿Qué factores pueden retrasar el tiempo de entrega del coche?"
         content: "En un proceso de importación hay muchos factores que pueden retrasar el tiempo de entrega del coche siendo una entrega tardía por parte del concesionario y retrasos en el transporte en camión los más comunes. No obstante, el plazo de 4 semanas ya prevé algún cierto retraso. Se alarga más que esto cuando se suman varios retrasos."
+
+
+  social:
+    badge: "IMPORTOGROUP EN REDES SOCIALES"
