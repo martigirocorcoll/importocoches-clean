@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     # Contracts routes
     resources :contracts, only: [:new]
     get '/contract_pdf', to: 'contracts#generate_pdf'
+    get '/contract_pdf_en', to: 'contracts#generate_pdf_en'
     root to: 'pages#home'
     get '/meta-campaign', to: 'pages#meta_campaign'
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

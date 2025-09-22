@@ -77,7 +77,6 @@ class CarsController < ApplicationController
       format.html
       format.pdf do
         render pdf: "ficha",
-        template: "cars/showficha.html.erb",
         encoding: 'utf8',
         header: { font_name: "Arial"}
       end
