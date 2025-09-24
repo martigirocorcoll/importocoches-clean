@@ -15,10 +15,8 @@ export default class extends Controller {
   }
 
   loadVideo() {
-    // 4) Lee this.idValue en vez de dataset.id
     const id = this.idValue
 
-    // 5) Inyecta el iframe
     const iframe = document.createElement("iframe")
     iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`
     iframe.loading = "lazy"

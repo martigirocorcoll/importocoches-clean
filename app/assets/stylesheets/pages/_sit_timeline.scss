@@ -676,8 +676,18 @@
   .video-break-container {
     max-width: 1200px; // Wider on large screens
   }
-  
+
   .hero-preview {
     min-height: 500px; // Bigger videos on large screens
   }
+}
+
+// More specific and aggressive CSS for hero video iframes
+.video-break-section .video-break-container .hero-video iframe,
+.hero-video iframe {
+  height: 400px !important;
+  width: 100% !important;
+  min-height: 400px !important;
+  max-height: 400px !important;
+  aspect-ratio: unset !important;
 }

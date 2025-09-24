@@ -37,7 +37,8 @@ class CarSearch
     model = "/models/#{@model.upcase}" unless @model.blank?
     model_description = "&modelDescription=#{@model_description}" unless @model_description.blank?
     fourwheeldrive = "&feature=FOUR_WHEEL_DRIVE" unless @fourwheeldrive=="0"
-    "https://services.mobile.de/search-api/search?vatable=1&#{make}#{model}#{model_description}#{potencia}#{transmision}&damageUnrepaired=0#{price_min}#{price_max}#{mileage_max}#{first_registration_date}#{fuel}#{fourwheeldrive}#{@order}"
+    # "https://services.mobile.de/search-api/search?vatable=1&#{make}#{model}#{model_description}#{potencia}#{transmision}&damageUnrepaired=0#{price_min}#{price_max}#{mileage_max}#{first_registration_date}#{fuel}#{fourwheeldrive}#{@order}"
+    "https://services.mobile.de/search-api/search?#{make}#{model}#{model_description}#{potencia}#{transmision}&damageUnrepaired=0#{price_min}#{price_max}#{mileage_max}#{first_registration_date}#{fuel}#{fourwheeldrive}#{@order}"
 
 
   end
