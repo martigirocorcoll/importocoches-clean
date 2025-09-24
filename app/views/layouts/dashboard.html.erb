@@ -13,7 +13,7 @@
     <% end %>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= favicon_link_tag asset_path='favicon-2.ico'%>
+    <%= favicon_link_tag asset_path='favicon-3.ico'%>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,7 @@
     min-height: calc(100vh - 200px);
     margin: 20px 0;
   }
-  
+
   .dashboard-sidebar {
     width: 250px;
     background: #2c3e50 !important;
@@ -38,7 +38,7 @@
     border-radius: 10px;
     margin-right: 20px;
   }
-  
+
   .dashboard-content {
     flex: 1;
     background: white !important;
@@ -46,30 +46,30 @@
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
-  
+
   .sidebar-header {
     background: #1a252f !important;
     padding: 20px !important;
     text-align: center;
     border-radius: 10px 10px 0 0;
   }
-  
+
   .sidebar-header h4 {
     color: white !important;
     margin: 0;
     font-weight: 600;
   }
-  
+
   .sidebar-menu {
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
   }
-  
+
   .sidebar-menu li:last-child a {
     border-radius: 0 0 10px 10px;
   }
-  
+
   .sidebar-menu a {
     display: flex !important;
     align-items: center !important;
@@ -78,30 +78,30 @@
     text-decoration: none !important;
     transition: all 0.3s ease;
   }
-  
+
   .sidebar-menu a:hover {
     background: #34495e !important;
     color: white !important;
     text-decoration: none !important;
   }
-  
+
   .sidebar-menu a.active {
     background: #3498db !important;
     border-left: 4px solid #2980b9 !important;
     color: white !important;
   }
-  
+
   .sidebar-menu i {
     width: 20px;
     margin-right: 12px;
     text-align: center;
   }
-  
+
   @media (max-width: 768px) {
     .dashboard-container {
       flex-direction: column;
     }
-    
+
     .dashboard-sidebar {
       width: 100%;
       margin-right: 0;
@@ -121,66 +121,66 @@
       <div class="sidebar-header">
         <h4><i class="fa-solid fa-gauge-high"></i> Panel de Control</h4>
       </div>
-      
+
       <ul class="sidebar-menu">
         <li>
-          <%= link_to dashboard_path, 
+          <%= link_to dashboard_path,
               class: "#{current_page?(dashboard_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-calculator"></i>
             <span>Presupuestador</span>
           <% end %>
         </li>
-        
+
         <li>
-          <%= link_to dashboard_transport_path, 
+          <%= link_to dashboard_transport_path,
               class: "#{current_page?(dashboard_transport_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-truck"></i>
             <span>Autorización Transporte</span>
           <% end %>
         </li>
-        
+
         <li>
-          <%= link_to dashboard_attribution_path, 
+          <%= link_to dashboard_attribution_path,
               class: "#{current_page?(dashboard_attribution_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-search"></i>
             <span>Búsqueda Referencias</span>
           <% end %>
         </li>
-        
+
         <li>
-          <%= link_to dashboard_users_path, 
+          <%= link_to dashboard_users_path,
               class: "#{current_page?(dashboard_users_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-users"></i>
             <span>Gestión Usuarios</span>
           <% end %>
         </li>
-        
+
         <li>
-          <%= link_to dashboard_contacts_path, 
+          <%= link_to dashboard_contacts_path,
               class: "#{current_page?(dashboard_contacts_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-address-book"></i>
             <span>Contactos</span>
           <% end %>
         </li>
-        
+
         <li>
-          <%= link_to dashboard_api_activity_path, 
+          <%= link_to dashboard_api_activity_path,
               class: "#{current_page?(dashboard_api_activity_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-chart-line"></i>
             <span>Actividad API</span>
           <% end %>
         </li>
-        
+
         <li>
-          <%= link_to dashboard_llamadas_path, 
+          <%= link_to dashboard_llamadas_path,
               class: "#{current_page?(dashboard_llamadas_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-phone"></i>
             <span>Llamadas API</span>
           <% end %>
         </li>
-        
+
         <li>
-          <%= link_to new_contract_path, 
+          <%= link_to new_contract_path,
               class: "#{current_page?(new_contract_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-file-contract"></i>
             <span>Generar Contrato</span>
@@ -188,7 +188,7 @@
         </li>
       </ul>
     </nav>
-    
+
     <main class="dashboard-content">
       <%= yield %>
     </main>

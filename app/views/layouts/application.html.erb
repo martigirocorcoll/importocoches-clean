@@ -10,7 +10,7 @@
     <% end %>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= favicon_link_tag asset_path='favicon-2.ico'%>
+    <%= favicon_link_tag asset_path='favicon-3.ico'%>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,7 +57,7 @@
 
       gtag('config', 'G-ZD4JPWWBKD');
     </script>
-    
+
     <!-- Clientify Iframe Form Tracking -->
     <script>
     // Monitor Meta Pixel warnings para detectar envíos de formularios iframe
@@ -66,12 +66,12 @@
       console.warn = function() {
         var args = Array.prototype.slice.call(arguments);
         var message = args.join(' ');
-        
+
         // Detectar warning específico de "Form submitted"
         if (message.includes('Form submitted') && message.includes('Meta Pixel')) {
-          
+
           console.log('✅ Clientify iframe form submitted (Meta Pixel detection)');
-          
+
           // Enviar evento a dataLayer para GTM
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
@@ -82,7 +82,7 @@
             }
           });
         }
-        
+
         // Llamar a la función original
         return originalWarn.apply(this, arguments);
       };
