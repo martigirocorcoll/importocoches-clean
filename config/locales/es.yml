@@ -409,7 +409,15 @@ es:
     faq4: "¿Me ayudan a buscar el coche?"
     faq5: "¿Aceptan coches como parte de pago?"
     faq6: "¿Qué hacen si un coche no llega como se espera?"
-    faq7: "¿Los coches en el motor de búsqueda son reales?"  # Nuevas claves para textos hardcodeados
+    faq7: "¿Los coches en el motor de búsqueda son reales?"
+    # FAQ text content
+    faq1_text: "¡Por supuesto! Importamos tanto coches nuevos como de ocasión. Los vehículos nuevos vienen con garantía de fábrica completa y se puede utilizar en concesionarios oficiales en España. Tenemos acceso a concesionarios alemanes autorizados para conseguir el modelo exacto que buscas, con las especificaciones y equipamientos que desees. El proceso es el mismo: encontramos, gestionamos y entregamos tu coche nuevo directamente en España."
+    faq2_text: "Sí, trabajamos con entidades financieras. Las condiciones pueden variar según el perfil del cliente y el vehículo elegido. También aceptamos tu coche actual como parte del pago."
+    faq3_text: "Nuestros honorarios varían según el valor y complejidad del vehículo, pero siempre son transparentes desde el primer momento. No cobramos por la búsqueda ni por el asesoramiento inicial. Solo cobramos cuando encontramos tu coche ideal y decides proceder. Te damos un presupuesto completo y detallado antes de cualquier compromiso, sin sorpresas ni costes ocultos."
+    faq4_text: "¡Absolutamente! La búsqueda personalizada es nuestra especialidad. Nuestros expertos acceden a más de 500.000 vehículos y aplican filtros específicos según tus necesidades: presupuesto, marca, modelo, equipamientos, kilómetros, etc. Tu asesor personal te acompaña durante todo el proceso de búsqueda."
+    faq5_text: "Sí, aceptamos tu coche actual como parte del pago. Realizamos una tasación profesional y objetiva de tu vehículo para determinar su valor de mercado actual. Este valor se descuenta directamente del precio final de tu nuevo coche alemán. Es una forma cómoda y práctica de renovar tu vehículo sin complicaciones adicionales."
+    faq6_text: "Si el vehículo no coincide con la descripción o presenta problemas no declarados, tenemos varias soluciones: devolución completa del dinero, búsqueda de otro vehículo similar, o reparación a cargo nuestro. Nuestra garantía de importación cubre estas situaciones. Realizamos inspección previa en Alemania y otra inspección final en España para minimizar estos casos."
+    faq7_text: "Sí, todos los vehículos que aparecen en nuestro motor de búsqueda son 100% reales y están disponibles. Conectamos directamente con la base de datos de mobile.de, la plataforma de vehículos más grande de Europa. Los precios y disponibilidad se actualizan en tiempo real. Si un coche aparece en nuestro buscador, significa que está disponible para reservar en ese momento."
   home_final:
     title: "¿Tienes alguna duda?"
     subtitle: "Contáctanos y te ayudaremos a encontrar el coche que buscas"

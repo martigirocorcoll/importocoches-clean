@@ -409,6 +409,14 @@ cat:
     faq5: "Accepteu cotxe a canvi?"
     faq6: "Què feu si un cotxe no ve com toca?"
     faq7: "Els cotxes del buscador són reals?"  # Noves claus per textos hardcoded
+    # FAQ text content
+    faq1_text: "Per descomptat! Importem tant cotxes nous com d'ocasió. Els vehicles nous vénen amb garantia de fàbrica completa i es pot utilitzar en concessionaris oficials a Espanya. Tenim accés a concessionaris alemanys autoritzats per aconseguir el model exacte que busques, amb les especificacions i equipaments que desitgis. El procés és el mateix: trobem, gestionem i lliurem el teu cotxe nou directament a Espanya."
+    faq2_text: "Sí, treballem amb entitats financeres. Les condicions poden variar segons el perfil del client i el vehicle triat. També acceptem el teu cotxe actual com a part del pagament."
+    faq3_text: "Els nostres honoraris varien segons el valor i complexitat del vehicle, però sempre són transparents des del primer moment. No cobrem per la cerca ni per l'assessorament inicial. Només cobrem quan trobem el teu cotxe ideal i decideixes procedir. Et donem un pressupost complet i detallat abans de qualsevol compromís, sense sorpreses ni costos ocults."
+    faq4_text: "Absolutament! La cerca personalitzada és la nostra especialitat. Els nostres experts accedeixen a més de 500.000 vehicles i apliquen filtres específics segons les teves necessitats: pressupost, marca, model, equipaments, quilòmetres, etc. El teu assessor personal t'acompanya durant tot el procés de cerca."
+    faq5_text: "Sí, acceptem el teu cotxe actual com a part del pagament. Realitzem una taxació professional i objectiva del teu vehicle per determinar el seu valor de mercat actual. Aquest valor es descompta directament del preu final del teu nou cotxe alemany. És una forma còmoda i pràctica de renovar el teu vehicle sense complicacions addicionals."
+    faq6_text: "Si el vehicle no coincideix amb la descripció o presenta problemes no declarats, tenim diverses solucions: devolució completa dels diners, cerca d'un altre vehicle similar, o reparació al nostre càrrec. La nostra garantia d'importació cobreix aquestes situacions. Realitzem inspecció prèvia a Alemanya i una altra inspecció final a Espanya per minimitzar aquests casos."
+    faq7_text: "Sí, tots els vehicles que apareixen al nostre motor de cerca són 100% reals i estan disponibles. Connectem directament amb la base de dades de mobile.de, la plataforma de vehicles més gran d'Europa. Els preus i disponibilitat s'actualitzen en temps real. Si un cotxe apareix al nostre cercador, significa que està disponible per reservar en aquest moment."
   home_final:
     title: "Tens algun dubte?"
     subtitle: "Contacta amb nosaltres i t'ajudarem a trobar el cotxe que busques"
