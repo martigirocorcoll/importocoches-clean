@@ -28,7 +28,7 @@ class CarSearch
     potencia = "&power.min=#{@potencia_minima}" unless @potencia_minima.blank?
     transmision = "&gearbox=#{@transmision}" unless @transmision.blank?
     if @first_registration_date.blank?
-      first_registration_date = "&firstRegistrationDate.min=2019-01"
+      first_registration_date = "&firstRegistrationDate.min=2015-01"
     else
       first_registration_date = "&firstRegistrationDate.min=#{@first_registration_date}-01"
     end

@@ -15,9 +15,9 @@
     <%= f.input :model_description, label: t('pages.home.descripcion'), input_html: {value: @model_description}, required: false%>
 
     <% if @first_registration_date=="" %>
-      <%= f.input :first_registration_date, label: t('pages.home.primeramat'), collection:["2019", "2020", "2021", "2022", "2023", "2024"], required: false %>
+      <%= f.input :first_registration_date, label: t('pages.home.primeramat'), collection:["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"], required: false %>
     <% else %>
-      <%= f.input :first_registration_date, label: t('pages.home.primeramat'), collection:["2019", "2020", "2021", "2022", "2023", "2024"], selected: @first_registration_date, required: false %>
+      <%= f.input :first_registration_date, label: t('pages.home.primeramat'), collection:["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"], selected: @first_registration_date, required: false %>
     <% end %>
 
     <% if @mileage_max=="" %>
