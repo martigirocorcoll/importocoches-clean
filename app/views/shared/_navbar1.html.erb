@@ -18,18 +18,18 @@
           <%# <li class="nav-item active">
             <%= link_to t('pages.us'), us_path, class: "nav-link" %>
           <%# </li>  %>
-          <li class="nav-item">
-            <%= link_to t('bread.importados'), imported_cars_path, class: "nav-link" %>
-          </li>
+          <%# <li class="nav-item"> %>
+            <%# <%= link_to t('bread.importados'), imported_cars_path, class: "nav-link" %>
+          <%# </li> %>
           <li class="nav-item">
             <%= link_to t('bread.marca'), marca_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
           <%= link_to t('faqs.faqs'), faqs_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <%# <li class="nav-item">
             <%= link_to t('pages.funcionament'), articles_path, class: "nav-link" %>
-          </li>
+          <%# </li> %>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/dd7x7bqya/image/upload/v1683187661/585e4bf3cb11b227491c339a_ifzi4a.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
