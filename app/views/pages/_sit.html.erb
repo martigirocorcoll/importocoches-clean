@@ -1,9 +1,9 @@
 <div class="german-advantages-section">
   <div class="german-advantages-container">
-    
+
     <!-- Main Content Grid -->
     <div class="advantages-grid">
-      
+
       <!-- Left: Premium Car Image -->
       <div class="car-showcase">
         <div class="car-image-wrapper">
@@ -17,16 +17,16 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Right: Advantages Content -->
       <div class="advantages-content">
         <div class="section-header">
           <h2><%= t('german_advantages.title') %></h2>
           <p class="section-subtitle"><%= t('german_advantages.subtitle') %></p>
         </div>
-        
+
         <div class="advantages-list">
-          
+
           <!-- Advantage 1: Better Price -->
           <div class="advantage-item">
             <div class="advantage-icon">
@@ -37,7 +37,7 @@
               <p><%= t('german_advantages.better_price_desc') %></p>
             </div>
           </div>
-          
+
           <!-- Advantage 2: Greater Variety -->
           <div class="advantage-item">
             <div class="advantage-icon">
@@ -48,21 +48,21 @@
               <p><%= t('german_advantages.variety_desc') %></p>
             </div>
           </div>
-          
+
         </div>
-        
+
         <!-- Call to Action -->
         <div class="advantages-cta">
-          <%= link_to "#{I18n.locale}/cars", class: "german-cta-button" do %>
+          <%= link_to root_path, class: "german-cta-button" do %>
             <%= t('german_advantages.cta_button') %>
             <i class="fas fa-arrow-right"></i>
           <% end %>
         </div>
-        
+
       </div>
-      
+
     </div>
-    
+
   </div>
 </div>
 
@@ -78,7 +78,7 @@
 
     <!-- Timeline Process -->
     <div class="sit-timeline">
-      
+
       <!-- Phase 1: Finding -->
       <div class="timeline-phase" data-phase="1">
         <div class="phase-number">01</div>
@@ -126,7 +126,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Phase 2: Management -->
       <div class="timeline-phase" data-phase="2">
         <div class="phase-number">02</div>
@@ -174,7 +174,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Phase 3: Delivery -->
       <div class="timeline-phase" data-phase="3">
         <div class="phase-number">03</div>
@@ -222,13 +222,13 @@
           </div>
         </div>
       </div>
-    
+
     </div> <!-- Close timeline -->
 
     <!-- Final CTA Section -->
     <div class="sit-final-section">
       <h2 class="final-title"><%= t('newhome.sitfin') %></h2>
-      
+
       <div class="final-video"
           data-controller="youtube"
           data-youtube-id-value="<%= t('video.main') %>">
