@@ -370,7 +370,7 @@ es:
     sitcomd: "Si buscas un coche convencional o un modelo específico que no aparece en nuestra plataforma, nosotros lo encontramos por ti. Nos encargas las especificaciones exactas y localizamos el vehículo perfecto en el mercado alemán."
     sit2com: "En la plataforma - Eléctricos e Híbridos"
     sit2comd: "Buscas directamente en nuestra plataforma con miles de coches eléctricos e híbridos disponibles en Alemania. Filtras por marca, modelo, precio y características para encontrar exactamente lo que necesitas."
-    sit2: "2. Gestionamos toda la importación"
+    sit2: "2. Gestionamos toda la importación desde Alemania"
     sitgar: "Coches de confianza"
     sitgard: "Con nuestra experiencia filtramos únicamente coches de confianza que se pueden importar sin problemas. Verificamos historial, documentación y viabilidad de importación antes de mostrártelos."
     sitcompra: "Gestión de compra"
@@ -431,12 +431,12 @@ es:
 
   reviews:
     badge: "TESTIMONIOS"
-    subtitle: "Lo que dicen nuestros clientes sobre nosotros"
+    subtitle: "Lo que dicen nuestros clientes sobre nuestro servicio de importación"
     verified: "Cliente Verificado"
     google_rating: "5.0 ⭐ en Google Reviews - 100% Clientes Satisfechos"
 
   german_advantages:
-    title: "¿Por qué elegir coches de Alemania?"
+    title: "¿Por qué elegir un coche importado de Alemania?"
     subtitle: "Descubre las ventajas que hacen la diferencia"
     better_price_title: "Mejor Precio"
     better_price_desc: "Ahorra hasta un 30% comprando directamente en el mercado alemán. Sin intermediarios, sin márgenes inflados."
