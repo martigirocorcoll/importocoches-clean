@@ -1,4 +1,10 @@
 <div class="hero_img">
+  <!-- LCP optimized hero image -->
+  <%= image_tag("https://res.cloudinary.com/dd7x7bqya/image/upload/f_auto,q_auto:good,w_1920/v1758710169/d-panyukov-T4xX_15D8o8-unsplash_xxgwap.jpg",
+    alt: "Importar coches desde Alemania",
+    class: "hero-background-image",
+    fetchpriority: "high") %>
+
   <h1 id="search"><%= t('pages.home.title') %></h1>
   <p class="hero-subtitle"><%= t('pages.home.subtitle') %></p>
   <div class = "main-form-home">
