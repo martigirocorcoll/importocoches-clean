@@ -253,7 +253,7 @@
     <!-- Google Reviews Badge -->
     <div class="reviews-footer">
       <a href="https://maps.app.goo.gl/cS7PvQpprWgFcAvC8" target="_blank" class="google-reviews-link">
-        <%= image_tag("5starsgoogle.png", alt: "5 estrellas en Google Reviews", class: "google-stars") %>
+        <%= image_tag("5starsgoogle.png", alt: "5 estrellas en Google Reviews", class: "google-stars", loading: "lazy") %>
       </a>
       <h3 class="brand-name"><%= t('reviews.google_rating') %></h3>
     </div>
@@ -262,8 +262,7 @@
 </div>
 
 <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
