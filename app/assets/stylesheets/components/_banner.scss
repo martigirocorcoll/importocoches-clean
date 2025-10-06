@@ -53,8 +53,8 @@
     z-index: 1;
   }
   
-  // Ensure content is above overlays
-  > * {
+  // Ensure content is above overlays (but not the background image)
+  > *:not(.hero-background-image) {
     position: relative;
     z-index: 2;
   }
