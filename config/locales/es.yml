@@ -166,6 +166,20 @@ es:
     p5: "Con una herencia de visión e innovación, Tesla continúa el espíritu de Nikola Tesla en su misión de cambiar el mundo a través de la tecnología. Cada vehículo Tesla lleva consigo la promesa de una nueva era en el transporte."
     t6: "Importación a España"
     p6: "En España, no hay concesionario oficial de Tesla, pero podemos ayudarte a importar un vehículo Tesla específico a tu puerta. Nuestro servicio de importación está especializado en la importación de vehículos Tesla desde diferentes países, asegurando un proceso sin problemas y garantizando que recibirás tu vehículo Tesla con la máxima calidad y eficiencia."
+  expbyd:
+    titol: "BYD, cuyo nombre significa 'Build Your Dreams' (Construye Tus Sueños), es un líder mundial en la fabricación de vehículos eléctricos y tecnología de baterías. Fundada en 1995 en China, la compañía se ha convertido en pionera de la movilidad sostenible y la innovación tecnológica."
+    t1: "Historia y Fundación"
+    p1: "BYD comenzó como fabricante de baterías recargables y rápidamente se posicionó como líder mundial en tecnología de baterías de iones de litio. En 2003, la compañía entró en la industria automotriz y desde entonces ha experimentado un crecimiento exponencial, convirtiéndose en uno de los mayores fabricantes de vehículos eléctricos del mundo."
+    t2: "Innovación en Baterías Blade"
+    p2: "BYD revolucionó la industria con su tecnología de batería Blade, una innovación que ofrece mayor seguridad, mayor densidad energética y una vida útil más larga. Esta tecnología LFP (fosfato de hierro y litio) elimina prácticamente el riesgo de incendio y permite recargas más rápidas, estableciendo nuevos estándares en el sector."
+    t3: "Gama de Vehículos Eléctricos"
+    p3: "BYD ofrece una amplia gama de vehículos totalmente eléctricos que abarcan desde compactos urbanos como el Dolphin hasta sedanes premium como el Seal, SUVs familiares como el Atto 3 y el Seal U. Cada modelo combina tecnología avanzada, diseño moderno y una excelente relación calidad-precio."
+    t4: "Tecnología y Autonomía"
+    p4: "Los vehículos BYD destacan por sus impresionantes autonomías que superan los 500 km en muchos modelos, sistemas de carga rápida que permiten recuperar el 80% de la batería en menos de 30 minutos, y tecnologías avanzadas de asistencia a la conducción que garantizan seguridad y confort."
+    t5: "Sostenibilidad y Compromiso Ambiental"
+    p5: "BYD es líder mundial en movilidad sostenible, no solo fabricando vehículos eléctricos sino también autobuses eléctricos, camiones y sistemas de almacenamiento de energía. Su compromiso con el medio ambiente se refleja en cada aspecto de su producción, desde la fabricación de baterías hasta el reciclaje de componentes."
+    t6: "Servicio de Importación de BYD a España"
+    p6: "Como líder en vehículos eléctricos, BYD es cada vez más demandado por conductores que buscan movilidad sostenible sin comprometer prestaciones. Si estás interesado en adquirir un BYD específico, ya sea el compacto Dolphin, el elegante Seal, el versátil Atto 3 o el espacioso Seal U, podemos ayudarte. Nos especializamos en la importación bajo demanda de coches eléctricos desde Alemania a España, garantizando un proceso transparente y eficiente. Contáctanos para descubrir cómo podemos ayudarte a encontrar tu BYD ideal y disfrutar de la movilidad eléctrica del futuro."
   explambo:
     titol: "Lamborghini: Pasión, Velocidad y Elegancia Italiana en Cada Detalle"
     t1: "Diseño Exclusivo"
@@ -181,6 +195,185 @@ es:
     t6: "Servicio de Importación a España"
     p6: "En España, no hay concesionario oficial de Lamborghini, pero podemos ayudarte a importar el Lamborghini de tus sueños a tu puerta. Nuestro servicio de importación especializado garantiza un proceso sin problemas y te permite disfrutar de la emoción de poseer un Lamborghini en España."
 
+  bmw_serie_7:
+    title: "BMW Serie 7: Lujo y Tecnología Híbrida"
+    description: "El BMW Serie 7 representa el máximo exponente del lujo y la tecnología de BMW, ahora disponible en versiones híbridas enchufables que combinan el rendimiento característico de la marca con una eficiencia excepcional."
+    sections:
+      - heading: "Tecnología Híbrida Avanzada"
+        content: "Las versiones híbridas enchufables del Serie 7 ofrecen una autonomía eléctrica de hasta 80 km, permitiendo la conducción en modo completamente eléctrico para los desplazamientos diarios."
+      - heading: "Interior de Máximo Lujo"
+        content: "El habitáculo del Serie 7 es un santuario de confort y tecnología, con asientos de cuero Nappa, sistema de sonido Bowers & Wilkins, iluminación ambiental y el sistema de entretenimiento BMW Theatre Screen."
+      - heading: "Seguridad y Asistencia"
+        content: "Equipado con los sistemas de asistencia más avanzados de BMW, incluyendo conducción semiautónoma de nivel 3, sistema de visión nocturna y head-up display de realidad aumentada."
+    conclusion: "El BMW Serie 7 representa la perfecta combinación entre lujo tradicional y tecnología del futuro, ideal para quienes buscan lo mejor sin compromisos."
+
+  bmw_i4:
+    title: "BMW i4: El Gran Turismo Eléctrico"
+    description: "El BMW i4 redefine el concepto de Gran Turismo eléctrico, combinando la elegancia de un cupé de cuatro puertas con la tecnología eléctrica más avanzada de BMW."
+    sections:
+      - heading: "Rendimiento Impresionante"
+        content: "Disponible en versiones eDrive40 y M50, el i4 ofrece desde 340 CV hasta 544 CV. La aceleración de 0 a 100 km/h en solo 3,9 segundos en la versión M50 demuestra que el futuro eléctrico es emocionante."
+      - heading: "Autonomía y Carga Rápida"
+        content: "Con baterías de hasta 83,9 kWh, el i4 ofrece una autonomía de hasta 590 km. La capacidad de carga rápida de hasta 205 kW permite recuperar 164 km de autonomía en solo 10 minutos."
+      - heading: "Diseño y Tecnología"
+        content: "El BMW Curved Display combina dos pantallas en una superficie curva, con el BMW Operating System 8 que ofrece una experiencia de usuario totalmente personalizable."
+    conclusion: "El BMW i4 es la prueba de que la movilidad eléctrica puede ser tan emocionante como la convencional, sin renunciar a las prestaciones deportivas."
+
+  mercedes_gle:
+    title: "Mercedes-Benz GLE: SUV de Lujo Premium"
+    description: "El Mercedes-Benz GLE combina el lujo característico de la Estrella con la versatilidad de un SUV de gran tamaño, disponible en versiones híbridas enchufables y totalmente eléctricas."
+    sections:
+      - heading: "Tecnología Híbrida y Eléctrica"
+        content: "Las versiones híbridas enchufables ofrecen hasta 100 km de autonomía eléctrica. La versión EQE SUV proporciona hasta 550 km de autonomía con cero emisiones."
+      - heading: "Interior Espacioso y Lujoso"
+        content: "Con capacidad para hasta 7 pasajeros, el GLE ofrece sistema MBUX con pantallas duales y asientos de masaje para una experiencia premium."
+      - heading: "Seguridad Avanzada"
+        content: "Equipado con PRE-SAFE, DISTRONIC PLUS, cámaras 360 grados y detección de punto ciego para máxima protección."
+    conclusion: "El Mercedes-Benz GLE es el SUV perfecto para familias que buscan lujo, espacio y tecnología sin compromisos."
+
+  mercedes_eqv:
+    title: "Mercedes-Benz EQV: Monovolumen Eléctrico Premium"
+    description: "El Mercedes-Benz EQV ofrece hasta 8 plazas con el lujo Mercedes en un formato 100% eléctrico, ideal para familias numerosas o uso profesional."
+    sections:
+      - heading: "Autonomía Eléctrica"
+        content: "Con batería de 90 kWh, ofrece hasta 363 km de autonomía. Carga rápida DC de 110 kW permite 10-80% en 45 minutos."
+      - heading: "Espacio y Versatilidad"
+        content: "Configuraciones de 6, 7 u 8 plazas con asientos tipo capitán en versiones premium y amplio maletero para viajes familiares."
+      - heading: "Tecnología y Confort"
+        content: "Sistema MBUX con pantalla de 10,25 pulgadas, climatizador de tres zonas, techo panorámico y puertas eléctricas."
+    conclusion: "El EQV es el monovolumen eléctrico que no compromete en espacio, lujo ni sostenibilidad."
+
+  audi_q4:
+    title: "Audi Q4 e-tron: SUV Eléctrico Compacto"
+    description: "El Audi Q4 e-tron ofrece hasta 534 km de autonomía con diseño compacto pero espacioso, tecnología avanzada y el prestigio de Audi."
+    sections:
+      - heading: "Tecnología Eléctrica"
+        content: "Disponible con tracción trasera o quattro total, potencias desde 170 CV hasta 299 CV. Batería de 77 kWh para hasta 534 km de autonomía."
+      - heading: "Carga Rápida"
+        content: "Carga rápida de 125 kW permite 5-80% en 38 minutos. Sistema e-tron route planner optimiza paradas de carga en viajes."
+      - heading: "Diseño Interior"
+        content: "Maletero de 520 litros, espacio para cinco pasajeros y Audi Virtual Cockpit plus con head-up display de realidad aumentada."
+    conclusion: "El Q4 e-tron es el SUV eléctrico compacto perfecto para quienes buscan versatilidad, tecnología y eficiencia."
+
+  audi_q6:
+    title: "Audi Q6 e-tron: SUV Eléctrico de Nueva Generación"
+    description: "El Audi Q6 e-tron con plataforma PPE de 800 voltios ofrece más de 600 km de autonomía y carga ultra rápida, marcando un nuevo estándar."
+    sections:
+      - heading: "Plataforma PPE"
+        content: "Arquitectura de 800V permite carga de 270 kW, recuperando 260 km en 10 minutos. Batería de 100 kWh para hasta 625 km de autonomía."
+      - heading: "Rendimiento quattro"
+        content: "Tracción trasera o quattro eléctrica, potencias desde 252 CV hasta 387 CV en SQ6. Dinámica excepcional en cualquier condición."
+      - heading: "Tecnología Innovadora"
+        content: "Audi Digital Stage con MMI panoramic display, head-up display de realidad aumentada con gráficos 3D."
+    conclusion: "El Q6 e-tron representa el futuro de los SUV eléctricos de Audi con tecnología de vanguardia."
+
+  volkswagen_t7_california:
+    title: "VW T7 Multivan California: Camper Moderna Híbrida"
+    description: "La nueva T7 California combina la legendaria versatilidad camper con tecnología híbrida enchufable para aventuras sostenibles."
+    sections:
+      - heading: "Tecnología Híbrida"
+        content: "Motor 1.4 TSI más motor eléctrico para 218 CV total. Hasta 50 km de autonomía eléctrica para uso diario sin combustible."
+      - heading: "Equipamiento Camper"
+        content: "Techo elevable eléctrico, cocina con dos fuegos, nevera, almacenamiento inteligente y cama convertible. Todo para vivir aventuras."
+      - heading: "Tecnología Conectada"
+        content: "Digital Cockpit Pro con navegación para autocaravanas, We Connect y pre-climatización para acondicionar antes de viajar."
+    conclusion: "La T7 California es la evolución perfecta del icono camper, ahora con eficiencia híbrida."
+
+  volkswagen_id3:
+    title: "VW ID.3: El Eléctrico para Todos"
+    description: "El Volkswagen ID.3 democratiza la movilidad eléctrica con espacio interior superior, hasta 557 km de autonomía y precio competitivo."
+    sections:
+      - heading: "Autonomía y Eficiencia"
+        content: "Baterías de 58, 77 y 82 kWh con autonomías desde 425 hasta 557 km. Eficiencia de solo 14-16 kWh/100km."
+      - heading: "Carga Rápida"
+        content: "Carga rápida de 170 kW permite 5-80% en 29 minutos. Carga AC de 11 kW para carga completa nocturna en 7 horas."
+      - heading: "Interior Espacioso"
+        content: "Plataforma MEB con batería plana ofrece habitáculo sorprendentemente amplio. Sistema ID.Light y head-up display de realidad aumentada."
+    conclusion: "El ID.3 hace la movilidad eléctrica accesible sin comprometer espacio, tecnología ni autonomía."
+
+  mini_aceman:
+    title: "Mini Aceman: Crossover Eléctrico Urbano"
+    description: "El Mini Aceman combina la agilidad urbana Mini con más espacio y versatilidad, todo en formato 100% eléctrico."
+    sections:
+      - heading: "Propulsión Eléctrica"
+        content: "Versiones Aceman E (184 CV) y SE (218 CV) con hasta 406 km de autonomía. Aceleración 0-100 en 7,1 segundos manteniendo la diversión Mini."
+      - heading: "Diseño Distintivo"
+        content: "Proporciones de crossover con esencia Mini. Interior con materiales sostenibles, pantalla OLED de 240mm y Mini Experience Modes."
+      - heading: "Tecnología Sostenible"
+        content: "Sistema Mini basado en BMW OS 9, integración total con smartphones y actualizaciones OTA. Materiales reciclados y superficies veganas."
+    conclusion: "El Aceman es el equilibrio perfecto entre estilo Mini, practicidad crossover y movilidad eléctrica."
+
+  cupra_tavascan:
+    title: "Cupra Tavascan: SUV Coupé Eléctrico Deportivo"
+    description: "El Cupra Tavascan lleva el ADN deportivo de Cupra al mundo 100% eléctrico con diseño SUV coupé agresivo y prestaciones electrizantes."
+    sections:
+      - heading: "Potencia Eléctrica"
+        content: "Tracción trasera (286 CV) o integral (340 CV en VZ). Aceleración 0-100 en 5,6 segundos. Batería de 77 kWh para hasta 520 km."
+      - heading: "Diseño Deportivo"
+        content: "Líneas tensas con caída coupé y firma luminosa Cupra. Interior deportivo con instrumentación de 15 pulgadas y volante específico."
+      - heading: "Dinámica Cupra"
+        content: "Chasis adaptativo DCC Sport, dirección progresiva y modo Cupra específico. Sistema con IA que aprende tu estilo de conducción."
+    conclusion: "El Tavascan demuestra que los SUV eléctricos pueden ser emocionantes y deportivos sin compromisos."
+
+  cupra_terramar:
+    title: "Cupra Terramar: SUV Deportivo Híbrido"
+    description: "El Cupra Terramar combina deportividad con tecnología híbrida enchufable avanzada, fabricado en Martorell para el futuro de la movilidad."
+    sections:
+      - heading: "Hibridación Potente"
+        content: "Versiones híbridas enchufables hasta 272 CV en VZ. Autonomía eléctrica de +100 km para desplazamientos diarios sin combustible."
+      - heading: "Diseño Atlético"
+        content: "Proporciones musculosas con paso de ruedas ensanchado y líneas tensas. Faros Matrix LED y luces Coast to Coast con firma Cupra."
+      - heading: "Tecnología Premium"
+        content: "Chasis adaptativo, dirección progresiva y modos Cupra. Pantalla curva de 12,9 pulgadas, head-up display y Sennheiser premium."
+    conclusion: "El Terramar es el SUV deportivo híbrido perfecto para quienes buscan eficiencia sin renunciar a emociones."
+
+  byd_seal:
+    title: "BYD Seal: Sedán Eléctrico Premium con Tecnología Blade"
+    description: "El BYD Seal compite con Tesla Model 3 y BMW i4 con diseño elegante, batería Blade de última generación y prestaciones impresionantes."
+    sections:
+      - heading: "Tecnología Blade Battery"
+        content: "Batería Blade con tecnología LFP ofrece mayor seguridad y longevidad. Baterías de 61,4 y 82,5 kWh para hasta 570 km de autonomía."
+      - heading: "Prestaciones Deportivas"
+        content: "Tracción trasera (313 CV) o AWD Performance (530 CV) con 0-100 en 3,8 segundos. Plataforma e-Platform 3.0 para dinámica excepcional."
+      - heading: "Interior Ocean Aesthetics"
+        content: "Pantalla giratoria de 15,6 pulgadas, instrumentación de 10,25 pulgadas y sistema Dynaudio con 12 altavoces premium."
+    conclusion: "El Seal demuestra que BYD domina tanto la tecnología de baterías como el arte de crear coches eléctricos excepcionales."
+
+  byd_atto_3:
+    title: "BYD Atto 3: SUV Eléctrico Compacto Versátil"
+    description: "El BYD Atto 3 democratiza el acceso a movilidad eléctrica de calidad con gran autonomía, diseño moderno y precio competitivo."
+    sections:
+      - heading: "Autonomía Blade"
+        content: "Batería Blade de 60,48 kWh para 420 km de autonomía. Más de 3.000 ciclos de carga. Carga rápida 88 kW: 30-80% en 29 minutos."
+      - heading: "Diseño Juvenil"
+        content: "Líneas dinámicas con Dragon Face característico. Manillas tipo cuerda de guitarra, pantalla giratoria de 12,8 pulgadas vertical/horizontal."
+      - heading: "Tecnología y Seguridad"
+        content: "Sistema DiPilot con crucero adaptativo, mantenimiento de carril y frenado de emergencia. DiLink 4.0 con CarPlay/Android Auto inalámbricos."
+    conclusion: "El Atto 3 prueba que es posible combinar calidad, tecnología y precio asequible en un SUV eléctrico."
+
+  byd_dolphin:
+    title: "BYD Dolphin: Compacto Eléctrico Urbano Asequible"
+    description: "El BYD Dolphin hace accesible la movilidad eléctrica con diseño bicolor juvenil inspirado en estética marina y precio muy competitivo."
+    sections:
+      - heading: "Plataforma e-Platform 3.0"
+        content: "Baterías Blade de 44,9 y 60,48 kWh con hasta 427 km de autonomía. Habitáculo espacioso gracias a arquitectura eléctrica dedicada."
+      - heading: "Diseño Marino"
+        content: "Exterior bicolor con techo en contraste y líneas fluidas. Interior con texturas y colores que evocan el océano, ambiente fresco y moderno."
+      - heading: "Tecnología Accesible"
+        content: "Pantalla giratoria de 12,8 pulgadas, DiLink 3.0 con navegación, cámara 360 grados y Vehicle-to-Load (V2L) para dispositivos externos."
+    conclusion: "El Dolphin es la opción perfecta como primer coche eléctrico, combinando precio, tecnología y diseño alegre."
+
+  byd_seal_u:
+    title: "BYD Seal U: SUV Familiar Híbrido Enchufable"
+    description: "El BYD Seal U DM-i ofrece capacidad para 7 pasajeros, gran versatilidad y sistema híbrido enchufable que prioriza propulsión eléctrica."
+    sections:
+      - heading: "Sistema DM-i Avanzado"
+        content: "Dual Mode intelligent prioriza propulsión eléctrica. Batería Blade de 18,3 kWh para 80 km eléctricos. Consumo híbrido de solo 5,5 L/100km."
+      - heading: "Espacio Familiar"
+        content: "4,78 metros con 2,76 m de distancia entre ejes. Configuraciones 5 o 7 plazas. Maletero de 425 L ampliable a 1.440 L."
+      - heading: "Confort Premium"
+        content: "Pantalla giratoria de 15,6 pulgadas con DiLink 4.0, climatizador de tres zonas, cuero vegano, techo panorámico y sistema de 12 altavoces."
+    conclusion: "El Seal U es el SUV familiar perfecto que combina espacio, tecnología híbrida eficiente y confort premium."
 
   pages:
     us: "Sobre nosotros"

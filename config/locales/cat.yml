@@ -164,6 +164,20 @@ cat:
     p5: "Amb una herència de visió i innovació, Tesla continua l'esperit de Nikola Tesla en la seva missió de canviar el món a través de la tecnologia. Cada vehicle Tesla porta consigo la promesa d'una nova era en el transport."
     t6: "Importació a Espanya"
     p6: "A Espanya, no hi ha concessionari oficial de Tesla, però podem ajudar-te a importar un vehicle Tesla específic a la teva porta. El nostre servei de importació està especialitzat en la importació de vehicles Tesla des de diferents països, assegurant un procés sense problemes i garantint que rebràs el teu vehicle Tesla amb la màxima qualitat i eficiència."
+  expbyd:
+    titol: "BYD, el nom del qual significa 'Build Your Dreams' (Construeix Els Teus Somnis), és un líder mundial en la fabricació de vehicles elèctrics i tecnologia de bateries. Fundada el 1995 a la Xina, la companyia s'ha convertit en pionera de la mobilitat sostenible i la innovació tecnològica."
+    t1: "Història i Fundació"
+    p1: "BYD va començar com a fabricant de bateries recarregables i ràpidament es va posicionar com a líder mundial en tecnologia de bateries d'ions de liti. El 2003, la companyia va entrar a la indústria automotriu i des d'aleshores ha experimentat un creixement exponencial, convertint-se en un dels majors fabricants de vehicles elèctrics del món."
+    t2: "Innovació en Bateries Blade"
+    p2: "BYD va revolucionar la indústria amb la seva tecnologia de bateria Blade, una innovació que ofereix major seguretat, major densitat energètica i una vida útil més llarga. Aquesta tecnologia LFP (fosfat de ferro i liti) elimina pràcticament el risc d'incendi i permet recàrregues més ràpides, establint nous estàndards al sector."
+    t3: "Gamma de Vehicles Elèctrics"
+    p3: "BYD ofereix una àmplia gamma de vehicles totalment elèctrics que abracen des de compactes urbans com el Dolphin fins a sedans premium com el Seal, SUVs familiars com l'Atto 3 i el Seal U. Cada model combina tecnologia avançada, disseny modern i una excel·lent relació qualitat-preu."
+    t4: "Tecnologia i Autonomia"
+    p4: "Els vehicles BYD destaquen per les seves impressionants autonomies que superen els 500 km en molts models, sistemes de càrrega ràpida que permeten recuperar el 80% de la bateria en menys de 30 minuts, i tecnologies avançades d'assistència a la conducció que garanteixen seguretat i confort."
+    t5: "Sostenibilitat i Compromís Ambiental"
+    p5: "BYD és líder mundial en mobilitat sostenible, no només fabricant vehicles elèctrics sinó també autobusos elèctrics, camions i sistemes d'emmagatzematge d'energia. El seu compromís amb el medi ambient es reflecteix en cada aspecte de la seva producció, des de la fabricació de bateries fins al reciclatge de components."
+    t6: "Servei d'Importació de BYD a Espanya"
+    p6: "Com a líder en vehicles elèctrics, BYD és cada vegada més sol·licitat per conductors que busquen mobilitat sostenible sense comprometre prestacions. Si estàs interessat en adquirir un BYD específic, ja sigui el compacte Dolphin, l'elegant Seal, el versàtil Atto 3 o l'espaiós Seal U, podem ajudar-te. Ens especialitzem en la importació sota demanda de cotxes elèctrics des d'Alemanya a Espanya, garantint un procés transparent i eficient. Contacta'ns per descobrir com podem ajudar-te a trobar el teu BYD ideal i gaudir de la mobilitat elèctrica del futur."
   explambo:
     titol: "Lamborghini: Passió, Velocitat i Elegància Italiana en Cada Detall"
     t1: "Disseny Exclusiu"
@@ -2008,3 +2022,20 @@ cat:
 
   social:
     badge: "IMPORTOGROUP A LES XARXES SOCIALS"
+
+  model_descriptions:
+    bmw_serie_7: "El BMW Sèrie 7 representa l'elegància i la innovació en el seu màxim esplendor. Aquest sedàn de luxe ofereix un interior refinat amb materials premium, tecnologia d'avantguarda i un rendiment excepcional. Perfecte per a aquells que busquen confort i prestigi a cada viatge."
+    bmw_i4: "El BMW i4 és el sedàn elèctric que combina sostenibilitat amb emoció de conducció. Amb una autonomia impressionant i acceleració instantània, l'i4 ofereix l'experiència BMW en un paquet 100% elèctric. Tecnologia innovadora i disseny atractiu per al conductor modern."
+    mercedes_gle: "El Mercedes-Benz GLE és el SUV que defineix versatilitat i luxe. Amb un espai interior generós, tecnologia intel·ligent i capacitats tot terreny, el GLE s'adapta tant a la ciutat com a l'aventura. Elegància i rendiment en perfecta harmonia."
+    mercedes_eqv: "El Mercedes-Benz EQV és la monovolum elèctrica premium que transforma els viatges familiars. Espai per a 7 passatgers, emissió zero i tot el luxe Mercedes en un vehicle pràctic i sostenible. Ideal per a famílies que no volen renunciar al confort ni al medi ambient."
+    audi_q4: "L'Audi Q4 e-tron és el SUV elèctric compacte que ofereix tecnologia quattro en versió elèctrica. Disseny modern, interior espaiat i una autonomia que t'assegura viatges sense preocupacions. L'entrada perfecta al món elèctric premium d'Audi."
+    audi_q6: "L'Audi Q6 e-tron representa el futur dels SUVs elèctrics. Amb la nova plataforma PPE, ofereix càrrega ultraràpida, autonomia estesa i un interior digital revolucionari. Tecnologia d'avantguarda per als conductors més exigents."
+    volkswagen_t7_california: "La Volkswagen T7 California és la icònica furgoneta camper reinventada. Equipada amb cuina, llit i sostre elevable, ofereix llibertat total per explorar. Perfecta per a les teves aventures amb tot el confort que necessites."
+    volkswagen_id3: "El Volkswagen ID.3 és l'elèctric accessible que marca el futur de la mobilitat. Amb autonomia real per al dia a dia, càrrega ràpida i un habitacle espaiat, l'ID.3 fa que la transició a l'elèctric sigui senzilla i agradable."
+    mini_aceman: "El MINI Aceman és el crossover elèctric que combina estil MINI amb pràcticitat moderna. Àgil a la ciutat però espaiat a dins, ofereix l'experiència de conducció MINI en format sostenible. Distintiu, divertit i 100% elèctric."
+    cupra_tavascan: "El Cupra Tavascan és el SUV coupé elèctric que combina esportivitat amb sostenibilitat. Disseny agressiu, rendiment emocionant i tecnologia puntera defineixen aquest model. Per als qui busquen prestacions sense comprometre el futur."
+    cupra_terramar: "El Cupra Terramar és el nou SUV que combina elegància amb caràcter esportiu. Motor potent, tecnologia avançada i un disseny que no passa desapercebut. L'equilibri perfecte entre confort diari i emoció de conducció."
+    byd_seal: "El BYD Seal és el sedàn elèctric que combina tecnologia de bateries d'última generació amb disseny elegant. Amb autonomia líder en el seu segment i prestacions esportives, el Seal demostra que els elèctrics xinesos han arribat per quedar-se."
+    byd_atto_3: "El BYD Atto 3 és el SUV elèctric compacte que ofereix una relació qualitat-preu excepcional. Amb bateries LFP de llarga durada, tecnologia de seguretat avançada i un interior modern, l'Atto 3 fa l'elèctric accessible per a tothom."
+    byd_dolphin: "El BYD Dolphin és l'urbà elèctric que fa la mobilitat sostenible accessible. Compacte però espaiat, amb autonomia suficient per al dia a dia i un disseny jove i fresc. La porta d'entrada perfecta a la família BYD."
+    byd_seal_u: "El BYD Seal U és el SUV familiar elèctric amb 7 places i autonomia estesa. Perfecte per a famílies que necessiten espai sense renunciar a la sostenibilitat. Tecnologia avançada i seguretat màxima en un paquet pràctic i eficient."

@@ -169,6 +169,20 @@ de:
     p5: "Mit einem Erbe an Visionen und Innovationen führt Tesla den Geist von Nikola Tesla in seiner Mission fort, die Welt durch Technologie zu verändern. Jedes Tesla-Fahrzeug birgt das Versprechen einer neuen Ära im Transportwesen in sich"
     t6: "Einfuhr nach Spanien"
     p6: "In Spanien gibt es keinen offiziellen Tesla-Händler, aber wir können Ihnen helfen, ein bestimmtes Tesla-Fahrzeug nach Hause zu importieren. Unser Importservice ist auf den Import von Tesla-Fahrzeugen aus verschiedenen Ländern spezialisiert und gewährleistet einen reibungslosen Ablauf und die Garantie, dass Sie Ihr Tesla-Fahrzeug mit höchster Qualität und Effizienz erhalten."
+  expbyd:
+    titol: "BYD, dessen Name für 'Build Your Dreams' (Baue Deine Träume) steht, ist ein weltweit führender Hersteller von Elektrofahrzeugen und Batterietechnologie. Das 1995 in China gegründete Unternehmen ist zu einem Pionier der nachhaltigen Mobilität und technologischen Innovation geworden."
+    t1: "Geschichte und Gründung"
+    p1: "BYD begann als Hersteller von wiederaufladbaren Batterien und positionierte sich schnell als weltweit führend in der Lithium-Ionen-Batterietechnologie. 2003 stieg das Unternehmen in die Automobilindustrie ein und hat seitdem ein exponentielles Wachstum erlebt und ist zu einem der größten Elektrofahrzeughersteller der Welt geworden."
+    t2: "Blade-Batterie-Innovation"
+    p2: "BYD revolutionierte die Industrie mit seiner Blade-Batterietechnologie, einer Innovation, die mehr Sicherheit, höhere Energiedichte und eine längere Lebensdauer bietet. Diese LFP-Technologie (Lithium-Eisen-Phosphat) eliminiert praktisch das Brandrisiko und ermöglicht schnelleres Laden, wodurch neue Industriestandards gesetzt werden."
+    t3: "Elektrofahrzeug-Palette"
+    p3: "BYD bietet eine breite Palette vollständig elektrischer Fahrzeuge, von kompakten Stadtautos wie dem Dolphin über Premium-Limousinen wie dem Seal bis hin zu Familien-SUVs wie dem Atto 3 und Seal U. Jedes Modell kombiniert fortschrittliche Technologie, modernes Design und ein hervorragendes Preis-Leistungs-Verhältnis."
+    t4: "Technologie und Reichweite"
+    p4: "BYD-Fahrzeuge zeichnen sich durch beeindruckende Reichweiten von über 500 km bei vielen Modellen, Schnellladesysteme, die 80% der Batterie in weniger als 30 Minuten wiederherstellen, und fortschrittliche Fahrerassistenztechnologien aus, die Sicherheit und Komfort garantieren."
+    t5: "Nachhaltigkeit und Umweltengagement"
+    p5: "BYD ist weltweit führend in nachhaltiger Mobilität und stellt nicht nur Elektrofahrzeuge, sondern auch Elektrobusse, LKWs und Energiespeichersysteme her. Ihr Engagement für die Umwelt spiegelt sich in jedem Aspekt ihrer Produktion wider, von der Batterieherstellung bis zum Recycling von Komponenten."
+    t6: "BYD Importservice nach Spanien"
+    p6: "Als Marktführer bei Elektrofahrzeugen ist BYD bei Fahrern, die nachhaltige Mobilität ohne Leistungseinbußen suchen, zunehmend gefragt. Wenn Sie an einem bestimmten BYD interessiert sind, ob kompakter Dolphin, eleganter Seal, vielseitiger Atto 3 oder geräumiger Seal U, können wir Ihnen helfen. Wir sind spezialisiert auf die bedarfsgerechte Einfuhr von Elektroautos aus Deutschland nach Spanien und garantieren einen transparenten und effizienten Prozess. Kontaktieren Sie uns, um herauszufinden, wie wir Ihnen helfen können, Ihren idealen BYD zu finden und die Elektromobilität der Zukunft zu genießen."
   explambo:
     titol: "Lamborghini: Leidenschaft, Geschwindigkeit und italienische Eleganz in jedem Detail"
     t1: "Exklusives Design"
@@ -2011,3 +2025,20 @@ de:
 
   social:
     badge: "IMPORTOGROUP IN SOZIALEN MEDIEN"
+
+  model_descriptions:
+    bmw_serie_7: "Der BMW 7er Serie repräsentiert Eleganz und Innovation auf höchstem Niveau. Diese Luxuslimousine bietet ein raffiniertes Interieur mit Premium-Materialien, modernster Technologie und außergewöhnlicher Leistung. Perfekt für alle, die Komfort und Prestige auf jeder Fahrt suchen."
+    bmw_i4: "Der BMW i4 ist die Elektrolimousine, die Nachhaltigkeit mit Fahrspaß verbindet. Mit beeindruckender Reichweite und sofortiger Beschleunigung bietet der i4 das BMW-Erlebnis in einem 100% elektrischen Paket. Innovative Technologie und attraktives Design für den modernen Fahrer."
+    mercedes_gle: "Der Mercedes-Benz GLE ist der SUV, der Vielseitigkeit und Luxus definiert. Mit großzügigem Innenraum, intelligenter Technologie und Geländefähigkeiten passt sich der GLE sowohl der Stadt als auch dem Abenteuer an. Eleganz und Leistung in perfekter Harmonie."
+    mercedes_eqv: "Der Mercedes-Benz EQV ist der Premium-Elektro-Van, der Familienreisen transformiert. Platz für 7 Passagiere, null Emissionen und aller Mercedes-Luxus in einem praktischen und nachhaltigen Fahrzeug. Ideal für Familien, die weder auf Komfort noch auf Umwelt verzichten wollen."
+    audi_q4: "Der Audi Q4 e-tron ist der kompakte Elektro-SUV mit quattro-Technologie in elektrischer Form. Modernes Design, geräumiger Innenraum und eine Reichweite, die sorgenfreie Fahrten garantiert. Der perfekte Einstieg in Audis Premium-Elektrowelt."
+    audi_q6: "Der Audi Q6 e-tron repräsentiert die Zukunft der Elektro-SUVs. Mit der neuen PPE-Plattform bietet er ultraschnelles Laden, erweiterte Reichweite und ein revolutionäres digitales Interieur. Spitzentechnologie für anspruchsvollste Fahrer."
+    volkswagen_t7_california: "Der Volkswagen T7 California ist der ikonische Campingbus neu erfunden. Ausgestattet mit Küche, Bett und Aufstelldach bietet er völlige Freiheit zum Entdecken. Perfekt für Ihre Abenteuer mit allem Komfort, den Sie brauchen."
+    volkswagen_id3: "Der Volkswagen ID.3 ist das erschwingliche Elektroauto, das die Zukunft der Mobilität prägt. Mit echter Alltagsreichweite, Schnellladung und geräumigem Innenraum macht der ID.3 den Umstieg auf Elektro einfach und angenehm."
+    mini_aceman: "Der MINI Aceman ist der Elektro-Crossover, der MINI-Stil mit moderner Praktikabilität verbindet. Agil in der Stadt, aber innen geräumig, bietet er das MINI-Fahrerlebnis im nachhaltigen Format. Unverwechselbar, spaßig und 100% elektrisch."
+    cupra_tavascan: "Der Cupra Tavascan ist das Elektro-SUV-Coupé, das Sportlichkeit mit Nachhaltigkeit verbindet. Aggressives Design, begeisternde Leistung und modernste Technologie definieren dieses Modell. Für alle, die Performance suchen, ohne die Zukunft zu gefährden."
+    cupra_terramar: "Der Cupra Terramar ist der neue SUV, der Eleganz mit sportlichem Charakter verbindet. Kraftvoller Motor, fortschrittliche Technologie und ein Design, das nicht unbemerkt bleibt. Die perfekte Balance zwischen Alltagskomfort und Fahrspaß."
+    byd_seal: "Der BYD Seal ist die Elektrolimousine, die neueste Batterietechnologie mit elegantem Design kombiniert. Mit segmentführender Reichweite und sportlicher Leistung beweist der Seal, dass chinesische Elektrofahrzeuge gekommen sind, um zu bleiben."
+    byd_atto_3: "Der BYD Atto 3 ist der kompakte Elektro-SUV mit außergewöhnlichem Preis-Leistungs-Verhältnis. Mit langlebigen LFP-Batterien, fortschrittlicher Sicherheitstechnologie und modernem Interieur macht der Atto 3 Elektromobilität für alle zugänglich."
+    byd_dolphin: "Der BYD Dolphin ist das Stadtauto, das nachhaltige Mobilität zugänglich macht. Kompakt aber geräumig, mit ausreichender Reichweite für den Alltag und einem jungen, frischen Design. Das perfekte Einstiegstor zur BYD-Familie."
+    byd_seal_u: "Der BYD Seal U ist der Familien-Elektro-SUV mit 7 Sitzen und erweiterter Reichweite. Perfekt für Familien, die Platz brauchen, ohne auf Nachhaltigkeit zu verzichten. Fortschrittliche Technologie und maximale Sicherheit in einem praktischen und effizienten Paket."

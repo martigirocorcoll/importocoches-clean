@@ -25,8 +25,8 @@
       <%= render "pages/#{@brand_config[:slug].split('-').first}/listingmodel" %>
     </div>
   </div>
-  
-  <div>
+
+  <div class="seocontainer">
     <% if I18n.exists?("#{@brand_config[:slug].split('-').first}_#{@model_config[:slug].gsub('-', '_')}.title") %>
       <h2><%= t("#{@brand_config[:slug].split('-').first}_#{@model_config[:slug].gsub('-', '_')}.title") %></h2>
       <p><%= t("#{@brand_config[:slug].split('-').first}_#{@model_config[:slug].gsub('-', '_')}.description") %></p>
@@ -37,7 +37,7 @@
           <p><%= section[:content] %></p>
         <% end %>
       <% end %>
-      
+
       <br>
       <% if I18n.exists?("#{@brand_config[:slug].split('-').first}_#{@model_config[:slug].gsub('-', '_')}.conclusion") %>
         <p><%= t("#{@brand_config[:slug].split('-').first}_#{@model_config[:slug].gsub('-', '_')}.conclusion") %></p>

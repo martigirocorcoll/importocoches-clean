@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get '/dashboard/contacts', to: 'dashboard#contacts', as: 'dashboard_contacts'
   get '/dashboard/api-activity', to: 'dashboard#api_activity', as: 'dashboard_api_activity'
   get '/dashboard/llamadas', to: 'dashboard#llamadas', as: 'dashboard_llamadas'
+  get '/dashboard/seo-cache', to: 'dashboard#seo_cache', as: 'dashboard_seo_cache'
+  post '/dashboard/seo-cache/refresh', to: 'dashboard#refresh_seo_cache', as: 'refresh_dashboard_seo_cache'
+  delete '/dashboard/seo-cache/clear', to: 'dashboard#clear_seo_cache', as: 'clear_dashboard_seo_cache'
   
   get '/privacy_policy', to: 'pages#privacy_policy'
   get '/cookie_policy', to: 'pages#cookie_policy'

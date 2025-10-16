@@ -108,15 +108,21 @@ class SeoCacheService
 
   def self.refresh_cache_for_brand(brand_slug)
     brand_config = BrandConfiguration.get_brand_by_slug(brand_slug)
+    Rails.logger.debug "🔍 Brand config for #{brand_slug}: #{brand_config ? 'found' : 'not found'}"
     return [] unless brand_config
-    
+
+    Rails.logger.debug "🔍 Models count: #{brand_config[:models]&.count || 0}"
+
     results = []
-    
+
     brand_config[:models].each do |model_key, model_config|
+      Rails.logger.debug "🔍 Processing model: #{model_key} - #{model_config[:slug]}"
       result = refresh_cache_for_model(brand_slug, model_config[:slug])
+      Rails.logger.debug "🔍 Result: #{result ? 'success' : 'nil'}"
       results << result if result
     end
-    
+
+    Rails.logger.debug "🔍 Total results: #{results.count}"
     results
   end
 
@@ -202,7 +208,7 @@ class SeoCacheService
   end
 
   def self.build_endpoint(brand_config, model_config)
-    base_url = "https://services.mobile.de/search-api/search?vatable=1"
+    base_url = "https://services.mobile.de/search-api/search?"
 
     if model_config[:type] == 'modelgroup'
       classification = "classification=refdata/classes/Car/makes/#{brand_config[:api_name]}/modelgroups/#{model_config[:api_name].upcase}"
@@ -210,10 +216,10 @@ class SeoCacheService
       classification = "classification=refdata/classes/Car/makes/#{brand_config[:api_name]}/models/#{model_config[:api_name].upcase}"
     end
 
-    # Add hybrid and electric fuel filters
-    fuel_filters = "&fuel=ELECTRIC&fuel=HYBRID_PETROL&fuel=HYBRID_DIESEL&fuel=PLUGIN_HYBRID"
+    # Use same fuel filters as CarSearch (ELECTRICITY, HYBRID, HYBRID_DIESEL)
+    fuel_filters = "&fuel=ELECTRICITY&fuel=HYBRID&fuel=HYBRID_DIESEL"
 
-    "#{base_url}&#{classification}&damageUnrepaired=0&firstRegistrationDate.min=2019-01#{fuel_filters}"
+    "#{base_url}#{classification}&damageUnrepaired=0&firstRegistrationDate.min=2019-01#{fuel_filters}"
   end
 
   def self.clear_cache_pattern(pattern)

@@ -1,0 +1,145 @@
+<div class="container mt-4">
+  <h1>Gestión de Caché SEO</h1>
+  <p class="text-muted">Control del caché de anuncios para páginas de modelos</p>
+
+  <% if flash[:notice] %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= flash[:notice] %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= flash[:alert] %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  <% end %>
+
+  <!-- Summary Card -->
+  <div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">📊 Resumen del Caché</h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3">
+          <h6>Total Modelos</h6>
+          <h3><%= @cache_summary[:total_models] %></h3>
+        </div>
+        <div class="col-md-3">
+          <h6>Modelos Cacheados</h6>
+          <h3 class="text-success"><%= @cache_summary[:cached_models] %></h3>
+        </div>
+        <div class="col-md-3">
+          <h6>Cobertura</h6>
+          <h3><%= @cache_summary[:cache_coverage] %>%</h3>
+        </div>
+        <div class="col-md-3">
+          <h6>Total Anuncios</h6>
+          <h3><%= @cache_summary[:total_ads] %></h3>
+        </div>
+      </div>
+      <hr>
+      <p class="text-muted mb-0">
+        <strong>Duración del caché:</strong> <%= (@cache_summary[:cache_expiry] / 1.day).round %> días
+      </p>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="card mb-4">
+    <div class="card-header">
+      <h5 class="mb-0">⚡ Acciones Rápidas</h5>
+    </div>
+    <div class="card-body">
+      <form action="<%= refresh_dashboard_seo_cache_path %>" method="post" onsubmit="return confirm('¿Actualizar el caché de TODAS las marcas? Esto puede tardar varios minutos.');">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :brand_slug, 'all' %>
+        <button type="submit" class="btn btn-primary btn-lg me-2">🔄 Actualizar TODO el Caché (48 modelos)</button>
+      </form>
+
+      <form action="<%= clear_dashboard_seo_cache_path %>" method="post" class="d-inline" onsubmit="return confirm('¿Está seguro de eliminar TODO el caché?');">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :_method, 'delete' %>
+        <button type="submit" class="btn btn-danger btn-lg">🗑️ Limpiar Todo el Caché</button>
+      </form>
+
+      <hr class="my-4">
+
+      <h6>Actualizar por Marca:</h6>
+      <div class="btn-group flex-wrap" role="group">
+        <% BrandConfiguration.all_brands.each do |brand| %>
+          <form action="<%= refresh_dashboard_seo_cache_path %>" method="post" class="d-inline me-2 mb-2">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= hidden_field_tag :brand_slug, brand[:slug] %>
+            <button type="submit" class="btn btn-outline-primary"><%= brand[:display_name] %></button>
+          </form>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cache Status by Brand -->
+  <div class="card">
+    <div class="card-header">
+      <h5 class="mb-0">📋 Estado del Caché por Marca</h5>
+    </div>
+    <div class="card-body">
+      <% @cache_status.each do |brand_name, models_status| %>
+        <h6 class="mt-3"><%= brand_name %></h6>
+        <div class="table-responsive">
+          <table class="table table-sm table-striped">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Estado</th>
+                <th>Anuncios</th>
+                <th>Cacheado</th>
+                <th>Expira</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% models_status.each do |model_slug, status| %>
+                <tr>
+                  <td><code><%= model_slug %></code></td>
+                  <td>
+                    <% if status[:cached] %>
+                      <span class="badge bg-success">✓ Cacheado</span>
+                    <% else %>
+                      <span class="badge bg-secondary">✗ Sin caché</span>
+                    <% end %>
+                  </td>
+                  <td><%= status[:ads_count] %></td>
+                  <td>
+                    <% if status[:cached_at] %>
+                      <small><%= time_ago_in_words(status[:cached_at]) %> ago</small>
+                    <% else %>
+                      <small class="text-muted">-</small>
+                    <% end %>
+                  </td>
+                  <td>
+                    <% if status[:expires_at] %>
+                      <small><%= time_ago_in_words(status[:expires_at]) %></small>
+                    <% else %>
+                      <small class="text-muted">-</small>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Instructions for Production -->
+  <div class="alert alert-info mt-4">
+    <h6>📝 Instrucciones para Heroku (Producción)</h6>
+    <p>Para actualizar el caché manualmente en producción, usa este botón o ejecuta:</p>
+    <pre class="mb-0"><code>heroku run rails seo_cache:refresh_all --app importocoches</code></pre>
+    <hr>
+    <p class="mb-0"><strong>Automatización:</strong> Configura Heroku Scheduler para ejecutar <code>rails seo_cache:refresh_all</code> diariamente.</p>
+  </div>
+</div>

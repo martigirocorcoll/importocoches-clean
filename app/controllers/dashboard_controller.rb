@@ -77,15 +77,15 @@ class DashboardController < ApplicationController
 
   def llamadas
     # EMERGENCY MODE - Ultra minimal loading
-    
+
     # Only get basic pagination data - NO complex queries
     page = params[:page] || 1
     per_page = [params[:per_page].to_i, 50].max # Min 50, max reasonable
     per_page = [per_page, 200].min # Max 200 to prevent overload
-    
+
     # Simple query - only current month, only essential data
     first_of_month = Date.current.beginning_of_month
-    
+
     # Minimal query with essential fields only
     @llamadas_display = Llamada
       .select(:id, :created_at, :ip_address, :user_agent, :request_method, :endpoint)
@@ -93,7 +93,7 @@ class DashboardController < ApplicationController
       .order(id: :desc)  # Use ID instead of created_at - faster
       .limit(per_page)
       .offset((page.to_i - 1) * per_page.to_i)
-    
+
     # CACHED stats - only calculate once per day
     cache_key = "llamadas_simple_stats_#{Date.current.strftime('%Y%m%d')}"
     @stats = Rails.cache.fetch(cache_key, expires_in: 24.hours) do
@@ -101,22 +101,52 @@ class DashboardController < ApplicationController
         total_count: Llamada.where('created_at >= ?', first_of_month).count,
         bot_count: 'N/A', # Too expensive to calculate
         suspicious_ips_count: 'N/A',
-        unique_ips_count: 'N/A', 
+        unique_ips_count: 'N/A',
         legitimate_count: 'N/A'
       }
     end
-    
+
     # Extract cached stats
     @total_count = @stats[:total_count]
     @bot_count = @stats[:bot_count]
-    @suspicious_ips_count = @stats[:suspicious_ips_count] 
+    @suspicious_ips_count = @stats[:suspicious_ips_count]
     @unique_ips_count = @stats[:unique_ips_count]
     @legitimate_count = @stats[:legitimate_count]
-    
+
     # Simple pagination - assume no filters for speed
     @filtered_count = @total_count
     @current_page = page.to_i
     @per_page = per_page.to_i
     @total_pages = (@total_count.to_f / @per_page).ceil
+  end
+
+  def seo_cache
+    @cache_summary = SeoCacheService.cache_summary
+    @cache_status = SeoCacheService.cache_status
+  end
+
+  def refresh_seo_cache
+    brand_slug = params[:brand_slug]
+
+    if brand_slug == 'all'
+      # Refresh all brands in background job
+      RefreshSeoCacheJob.perform_later
+      flash[:notice] = "Actualizando caché de todas las marcas en segundo plano. Esto puede tardar varios minutos."
+    elsif brand_slug.present?
+      # Refresh specific brand
+      results = SeoCacheService.refresh_cache_for_brand(brand_slug)
+      successful = results.count { |r| r[:success] }
+      flash[:notice] = "✅ Actualizado #{successful} modelos de #{brand_slug}"
+    else
+      flash[:alert] = "Debe especificar una marca"
+    end
+
+    redirect_to dashboard_seo_cache_path
+  end
+
+  def clear_seo_cache
+    SeoCacheService.clear_cache
+    flash[:notice] = "🗑️ Caché SEO eliminado completamente"
+    redirect_to dashboard_seo_cache_path
   end
 end

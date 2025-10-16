@@ -165,6 +165,20 @@ nl:
     p5: "With a heritage of vision and innovation, Tesla continues Nikola Tesla's spirit in its mission to change the world through technology. Each Tesla vehicle carries the promise of a new era in transportation."
     t6: "Importation to Spain"
     p6: "In Spain, there is no official Tesla dealership, but we can help you import a specific Tesla vehicle to your doorstep. Our importation service specializes in importing Tesla vehicles from different countries, ensuring a seamless process and guaranteeing that you will receive your Tesla vehicle with the highest quality and efficiency."
+  expbyd:
+    titol: "BYD, waarvan de naam staat voor 'Build Your Dreams' (Bouw Je Dromen), is een wereldleider in de productie van elektrische voertuigen en batterijtechnologie. Opgericht in 1995 in China, is het bedrijf een pionier geworden in duurzame mobiliteit en technologische innovatie."
+    t1: "Geschiedenis en Oprichting"
+    p1: "BYD begon als fabrikant van oplaadbare batterijen en positioneerde zich snel als wereldleider in lithium-ion batterijtechnologie. In 2003 trad het bedrijf toe tot de auto-industrie en heeft sindsdien een exponentiële groei doorgemaakt, waardoor het een van de grootste fabrikanten van elektrische voertuigen ter wereld is geworden."
+    t2: "Blade Batterij Innovatie"
+    p2: "BYD revolutioneerde de industrie met zijn Blade batterijtechnologie, een innovatie die meer veiligheid, hogere energiedichtheid en een langere levensduur biedt. Deze LFP-technologie (lithium-ijzerfosfaat) elimineert vrijwel het brandrisico en maakt sneller opladen mogelijk, waardoor nieuwe industriestandaarden worden gezet."
+    t3: "Elektrisch Voertuigengamma"
+    p3: "BYD biedt een breed scala aan volledig elektrische voertuigen, variërend van compacte stadsauto's zoals de Dolphin tot premium sedans zoals de Seal, gezins-SUV's zoals de Atto 3 en Seal U. Elk model combineert geavanceerde technologie, modern design en een uitstekende prijs-kwaliteitverhouding."
+    t4: "Technologie en Bereik"
+    p4: "BYD-voertuigen vallen op door hun indrukwekkende reikwijdtes van meer dan 500 km bij veel modellen, snellaadsystemen die 80% van de batterij in minder dan 30 minuten herstellen, en geavanceerde rijhulpsystemen die veiligheid en comfort garanderen."
+    t5: "Duurzaamheid en Milieu-engagement"
+    p5: "BYD is wereldleider in duurzame mobiliteit en produceert niet alleen elektrische voertuigen maar ook elektrische bussen, vrachtwagens en energieopslagsystemen. Hun toewijding aan het milieu wordt weerspiegeld in elk aspect van hun productie, van batterijfabricage tot recycling van componenten."
+    t6: "BYD Importservice naar Spanje"
+    p6: "Als leider in elektrische voertuigen wordt BYD steeds meer gevraagd door bestuurders die duurzame mobiliteit zoeken zonder prestaties in te leveren. Als u geïnteresseerd bent in het aanschaffen van een specifieke BYD, of het nu de compacte Dolphin, elegante Seal, veelzijdige Atto 3 of ruime Seal U is, kunnen wij u helpen. Wij zijn gespecialiseerd in het op bestelling importeren van elektrische auto's vanuit Duitsland naar Spanje, met garantie voor een transparant en efficiënt proces. Neem contact met ons op om te ontdekken hoe wij u kunnen helpen uw ideale BYD te vinden en te genieten van de elektrische mobiliteit van de toekomst."
   explambo:
     titol: "Lamborghini: Passion, Speed, and Italian Elegance in Every Detail"
     t1: "Exclusive Design"
@@ -2094,3 +2108,20 @@ nl:
 
   social:
     badge: "IMPORTOGROUP ON SOCIAL MEDIA"
+
+  model_descriptions:
+    bmw_serie_7: "De BMW 7 Serie vertegenwoordigt elegantie en innovatie op zijn best. Deze luxe sedan biedt een verfijnd interieur met premium materialen, geavanceerde technologie en uitzonderlijke prestaties. Perfect voor wie op elke reis comfort en prestige zoekt."
+    bmw_i4: "De BMW i4 is de elektrische sedan die duurzaamheid combineert met rijplezier. Met indrukwekkend bereik en directe acceleratie levert de i4 de BMW-ervaring in een 100% elektrisch pakket. Innovatieve technologie en aantrekkelijk design voor de moderne bestuurder."
+    mercedes_gle: "De Mercedes-Benz GLE is de SUV die veelzijdigheid en luxe definieert. Met royale binnenruimte, intelligente technologie en terreinmogelijkheden past de GLE zich zowel aan de stad als aan avontuur aan. Elegantie en prestaties in perfecte harmonie."
+    mercedes_eqv: "De Mercedes-Benz EQV is de premium elektrische MPV die familiereizen transformeert. Ruimte voor 7 passagiers, zero emissie en alle Mercedes luxe in een praktisch en duurzaam voertuig. Ideaal voor gezinnen die niet willen inleveren op comfort of het milieu."
+    audi_q4: "De Audi Q4 e-tron is de compacte elektrische SUV met quattro-technologie in elektrische vorm. Modern design, ruim interieur en een bereik dat zorgeloze ritten garandeert. De perfecte toegang tot Audi's premium elektrische wereld."
+    audi_q6: "De Audi Q6 e-tron vertegenwoordigt de toekomst van elektrische SUV's. Met het nieuwe PPE-platform biedt hij ultrasnelladen, verlengd bereik en een revolutionair digitaal interieur. Geavanceerde technologie voor de meest veeleisende bestuurders."
+    volkswagen_t7_california: "De Volkswagen T7 California is de iconische camper opnieuw uitgevonden. Uitgerust met keuken, bed en hefdak, biedt hij volledige vrijheid om te verkennen. Perfect voor uw avonturen met al het comfort dat u nodig heeft."
+    volkswagen_id3: "De Volkswagen ID.3 is de toegankelijke elektrische auto die de toekomst van mobiliteit vormt. Met echt dagelijks bereik, snelladen en een ruime cabine maakt de ID.3 de overstap naar elektrisch eenvoudig en aangenaam."
+    mini_aceman: "De MINI Aceman is de elektrische crossover die MINI-stijl combineert met moderne prakticaliteit. Wendbaar in de stad maar ruim van binnen, biedt hij de MINI-rijervaring in duurzaam formaat. Onderscheidend, leuk en 100% elektrisch."
+    cupra_tavascan: "De Cupra Tavascan is de elektrische SUV-coupé die sportiviteit combineert met duurzaamheid. Agressief design, opwindende prestaties en geavanceerde technologie definiëren dit model. Voor wie prestaties zoekt zonder de toekomst te compromitteren."
+    cupra_terramar: "De Cupra Terramar is de nieuwe SUV die elegantie combineert met sportief karakter. Krachtige motor, geavanceerde technologie en een design dat niet onopgemerkt blijft. De perfecte balans tussen dagelijks comfort en rijplezier."
+    byd_seal: "De BYD Seal is de elektrische sedan die de nieuwste batterijtechnologie combineert met elegant design. Met segmentleidend bereik en sportieve prestaties bewijst de Seal dat Chinese elektrische voertuigen er zijn om te blijven."
+    byd_atto_3: "De BYD Atto 3 is de compacte elektrische SUV met uitzonderlijke prijs-kwaliteitverhouding. Met langdurige LFP-batterijen, geavanceerde veiligheidstechnologie en een modern interieur maakt de Atto 3 elektrisch toegankelijk voor iedereen."
+    byd_dolphin: "De BYD Dolphin is de stadsauto die duurzame mobiliteit toegankelijk maakt. Compact maar ruim, met voldoende bereik voor dagelijks gebruik en een jong, fris design. De perfecte toegangspoort tot de BYD-familie."
+    byd_seal_u: "De BYD Seal U is de familie elektrische SUV met 7 zitplaatsen en verlengd bereik. Perfect voor gezinnen die ruimte nodig hebben zonder in te leveren op duurzaamheid. Geavanceerde technologie en maximale veiligheid in een praktisch en efficiënt pakket."

@@ -180,6 +180,14 @@
         </li>
 
         <li>
+          <%= link_to dashboard_seo_cache_path,
+              class: "#{current_page?(dashboard_seo_cache_path) ? 'active' : ''}" do %>
+            <i class="fa-solid fa-database"></i>
+            <span>Caché SEO</span>
+          <% end %>
+        </li>
+
+        <li>
           <%= link_to new_contract_path,
               class: "#{current_page?(new_contract_path) ? 'active' : ''}" do %>
             <i class="fa-solid fa-file-contract"></i>
