@@ -203,14 +203,17 @@ class SeoCacheService
 
   def self.build_endpoint(brand_config, model_config)
     base_url = "https://services.mobile.de/search-api/search?vatable=1"
-    
+
     if model_config[:type] == 'modelgroup'
       classification = "classification=refdata/classes/Car/makes/#{brand_config[:api_name]}/modelgroups/#{model_config[:api_name].upcase}"
     else
       classification = "classification=refdata/classes/Car/makes/#{brand_config[:api_name]}/models/#{model_config[:api_name].upcase}"
     end
-    
-    "#{base_url}&#{classification}&damageUnrepaired=0&firstRegistrationDate.min=2019-01"
+
+    # Add hybrid and electric fuel filters
+    fuel_filters = "&fuel=ELECTRIC&fuel=HYBRID_PETROL&fuel=HYBRID_DIESEL&fuel=PLUGIN_HYBRID"
+
+    "#{base_url}&#{classification}&damageUnrepaired=0&firstRegistrationDate.min=2019-01#{fuel_filters}"
   end
 
   def self.clear_cache_pattern(pattern)
