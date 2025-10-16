@@ -69,8 +69,8 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # Use Redis for persistent cache in production
-  config.cache_store = :redis_cache_store, { 
-    url: ENV['REDIS_URL'], 
+  config.cache_store = :redis_cache_store, {
+    url: ENV['REDISCLOUD_URL'] || ENV['REDIS_URL'],
     expires_in: 1.month,
     namespace: 'importocotxe_cache',
     reconnect_attempts: 1,
